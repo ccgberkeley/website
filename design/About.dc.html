@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; background: #FAF9FB; }
+    a { color: #3B1878; text-decoration: none; }
+    a:hover { color: #2A1057; }
+    html { scroll-behavior: smooth; }
+    @keyframes heroIn { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+    @keyframes drift { 0% { transform: translate(0,0); } 50% { transform: translate(0,-22px); } 100% { transform: translate(0,0); } }
+    [data-reveal] { opacity: 0; transform: translateY(28px); transition: opacity 0.8s cubic-bezier(0.2,0.6,0.2,1), transform 0.8s cubic-bezier(0.2,0.6,0.2,1); }
+    [data-reveal].in { opacity: 1; transform: none; }
+  </style>
+</helmet>
+
+<div style="font-family: 'Instrument Sans', sans-serif; color: #191322; overflow-x: hidden">
+
+  <!-- Nav -->
+  <div style="position: sticky; top: 0; z-index: 50; background: rgba(250,249,251,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid #E6E1EE">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 16px 40px; display: flex; align-items: center; justify-content: space-between">
+      <a href="Home.dc.html" style="display: flex; align-items: center; gap: 12px; color: #191322" style-hover="color: #191322">
+        <img src="assets/logo.png" alt="Core Consulting Group" style="width: 36px; height: 36px">
+        <span style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: -0.01em">Core Consulting Group</span>
+      </a>
+      <div style="display: flex; align-items: center; gap: 32px">
+        <a href="About.dc.html" style="font-size: 15px; font-weight: 600; color: #3B1878">About</a>
+        <a href="Work.dc.html" style="font-size: 15px; font-weight: 500; color: #191322" style-hover="color: #3B1878">Work</a>
+        <a href="Team.dc.html" style="font-size: 15px; font-weight: 500; color: #191322" style-hover="color: #3B1878">Team</a>
+        <a href="Community College.dc.html" style="font-size: 15px; font-weight: 500; color: #191322" style-hover="color: #3B1878">Outreach</a>
+        <a href="Join.dc.html" style="font-size: 15px; font-weight: 500; color: #191322" style-hover="color: #3B1878">Join</a>
+        <a href="Contact.dc.html" style="font-size: 15px; font-weight: 500; color: #191322" style-hover="color: #3B1878">Contact</a>
+        <a href="Work With Us.dc.html" style="font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 600; color: #FFFFFF; background: #3B1878; padding: 10px 20px; border-radius: 8px" style-hover="background: #2A1057; color: #FFFFFF">Work with us</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Immersive hero: deep purple, full-bleed -->
+  <div style="position: relative; background: #2A1057; overflow: hidden">
+    <div style="position: absolute; top: -140px; right: -160px; width: 520px; height: 520px; border-radius: 50%; background: rgba(59,24,120,0.65); animation: drift 9s ease-in-out infinite"></div>
+    <div style="position: absolute; bottom: -60px; left: -120px; width: 380px; height: 380px; border-radius: 50%; background: rgba(201,180,242,0.10); animation: drift 12s ease-in-out infinite reverse"></div>
+    <div style="position: relative; max-width: 1180px; margin: 0 auto; padding: 130px 40px 90px; display: flex; flex-direction: column; gap: 24px; align-items: flex-start">
+      <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #C9B4F2; animation: heroIn 0.9s cubic-bezier(0.2,0.6,0.2,1) both">About CCG</div>
+      <h1 style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 68px; letter-spacing: -0.03em; line-height: 1.04; color: #FFFFFF; margin: 0; max-width: 860px; animation: heroIn 0.9s cubic-bezier(0.2,0.6,0.2,1) 0.12s both">We don't just count voices.<br>We make <span style="color: #C9B4F2">every voice count</span>.</h1>
+      <div style="font-size: 19px; line-height: 1.65; color: rgba(255,255,255,0.82); max-width: 640px; animation: heroIn 0.9s cubic-bezier(0.2,0.6,0.2,1) 0.24s both">CCG democratizes business careers for students of diverse and non-traditional backgrounds — a team of passionate, hardworking professionals bringing fresh perspectives to leadership teams.</div>
+    </div>
+
+    <!-- Diversity stats live inside the color -->
+    <sc-if value="{{ showStats }}" hint-placeholder-val="{{ true }}">
+      <div style="position: relative; border-top: 1px solid rgba(255,255,255,0.14)">
+        <div id="stats-row" style="max-width: 1180px; margin: 0 auto; padding: 56px 40px 72px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px">
+          <div style="display: flex; flex-direction: column; gap: 6px">
+            <div style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 54px; letter-spacing: -0.03em; color: #FFFFFF">{{ statTransfer }}%</div>
+            <div style="font-size: 15px; color: #C9B4F2">Transfer students</div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 6px">
+            <div style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 54px; letter-spacing: -0.03em; color: #FFFFFF">{{ statIntl }}%</div>
+            <div style="font-size: 15px; color: #C9B4F2">International</div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 6px">
+            <div style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 54px; letter-spacing: -0.03em; color: #FFFFFF">{{ statFgli }}%</div>
+            <div style="font-size: 15px; color: #C9B4F2">First-gen + low-income</div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 6px">
+            <div style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 54px; letter-spacing: -0.03em; color: #FFFFFF">{{ statWomen }}%</div>
+            <div style="font-size: 15px; color: #C9B4F2">Women</div>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+    <svg viewBox="0 0 1440 100" preserveAspectRatio="none" style="width: 100%; height: 80px; display: block; position: relative">
+      <path d="M0,10 C400,90 1040,-20 1440,50 L1440,100 L0,100 Z" fill="#C9B4F2" opacity="0.45"></path>
+      <path d="M0,30 C420,104 1060,0 1440,66 L1440,100 L0,100 Z" fill="#FAF9FB"></path>
+    </svg>
+  </div>
+
+  <!-- Who we are -->
+  <div style="max-width: 1180px; margin: 0 auto; padding: 104px 40px 120px; display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 72px; align-items: center">
+    <div data-reveal style="height: 460px; min-width: 0; overflow: hidden; border-radius: 14px">
+      <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="about-page-photo" shape="rounded" radius="14" placeholder="Drop a candid team photo here" hint-size="100%,460px" style="width: 100%; height: 460px"></x-import>
+    </div>
+    <div data-reveal style="display: flex; flex-direction: column; gap: 20px; transition-delay: 0.15s">
+      <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #3B1878">Who we are</div>
+      <h2 style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 44px; letter-spacing: -0.03em; line-height: 1.1; margin: 0">A student-run consultancy at <span style="color: #3B1878">UC Berkeley</span></h2>
+      <div style="font-size: 17px; line-height: 1.65; color: #5C5468">We recruit for curiosity and work ethic — no consulting experience required — then train every member through real client engagements. Each semester, hand-picked teams of six take on projects for startups, nonprofits, and established firms.</div>
+      <div style="display: flex; gap: 16px; margin-top: 4px">
+        <a href="Join.dc.html" style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 15px; color: #FFFFFF; background: #3B1878; padding: 14px 28px; border-radius: 8px" style-hover="background: #2A1057; color: #FFFFFF">Join our team</a>
+        <a href="Work.dc.html" style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 15px; color: #191322; border: 1.5px solid #191322; padding: 12.5px 28px; border-radius: 8px" style-hover="border-color: #3B1878; color: #3B1878">See our work</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Values: full-bleed violet immersion -->
+  <div style="position: relative; background: #FAF9FB">
+    <svg viewBox="0 0 1440 100" preserveAspectRatio="none" style="width: 100%; height: 90px; display: block">
+      <path d="M0,80 C420,-20 1020,110 1440,30 L1440,100 L0,100 Z" fill="#C9B4F2" opacity="0.45"></path>
+      <path d="M0,92 C440,4 1040,116 1440,44 L1440,100 L0,100 Z" fill="#3B1878"></path>
+    </svg>
+    <div style="background: #3B1878">
+      <div style="max-width: 1180px; margin: 0 auto; padding: 56px 40px 96px">
+        <div data-reveal style="display: flex; flex-direction: column; gap: 16px; max-width: 640px; margin: 0 auto 56px; text-align: center; align-items: center">
+          <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #C9B4F2">What we stand for</div>
+          <h2 style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 48px; letter-spacing: -0.03em; line-height: 1.08; margin: 0; color: #FFFFFF">Our <span style="color: #C9B4F2">values</span></h2>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px">
+          <div data-reveal style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 14px; padding: 36px 32px; display: flex; flex-direction: column; gap: 14px; transition-delay: 0s" style-hover="background: rgba(255,255,255,0.12); transform: translateY(-4px)">
+            <div style="width: 48px; height: 48px; border-radius: 10px; background: rgba(201,180,242,0.18); display: flex; align-items: center; justify-content: center">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9B4F2" stroke-width="1.5"><path d="M12 3l2.5 5.5L20 9.5l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-1z"></path></svg>
+            </div>
+            <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 19px; color: #FFFFFF">Access for all</div>
+            <div style="font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.75); margin-top: -6px">Business careers shouldn't depend on your background. We open the door for students from every path.</div>
+          </div>
+          <div data-reveal style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 14px; padding: 36px 32px; display: flex; flex-direction: column; gap: 14px; transition-delay: 0.1s" style-hover="background: rgba(255,255,255,0.12); transform: translateY(-4px)">
+            <div style="width: 48px; height: 48px; border-radius: 10px; background: rgba(201,180,242,0.18); display: flex; align-items: center; justify-content: center">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9B4F2" stroke-width="1.5"><circle cx="9" cy="8" r="3.5"></circle><circle cx="16.5" cy="10" r="2.5"></circle><path d="M3.5 19c.7-3 3-4.5 5.5-4.5s4.8 1.5 5.5 4.5M14.5 14.7c2 .2 3.6 1.4 4.2 3.3"></path></svg>
+            </div>
+            <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 19px; color: #FFFFFF">Every voice counts</div>
+            <div style="font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.75); margin-top: -6px">Fresh perspectives make better advice. We build teams where different viewpoints shape the answer.</div>
+          </div>
+          <div data-reveal style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 14px; padding: 36px 32px; display: flex; flex-direction: column; gap: 14px; transition-delay: 0.2s" style-hover="background: rgba(255,255,255,0.12); transform: translateY(-4px)">
+            <div style="width: 48px; height: 48px; border-radius: 10px; background: rgba(201,180,242,0.18); display: flex; align-items: center; justify-content: center">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9B4F2" stroke-width="1.5"><path d="M4 19h16M6 16v-5M11 16V8M16 16v-8"></path></svg>
+            </div>
+            <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 19px; color: #FFFFFF">Learn by doing</div>
+            <div style="font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.75); margin-top: -6px">Real clients, real deliverables, real stakes. Members grow through the work, not the classroom.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <svg viewBox="0 0 1440 100" preserveAspectRatio="none" style="width: 100%; height: 90px; display: block; transform: scaleY(-1)">
+      <path d="M0,80 C420,-20 1020,110 1440,30 L1440,100 L0,100 Z" fill="#C9B4F2" opacity="0.45"></path>
+      <path d="M0,92 C440,4 1040,116 1440,44 L1440,100 L0,100 Z" fill="#3B1878"></path>
+    </svg>
+  </div>
+
+  <!-- Team photos -->
+  <div style="max-width: 1180px; margin: 0 auto; padding: 96px 40px 120px">
+    <div data-reveal style="display: flex; flex-direction: column; gap: 14px; text-align: center; align-items: center; margin-bottom: 48px">
+      <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #3B1878">Life at CCG</div>
+      <h2 style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 44px; letter-spacing: -0.03em; margin: 0">More than a <span style="color: #3B1878">club</span></h2>
+    </div>
+    <div data-reveal style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px">
+      <div style="height: 280px; overflow: hidden; border-radius: 14px">
+        <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="life-photo-1" shape="rounded" radius="14" placeholder="Retreat photo" hint-size="100%,280px" style="width: 100%; height: 280px"></x-import>
+      </div>
+      <div style="height: 280px; overflow: hidden; border-radius: 14px">
+        <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="life-photo-2" shape="rounded" radius="14" placeholder="Client presentation photo" hint-size="100%,280px" style="width: 100%; height: 280px"></x-import>
+      </div>
+      <div style="height: 280px; overflow: hidden; border-radius: 14px">
+        <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="life-photo-3" shape="rounded" radius="14" placeholder="Social event photo" hint-size="100%,280px" style="width: 100%; height: 280px"></x-import>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div style="max-width: 1180px; margin: 0 auto; padding: 0 40px 120px">
+    <div data-reveal style="background: #2A1057; border-radius: 14px; padding: 72px 64px; display: flex; align-items: center; justify-content: space-between; gap: 40px">
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <div style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 36px; letter-spacing: -0.03em; color: #FFFFFF; line-height: 1.15">Join our <span style="color: #C9B4F2">family</span></div>
+        <div style="font-size: 17px; line-height: 1.6; color: #C9B4F2">Applications open each semester — no experience required.</div>
+      </div>
+      <a href="Home.dc.html#contact" style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 15px; color: #191322; background: #FFFFFF; padding: 15px 30px; border-radius: 8px; flex-shrink: 0" style-hover="background: #C9B4F2; color: #191322">Apply now</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div style="background: #191322">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 56px 40px 40px; display: flex; align-items: center; justify-content: space-between; gap: 32px">
+      <div style="display: flex; align-items: center; gap: 12px">
+        <img src="assets/logo.png" alt="" style="width: 32px; height: 32px">
+        <span style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 16px; color: #FFFFFF">Core Consulting Group</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 28px">
+        <a href="Home.dc.html" style="font-size: 14px; color: #9C93AC" style-hover="color: #C9B4F2">Home</a>
+        <a href="Work.dc.html" style="font-size: 14px; color: #9C93AC" style-hover="color: #C9B4F2">Our work</a>
+        <a href="mailto:Berkeleyccg@gmail.com" style="font-size: 14px; color: #9C93AC" style-hover="color: #C9B4F2">Berkeleyccg@gmail.com</a>
+        <span style="font-size: 13px; color: #5C5468">© 2026 CCG</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showStats&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Sections&quot;}}">
+class Component extends DCLogic {
+  state = { progress: 0, started: false };
+
+  componentDidMount() {
+    this._startStats = () => {
+      if (this.state.started) return;
+      this.setState({ started: true });
+      const t0 = performance.now();
+      const dur = 1400;
+      const tick = (t) => {
+        const p = Math.min(1, (t - t0) / dur);
+        this.setState({ progress: 1 - Math.pow(1 - p, 3) });
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    };
+    this._checkReveals = () => {
+      document.querySelectorAll('[data-reveal]:not(.in)').forEach((el) => {
+        const r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight * 0.88 && r.bottom > 0) el.classList.add('in');
+      });
+      if (!this.state.started) {
+        const row = document.getElementById('stats-row');
+        if (row) {
+          const r = row.getBoundingClientRect();
+          if (r.top < window.innerHeight && r.bottom > 0) this._startStats();
+        }
+      }
+    };
+    this._onScroll = () => requestAnimationFrame(this._checkReveals);
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    window.addEventListener('resize', this._onScroll);
+    this._revealTimer = setInterval(this._checkReveals, 400);
+    this._checkReveals();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+    window.removeEventListener('resize', this._onScroll);
+    if (this._revealTimer) clearInterval(this._revealTimer);
+  }
+
+  renderVals() {
+    const p = this.state.progress;
+    const n = (v) => Math.round(v * p);
+    return {
+      showStats: this.props.showStats ?? true,
+      statTransfer: n(59),
+      statIntl: n(38),
+      statFgli: n(26),
+      statWomen: n(50),
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; background: #FAF9FB; }
+    a { color: #3B1878; text-decoration: none; }
+    a:hover { color: #2A1057; }
+    html { scroll-behavior: smooth; }
+    @keyframes heroIn { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+    input::placeholder, textarea::placeholder { color: #9C93AC; }
+    [data-reveal] { opacity: 0; transform: translateY(28px); transition: opacity 0.8s cubic-bezier(0.2,0.6,0.2,1), transform 0.8s cubic-bezier(0.2,0.6,0.2,1); }
+    [data-reveal].in { opacity: 1; transform: none; }
+  </style>
+</helmet>
+
+<div style="font-family: 'Instrument Sans', sans-serif; color: #191322; overflow-x: clip">
+
+  <!-- Nav -->
+  <div style="position: sticky; top: 0; z-index: 50; background: rgba(250,249,251,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid #E6E1EE">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 16px 40px; display: flex; align-items: center; justify-content: space-between">
+      <a href="Home.dc.html" style="display: flex; align-items: center; gap: 12px; color: #191322" style-hover="color: #191322">
+        <img src="assets/logo.png" alt="Core Consulting Group" style="width: 36px; height: 36px">
+        <span style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: -0.01em">Core Consulting Group</span>
+      </a>
+      <div style="display: flex; align-items: center; gap: 32px">
+        <a href="About.dc.html" style="font-size: 15px; font-weight: 500; color: #191322" style-hover="color: #3B1878">About</a>
+        <a href="Work.dc.html" style="font-size: 15px; font-weight: 500; color: #191322" style-hover="color: #3B1878">Work</a>
+        <a href="Team.dc.html" style="font-size: 15px; font-weight: 500; color: #191322" style-hover="color: #3B1878">Team</a>
+        <a href="Community College.dc.html" style="font-size: 15px; font-weight: 500; color: #191322" style-hover="color: #3B1878">Outreach</a>
+        <a href="Join.dc.html" style="font-size: 15px; font-weight: 500; color: #191322" style-hover="color: #3B1878">Join</a>
+        <a href="Contact.dc.html" style="font-size: 15px; font-weight: 600; color: #3B1878">Contact</a>
+        <a href="Work With Us.dc.html" style="font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 600; color: #FFFFFF; background: #3B1878; padding: 10px 20px; border-radius: 8px" style-hover="background: #2A1057; color: #FFFFFF">Work with us</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <div style="position: relative; background: #2A1057">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 104px 40px 72px; display: flex; flex-direction: column; gap: 20px; align-items: center; text-align: center">
+      <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #C9B4F2; animation: heroIn 0.9s cubic-bezier(0.2,0.6,0.2,1) both">Contact</div>
+      <h1 style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 60px; letter-spacing: -0.03em; line-height: 1.05; color: #FFFFFF; margin: 0; animation: heroIn 0.9s cubic-bezier(0.2,0.6,0.2,1) 0.12s both">Say <span style="color: #C9B4F2">hello</span></h1>
+      <div style="font-size: 18px; line-height: 1.65; color: rgba(255,255,255,0.82); max-width: 600px; animation: heroIn 0.9s cubic-bezier(0.2,0.6,0.2,1) 0.24s both">Curious about joining, want to grab a coffee chat, or just have a question? We'd love to hear from you — no consulting experience required.</div>
+    </div>
+    <svg viewBox="0 0 1440 100" preserveAspectRatio="none" style="width: 100%; height: 80px; display: block; pointer-events: none">
+      <path d="M0,10 C400,90 1040,-20 1440,50 L1440,100 L0,100 Z" fill="#C9B4F2" opacity="0.45"></path>
+      <path d="M0,30 C420,104 1060,0 1440,66 L1440,100 L0,100 Z" fill="#FAF9FB"></path>
+    </svg>
+  </div>
+
+  <!-- Contact info + form -->
+  <div style="max-width: 1180px; margin: 0 auto; padding: 64px 40px 120px; display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.2fr); gap: 72px; align-items: start">
+    <div data-reveal style="display: flex; flex-direction: column; gap: 24px; padding-top: 16px">
+      <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #3B1878">Get in touch</div>
+      <h2 style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 40px; letter-spacing: -0.03em; line-height: 1.1; margin: 0">We're students <span style="color: #3B1878">too</span></h2>
+      <div style="font-size: 17px; line-height: 1.65; color: #5C5468">Whether you're thinking about applying, want advice on breaking into consulting, or your club wants to collaborate — send us a note. A real member reads every message.</div>
+      <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 8px">
+        <a href="mailto:Berkeleyccg@gmail.com" style="display: flex; align-items: center; gap: 12px; font-size: 16px; font-weight: 500; color: #191322" style-hover="color: #3B1878">
+          <span style="width: 40px; height: 40px; border-radius: 10px; background: #F2EDFA; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3B1878" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg></span>
+          Berkeleyccg@gmail.com
+        </a>
+        <a href="https://www.instagram.com/berkeleyccg/" style="display: flex; align-items: center; gap: 12px; font-size: 16px; font-weight: 500; color: #191322" style-hover="color: #3B1878">
+          <span style="width: 40px; height: 40px; border-radius: 10px; background: #F2EDFA; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3B1878" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="5"></rect><circle cx="12" cy="12" r="3.5"></circle><circle cx="17" cy="7" r="1" fill="#3B1878" stroke="none"></circle></svg></span>
+          @berkeleyccg
+        </a>
+        <div style="display: flex; align-items: center; gap: 12px; font-size: 16px; font-weight: 500; color: #191322">
+          <span style="width: 40px; height: 40px; border-radius: 10px; background: #F2EDFA; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3B1878" stroke-width="1.5"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg></span>
+          UC Berkeley, Berkeley CA
+        </div>
+      </div>
+      <div style="background: #F2EDFA; border-radius: 12px; padding: 20px 22px; display: flex; flex-direction: column; gap: 6px; margin-top: 8px">
+        <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 15px; color: #3B1878">Thinking of applying?</div>
+        <div style="font-size: 14.5px; line-height: 1.6; color: #5C5468">Check the <a href="Join.dc.html" style="font-weight: 600">recruitment timeline</a> for this semester's dates — info sessions are the best place to meet us in person.</div>
+      </div>
+    </div>
+
+    <div data-reveal style="background: #FFFFFF; border: 1px solid #E6E1EE; border-radius: 14px; padding: 44px 40px; display: flex; flex-direction: column; gap: 18px; transition-delay: 0.15s">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px">
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <label style="font-size: 14px; font-weight: 600; color: #191322">First name</label>
+          <input value="{{ firstName }}" onChange="{{ setFirstName }}" placeholder="Oski" style="width: 100%; box-sizing: border-box; min-width: 0; font-family: 'Instrument Sans', sans-serif; font-size: 15px; color: #191322; background: #FAF9FB; border: 1px solid #E6E1EE; border-radius: 8px; padding: 13px 14px; outline: none" style-focus="border-color: #3B1878; background: #FFFFFF">
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <label style="font-size: 14px; font-weight: 600; color: #191322">Last name</label>
+          <input value="{{ lastName }}" onChange="{{ setLastName }}" placeholder="Bear" style="width: 100%; box-sizing: border-box; min-width: 0; font-family: 'Instrument Sans', sans-serif; font-size: 15px; color: #191322; background: #FAF9FB; border: 1px solid #E6E1EE; border-radius: 8px; padding: 13px 14px; outline: none" style-focus="border-color: #3B1878; background: #FFFFFF">
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <label style="font-size: 14px; font-weight: 600; color: #191322">Email</label>
+        <input value="{{ email }}" onChange="{{ setEmail }}" placeholder="oski@berkeley.edu" style="width: 100%; box-sizing: border-box; min-width: 0; font-family: 'Instrument Sans', sans-serif; font-size: 15px; color: #191322; background: #FAF9FB; border: 1px solid #E6E1EE; border-radius: 8px; padding: 13px 14px; outline: none" style-focus="border-color: #3B1878; background: #FFFFFF">
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <label style="font-size: 14px; font-weight: 600; color: #191322">I'm reaching out about</label>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap">
+          <button onClick="{{ pickJoining }}" style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; font-weight: 600; padding: 9px 16px; border-radius: 999px; cursor: pointer; border: 1px solid {{ joiningBorder }}; background: {{ joiningBg }}; color: {{ joiningColor }}">Joining CCG</button>
+          <button onClick="{{ pickChat }}" style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; font-weight: 600; padding: 9px 16px; border-radius: 999px; cursor: pointer; border: 1px solid {{ chatBorder }}; background: {{ chatBg }}; color: {{ chatColor }}">A question</button>
+          <button onClick="{{ pickCollab }}" style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; font-weight: 600; padding: 9px 16px; border-radius: 999px; cursor: pointer; border: 1px solid {{ collabBorder }}; background: {{ collabBg }}; color: {{ collabColor }}">Club collaboration</button>
+          <button onClick="{{ pickOther }}" style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; font-weight: 600; padding: 9px 16px; border-radius: 999px; cursor: pointer; border: 1px solid {{ otherBorder }}; background: {{ otherBg }}; color: {{ otherColor }}">Something else</button>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <label style="font-size: 14px; font-weight: 600; color: #191322">Message</label>
+        <textarea value="{{ message }}" onChange="{{ setMessage }}" rows="5" placeholder="Hi CCG! I'm a sophomore studying…" style="width: 100%; box-sizing: border-box; min-width: 0; font-family: 'Instrument Sans', sans-serif; font-size: 15px; color: #191322; background: #FAF9FB; border: 1px solid #E6E1EE; border-radius: 8px; padding: 13px 14px; outline: none; resize: vertical" style-focus="border-color: #3B1878; background: #FFFFFF"></textarea>
+      </div>
+      <a href="{{ mailtoHref }}" style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 15px; color: #FFFFFF; background: #3B1878; padding: 15px 28px; border-radius: 8px; text-align: center; margin-top: 6px" style-hover="background: #2A1057; color: #FFFFFF">Send message</a>
+      <div style="font-size: 13px; color: #9C93AC; text-align: center">Opens your email client — or DM us on Instagram, we're fast there.</div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div style="background: #191322">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 56px 40px 40px; display: flex; align-items: center; justify-content: space-between; gap: 32px">
+      <div style="display: flex; align-items: center; gap: 12px">
+        <img src="assets/logo.png" alt="" style="width: 32px; height: 32px">
+        <span style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 16px; color: #FFFFFF">Core Consulting Group</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 28px">
+        <a href="Home.dc.html" style="font-size: 14px; color: #9C93AC" style-hover="color: #C9B4F2">Home</a>
+        <a href="About.dc.html" style="font-size: 14px; color: #9C93AC" style-hover="color: #C9B4F2">About</a>
+        <a href="Join.dc.html" style="font-size: 14px; color: #9C93AC" style-hover="color: #C9B4F2">Join</a>
+        <a href="mailto:Berkeleyccg@gmail.com" style="font-size: 14px; color: #9C93AC" style-hover="color: #C9B4F2">Berkeleyccg@gmail.com</a>
+        <span style="font-size: 13px; color: #5C5468">© 2026 CCG</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { firstName: '', lastName: '', email: '', message: '', topic: 'Joining CCG' };
+
+  componentDidMount() {
+    this._checkReveals = () => {
+      document.querySelectorAll('[data-reveal]:not(.in)').forEach((el) => {
+        const r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight * 0.88 && r.bottom > 0) el.classList.add('in');
+      });
+    };
+    this._onScroll = () => requestAnimationFrame(this._checkReveals);
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    window.addEventListener('resize', this._onScroll);
+    this._revealTimer = setInterval(this._checkReveals, 400);
+    this._checkReveals();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+    window.removeEventListener('resize', this._onScroll);
+    if (this._revealTimer) clearInterval(this._revealTimer);
+  }
+
+  renderVals() {
+    const { firstName, lastName, email, message, topic } = this.state;
+    const subject = encodeURIComponent(topic + ' — ' + [firstName, lastName].filter(Boolean).join(' '));
+    const body = encodeURIComponent((message || '') + (email ? '\n\nReply to: ' + email : ''));
+    const chip = (label) => {
+      const on = topic === label;
+      return {
+        bg: on ? '#3B1878' : '#FAF9FB',
+        color: on ? '#FFFFFF' : '#5C5468',
+        border: on ? '#3B1878' : '#E6E1EE',
+      };
+    };
+    const j = chip('Joining CCG'), c = chip('A question'), co = chip('Club collaboration'), o = chip('Something else');
+    return {
+      firstName, lastName, email, message,
+      setFirstName: (e) => this.setState({ firstName: e.target.value }),
+      setLastName: (e) => this.setState({ lastName: e.target.value }),
+      setEmail: (e) => this.setState({ email: e.target.value }),
+      setMessage: (e) => this.setState({ message: e.target.value }),
+      pickJoining: () => this.setState({ topic: 'Joining CCG' }),
+      pickChat: () => this.setState({ topic: 'A question' }),
+      pickCollab: () => this.setState({ topic: 'Club collaboration' }),
+      pickOther: () => this.setState({ topic: 'Something else' }),
+      joiningBg: j.bg, joiningColor: j.color, joiningBorder: j.border,
+      chatBg: c.bg, chatColor: c.color, chatBorder: c.border,
+      collabBg: co.bg, collabColor: co.color, collabBorder: co.border,
+      otherBg: o.bg, otherColor: o.color, otherBorder: o.border,
+      mailtoHref: 'mailto:Berkeleyccg@gmail.com?subject=' + subject + '&body=' + body,
+    };
+  }
+}
+</script>
+</body>
+</html>

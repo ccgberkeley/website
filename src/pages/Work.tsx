@@ -1,0 +1,544 @@
+import { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
+import Nav from '../components/Nav'
+import ImageSlot from '../components/ImageSlot'
+import { useReveal } from '../hooks/useReveal'
+
+const sora = "'Sora', sans-serif"
+
+const PROJECTS = [
+  { id: 'work-team-1', name: 'Project name one', term: 'Fall 2025' },
+  { id: 'work-team-2', name: 'Project name two', term: 'Spring 2026' },
+  { id: 'work-team-3', name: 'Intel', term: 'Fall 2026' },
+]
+
+const SERVICES = [
+  {
+    num: '01',
+    slot: 'svc-1',
+    title: 'Market expansion',
+    desc: 'Market sizing, customer segmentation, competitive landscaping, and go-to-market strategy for teams launching new products or entering new regions. Past work includes international expansion guides and channel strategies.',
+  },
+  {
+    num: '02',
+    slot: 'svc-2',
+    title: 'Data & analytics',
+    desc: "Statistical modeling, forecasting, survey design, and dashboards that turn raw data into clear decisions. We've tackled immense data-driven projects involving quantitative models and white papers.",
+  },
+  {
+    num: '03',
+    slot: 'svc-3',
+    title: 'Growth strategy',
+    desc: 'Pricing, positioning, brand audits, and product roadmaps for startups and established firms alike. Deliverables include slide decks, written reports, and midpoint plus final presentations.',
+  },
+  {
+    num: '04',
+    slot: 'svc-4',
+    title: 'Operations',
+    desc: 'Process audits, cost analysis, and organizational design that cut friction. Each recommendation comes with an implementation plan your team can act on the day we hand it off.',
+  },
+]
+
+const TIMELINE = [
+  { weeks: 'Weeks 1–2', title: 'Scope', desc: 'Initial meetings to define the challenge, success metrics, and deliverables.' },
+  { weeks: 'Weeks 3–5', title: 'Research', desc: 'Primary and secondary research, data collection, and expert interviews.' },
+  { weeks: 'Weeks 6–8', title: 'Analysis', desc: 'Modeling and synthesis, with a midpoint presentation to check direction.' },
+  { weeks: 'Weeks 9–10', title: 'Deliver', desc: 'Final deliverable and presentation, with an implementation roadmap.' },
+]
+
+const CLIENTS = [
+  ['apple', 'Apple'],
+  ['jpmorgan', 'J.P. Morgan'],
+  ['autodesk', 'Autodesk'],
+  ['jnj', 'Johnson & Johnson'],
+  ['urban', 'Urban Outfitters'],
+  ['strom', 'Strom Living'],
+  ['raceforward', 'Race Forward'],
+  ['adobe', 'Adobe'],
+  ['tesla', 'Tesla'],
+  ['tiktok', 'TikTok'],
+  ['oracle', 'Oracle'],
+  ['hny', 'HNY+'],
+  ['alaska', 'Alaska Airlines'],
+  ['chegg', 'Chegg'],
+  ['qualcomm', 'Qualcomm'],
+] as const
+
+function heroIn(delay: number): React.CSSProperties {
+  return { animation: `heroIn 0.9s cubic-bezier(0.2,0.6,0.2,1) ${delay}s both` }
+}
+
+function LogoCard({ slug, name }: { slug: string; name: string }) {
+  const [failed, setFailed] = useState(false)
+  return (
+    <div
+      style={{
+        background: '#FFFFFF',
+        borderRadius: 12,
+        padding: '0 32px',
+        height: 84,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexShrink: 0,
+      }}
+    >
+      {failed ? (
+        <span style={{ fontFamily: sora, fontSize: 14, fontWeight: 600, color: '#5C5468' }}>{name}</span>
+      ) : (
+        <img
+          src={`/assets/logos/${slug}.png`}
+          alt={name}
+          style={{ maxHeight: 44, maxWidth: 150, width: 'auto', height: 'auto' }}
+          onError={() => setFailed(true)}
+        />
+      )}
+    </div>
+  )
+}
+
+export default function Work() {
+  useReveal()
+  const [slide, setSlide] = useState(0)
+  const rotTimer = useRef<ReturnType<typeof setInterval>>()
+
+  const startRotation = () => {
+    if (rotTimer.current) clearInterval(rotTimer.current)
+    rotTimer.current = setInterval(() => setSlide((s) => (s + 1) % 3), 5000)
+  }
+
+  useEffect(() => {
+    startRotation()
+    return () => clearInterval(rotTimer.current)
+  }, [])
+
+  const goTo = (i: number) => {
+    setSlide(i)
+    startRotation()
+  }
+
+  return (
+    <div style={{ overflowX: 'hidden' }}>
+      <Nav active="Work" />
+
+      {/* Hero: campus photo backdrop + rotating project showcase */}
+      <div style={{ position: 'relative', background: '#2A1057', overflow: 'hidden' }}>
+        <img
+          src="/assets/berkeley-campus.png"
+          alt=""
+          style={{
+            position: 'absolute',
+            inset: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            objectPosition: 'center 30%',
+            opacity: 0.38,
+            pointerEvents: 'none',
+          }}
+        />
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'linear-gradient(180deg, rgba(42,16,87,0.55) 0%, rgba(42,16,87,0.75) 55%, #2A1057 100%)',
+            pointerEvents: 'none',
+          }}
+        />
+
+        <div
+          style={{
+            position: 'relative',
+            maxWidth: 1180,
+            margin: '0 auto',
+            padding: '88px 40px 48px',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: 18,
+            textAlign: 'center',
+          }}
+        >
+          <div
+            style={{
+              fontFamily: sora,
+              fontWeight: 600,
+              fontSize: 13,
+              letterSpacing: '0.18em',
+              textTransform: 'uppercase',
+              color: '#C9B4F2',
+              ...heroIn(0),
+            }}
+          >
+            Our work
+          </div>
+          <h1
+            style={{
+              fontFamily: sora,
+              fontWeight: 800,
+              fontSize: 56,
+              letterSpacing: '-0.03em',
+              lineHeight: 1.05,
+              color: '#FFFFFF',
+              margin: 0,
+              ...heroIn(0.12),
+            }}
+          >
+            Partnering with <span style={{ color: '#C9B4F2' }}>purpose</span>
+          </h1>
+
+          {/* Rotating project cutouts */}
+          <div style={{ position: 'relative', width: 'min(760px, 100%)', height: 440, marginTop: 16, ...heroIn(0.24) }}>
+            {PROJECTS.map((p, i) => (
+              <div
+                key={p.id}
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  gap: 16,
+                  opacity: slide === i ? 1 : 0,
+                  zIndex: slide === i ? 2 : 1,
+                  pointerEvents: slide === i ? 'auto' : 'none',
+                  transition: 'opacity 0.9s ease',
+                }}
+              >
+                <div style={{ width: '100%', flex: 1, minHeight: 0 }}>
+                  <ImageSlot
+                    id={p.id}
+                    placeholder="Project team cutout photo (transparent PNG)"
+                    style={{ width: '100%', height: '100%' }}
+                  />
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2 }}>
+                  <span
+                    style={{
+                      fontFamily: sora,
+                      fontWeight: 800,
+                      fontSize: 34,
+                      letterSpacing: '-0.02em',
+                      color: '#F5F1FC',
+                      textShadow: '0 0 24px rgba(201,180,242,0.55), 0 2px 18px rgba(25,19,34,0.6)',
+                    }}
+                  >
+                    {p.name}
+                  </span>
+                  <span
+                    style={{
+                      fontFamily: "'Instrument Serif', serif",
+                      fontStyle: 'italic',
+                      fontSize: 22,
+                      color: '#C9B4F2',
+                      textShadow: '0 0 18px rgba(201,180,242,0.6)',
+                    }}
+                  >
+                    {p.term}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Dots */}
+          <div style={{ display: 'flex', gap: 10, marginTop: 6 }}>
+            {PROJECTS.map((p, i) => (
+              <button
+                key={p.id}
+                onClick={() => goTo(i)}
+                aria-label={`Project ${i + 1}`}
+                style={{
+                  width: 10,
+                  height: 10,
+                  borderRadius: '50%',
+                  border: 'none',
+                  padding: 0,
+                  cursor: 'pointer',
+                  background: slide === i ? '#C9B4F2' : 'rgba(255,255,255,0.35)',
+                  transition: 'background 0.3s',
+                }}
+              />
+            ))}
+          </div>
+        </div>
+
+        <svg
+          viewBox="0 0 1440 100"
+          preserveAspectRatio="none"
+          style={{ position: 'relative', width: '100%', height: 80, display: 'block' }}
+        >
+          <path d="M0,10 C400,90 1040,-20 1440,50 L1440,100 L0,100 Z" fill="#C9B4F2" opacity="0.45" />
+          <path d="M0,30 C420,104 1060,0 1440,66 L1440,100 L0,100 Z" fill="#FAF9FB" />
+        </svg>
+      </div>
+
+      {/* Numbered service rows */}
+      <div
+        id="services"
+        style={{
+          maxWidth: 1080,
+          margin: '0 auto',
+          padding: '72px 40px 40px',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 24,
+        }}
+      >
+        <div
+          data-reveal
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 14,
+            textAlign: 'center',
+            alignItems: 'center',
+            marginBottom: 24,
+          }}
+        >
+          <div
+            style={{
+              fontFamily: sora,
+              fontWeight: 600,
+              fontSize: 13,
+              letterSpacing: '0.14em',
+              textTransform: 'uppercase',
+              color: '#3B1878',
+            }}
+          >
+            Our services
+          </div>
+          <h2 style={{ fontFamily: sora, fontWeight: 800, fontSize: 44, letterSpacing: '-0.03em', margin: 0 }}>
+            Bring us <span style={{ color: '#3B1878' }}>any problem</span>
+          </h2>
+        </div>
+
+        {SERVICES.map((s, i) => {
+          const number = (
+            <div
+              key="num"
+              style={{
+                fontFamily: sora,
+                fontWeight: 800,
+                fontSize: 64,
+                letterSpacing: '-0.03em',
+                color: '#C9B4F2',
+                textAlign: i % 2 ? 'right' : 'left',
+              }}
+            >
+              {s.num}
+            </div>
+          )
+          const text = (
+            <div key="text" style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+              <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 26, letterSpacing: '-0.01em' }}>{s.title}</div>
+              <div style={{ fontSize: 16, lineHeight: 1.65, color: '#5C5468' }}>{s.desc}</div>
+            </div>
+          )
+          const photo = (
+            <div key="photo" style={{ height: 180, minWidth: 0, overflow: 'hidden', borderRadius: 10 }}>
+              <ImageSlot id={s.slot} placeholder="Project photo" style={{ width: '100%', height: 180 }} />
+            </div>
+          )
+          return (
+            <div
+              key={s.num}
+              data-reveal
+              className="work-row"
+              style={{
+                display: 'grid',
+                gridTemplateColumns: i % 2 ? '340px minmax(0,1fr) 120px' : '120px minmax(0,1fr) 340px',
+                gap: 40,
+                alignItems: 'center',
+                background: '#FFFFFF',
+                border: '1px solid #E6E1EE',
+                borderRadius: 14,
+                padding: 48,
+              }}
+            >
+              {i % 2 ? [photo, text, number] : [number, text, photo]}
+            </div>
+          )
+        })}
+      </div>
+
+      {/* Process timeline */}
+      <div style={{ maxWidth: 1080, margin: '0 auto', padding: '80px 40px 64px' }}>
+        <div
+          data-reveal
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 14,
+            textAlign: 'center',
+            alignItems: 'center',
+            marginBottom: 56,
+          }}
+        >
+          <div
+            style={{
+              fontFamily: sora,
+              fontWeight: 600,
+              fontSize: 13,
+              letterSpacing: '0.14em',
+              textTransform: 'uppercase',
+              color: '#3B1878',
+            }}
+          >
+            How we work
+          </div>
+          <h2 style={{ fontFamily: sora, fontWeight: 800, fontSize: 44, letterSpacing: '-0.03em', margin: 0 }}>
+            A 10-week <span style={{ color: '#3B1878' }}>engagement</span>
+          </h2>
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16 }}>
+          {TIMELINE.map((t, i) => (
+            <div
+              key={t.title}
+              data-reveal
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 12,
+                padding: 28,
+                background: '#F2EDFA',
+                borderRadius: 14,
+                transitionDelay: `${i * 0.1}s`,
+              }}
+            >
+              <div
+                style={{
+                  fontFamily: sora,
+                  fontWeight: 600,
+                  fontSize: 13,
+                  letterSpacing: '0.14em',
+                  textTransform: 'uppercase',
+                  color: '#3B1878',
+                }}
+              >
+                {t.weeks}
+              </div>
+              <div style={{ fontFamily: sora, fontWeight: 600, fontSize: 19 }}>{t.title}</div>
+              <div style={{ fontSize: 15, lineHeight: 1.6, color: '#5C5468' }}>{t.desc}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Animated CTA band */}
+      <div style={{ position: 'relative', background: '#2A1057', overflow: 'hidden' }}>
+        <div style={{ padding: '72px 0 0', display: 'flex', flexDirection: 'column', gap: 24 }}>
+          <div
+            style={{
+              maxWidth: 1180,
+              margin: '0 auto',
+              padding: '0 40px',
+              boxSizing: 'border-box',
+              width: '100%',
+              textAlign: 'center',
+            }}
+          >
+            <div
+              style={{
+                fontFamily: sora,
+                fontWeight: 600,
+                fontSize: 13,
+                letterSpacing: '0.18em',
+                textTransform: 'uppercase',
+                color: '#C9B4F2',
+              }}
+            >
+              Our clients
+            </div>
+          </div>
+          <div style={{ overflow: 'hidden' }}>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 24,
+                width: 'max-content',
+                animation: 'marquee 55s linear infinite',
+                padding: '14px 0',
+              }}
+            >
+              {[...CLIENTS, ...CLIENTS].map(([slug, name], i) => (
+                <LogoCard key={`${slug}-${i}`} slug={slug} name={name} />
+              ))}
+            </div>
+          </div>
+        </div>
+        <div
+          style={{
+            position: 'relative',
+            maxWidth: 1180,
+            margin: '0 auto',
+            padding: '72px 40px 96px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: 40,
+          }}
+        >
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+            <div
+              style={{
+                fontFamily: sora,
+                fontWeight: 800,
+                fontSize: 40,
+                letterSpacing: '-0.03em',
+                color: '#FFFFFF',
+                lineHeight: 1.15,
+              }}
+            >
+              Become our next client
+            </div>
+            <div style={{ fontSize: 17, lineHeight: 1.6, color: '#C9B4F2' }}>
+              Applications for Fall 2026 are open — reach out at Berkeleyccg@gmail.com.
+            </div>
+          </div>
+          <Link to="/work-with-us" className="btn-white" style={{ flexShrink: 0 }}>
+            Get in touch
+          </Link>
+        </div>
+      </div>
+
+      {/* Compact footer */}
+      <div style={{ background: '#191322' }}>
+        <div
+          style={{
+            maxWidth: 1180,
+            margin: '0 auto',
+            padding: '56px 40px 40px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: 32,
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+            <img src="/assets/logo.png" alt="" style={{ width: 32, height: 32 }} />
+            <span style={{ fontFamily: sora, fontWeight: 700, fontSize: 16, color: '#FFFFFF' }}>
+              Core Consulting Group
+            </span>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
+            <Link to="/" className="footer-link-muted">
+              Home
+            </Link>
+            <Link to="/about" className="footer-link-muted">
+              About
+            </Link>
+            <Link to="/work-with-us" className="footer-link-muted">
+              Contact
+            </Link>
+            <a href="mailto:Berkeleyccg@gmail.com" className="footer-link-muted">
+              Berkeleyccg@gmail.com
+            </a>
+            <span style={{ fontSize: 13, color: '#5C5468' }}>© 2026 CCG</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&amp;family=Instrument+Sans:wght@400;500;600&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; background: #FAF9FB; }
+    a { color: #3B1878; text-decoration: none; }
+    a:hover { color: #2A1057; }
+    html { scroll-behavior: smooth; }
+    @keyframes heroIn { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+    [data-reveal] { opacity: 0; transform: translateY(28px); transition: opacity 0.8s cubic-bezier(0.2,0.6,0.2,1), transform 0.8s cubic-bezier(0.2,0.6,0.2,1); }
+    [data-reveal].in { opacity: 1; transform: none; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @keyframes marqueeRev { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+  </style>
+</helmet>
+
+<div style="font-family: 'Instrument Sans', sans-serif; color: #191322; overflow-x: clip">
+
+  <!-- Nav -->
+  <div style="position: sticky; top: 0; z-index: 50; background: rgba(250,249,251,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid #E6E1EE">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 16px 40px; display: flex; align-items: center; justify-content: space-between">
+      <a href="Home.dc.html" style="display: flex; align-items: center; gap: 12px; color: #191322" style-hover="color: #191322">
+        <img src="assets/logo.png" alt="Core Consulting Group" style="width: 36px; height: 36px">
+        <span style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: -0.01em">Core Consulting Group</span>
+      </a>
+      <div style="display: flex; align-items: center; gap: 32px">
+        <a href="About.dc.html" style="font-size: 15px; font-weight: 500; color: #191322" style-hover="color: #3B1878">About</a>
+        <a href="Work.dc.html" style="font-size: 15px; font-weight: 500; color: #191322" style-hover="color: #3B1878">Work</a>
+        <a href="Team.dc.html" style="font-size: 15px; font-weight: 600; color: #3B1878">Team</a>
+        <a href="Community College.dc.html" style="font-size: 15px; font-weight: 500; color: #191322" style-hover="color: #3B1878">Outreach</a>
+        <a href="Join.dc.html" style="font-size: 15px; font-weight: 500; color: #191322" style-hover="color: #3B1878">Join</a>
+        <a href="Contact.dc.html" style="font-size: 15px; font-weight: 500; color: #191322" style-hover="color: #3B1878">Contact</a>
+        <a href="Work With Us.dc.html" style="font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 600; color: #FFFFFF; background: #3B1878; padding: 10px 20px; border-radius: 8px" style-hover="background: #2A1057; color: #FFFFFF">Work with us</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero with member videos -->
+  <div style="position: relative; background: #2A1057; overflow: hidden">
+    <img src="assets/berkeley-campus.png" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; opacity: 0.3; pointer-events: none">
+    <div style="position: absolute; inset: 0">
+      <x-import component-from-global-scope="video-slot" from="./video-slot.js" id="team-hero-video" placeholder="Drop a recruitment video here (mp4) — plays behind the heading" hint-size="100%,100%" style="width: 100%; height: 100%"></x-import>
+    </div>
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(42,16,87,0.6) 0%, rgba(42,16,87,0.8) 55%, #2A1057 100%); pointer-events: none"></div>
+    <div style="position: relative; max-width: 1180px; margin: 0 auto; padding: 100px 40px 56px; display: flex; flex-direction: column; gap: 20px; align-items: center; text-align: center; pointer-events: none">
+      <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #C9B4F2; animation: heroIn 0.9s cubic-bezier(0.2,0.6,0.2,1) both">Our team</div>
+      <h1 style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 60px; letter-spacing: -0.03em; line-height: 1.05; color: #FFFFFF; margin: 0; animation: heroIn 0.9s cubic-bezier(0.2,0.6,0.2,1) 0.12s both">Meet our <span style="color: #C9B4F2">team</span></h1>
+      <div style="font-size: 18px; line-height: 1.65; color: rgba(255,255,255,0.85); max-width: 580px; animation: heroIn 0.9s cubic-bezier(0.2,0.6,0.2,1) 0.24s both">The leadership behind every engagement — and the family behind the leadership.</div>
+    </div>
+    <svg viewBox="0 0 1440 100" preserveAspectRatio="none" style="position: relative; width: 100%; height: 80px; display: block; pointer-events: none">
+      <path d="M0,10 C400,90 1040,-20 1440,50 L1440,100 L0,100 Z" fill="#C9B4F2" opacity="0.45"></path>
+      <path d="M0,30 C420,104 1060,0 1440,66 L1440,100 L0,100 Z" fill="#FAF9FB"></path>
+    </svg>
+  </div>
+
+  <!-- Executive board: violet contrast band -->
+  <div style="position: relative; background: #FAF9FB">
+    <!-- Exec team banner -->
+    <div style="position: relative; height: 560px; overflow: hidden; background: repeating-linear-gradient(45deg, #EFEBF6 0, #EFEBF6 24px, #E6E1EE 24px, #E6E1EE 48px)">
+      <div style="position: absolute; inset: 0">
+        <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="team-exec-banner" shape="rect" placeholder="Drop your full team banner photo here (PNG/JPG)" hint-size="100%,560px" style="width: 100%; height: 100%"></x-import>
+      </div>
+      <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(25,19,34,0.15), rgba(25,19,34,0.45)); pointer-events: none"></div>
+      <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 12px; padding-bottom: 44px; pointer-events: none">
+        <img src="assets/logo.png" alt="" style="width: 80px; height: 80px; filter: drop-shadow(0 4px 16px rgba(25,19,34,0.5))">
+        <div style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 60px; letter-spacing: -0.02em; color: #FFFFFF; text-shadow: 0 2px 20px rgba(25,19,34,0.7); text-align: center; line-height: 1.1">Core Consulting Group</div>
+        <div style="font-family: 'Instrument Serif', serif; font-style: italic; font-size: 28px; color: #C9B4F2; text-shadow: 0 0 18px rgba(201,180,242,0.5)">Leadership · 2026</div>
+      </div>
+    </div>
+    <svg viewBox="0 0 1440 100" preserveAspectRatio="none" style="width: 100%; height: 90px; display: block">
+      <path d="M0,80 C420,-20 1020,110 1440,30 L1440,100 L0,100 Z" fill="#C9B4F2" opacity="0.45"></path>
+      <path d="M0,92 C440,4 1040,116 1440,44 L1440,100 L0,100 Z" fill="#3B1878"></path>
+    </svg>
+    <div style="background: #3B1878">
+      <div style="max-width: 1180px; margin: 0 auto; padding: 48px 40px 88px">
+        <div data-reveal style="text-align: center; margin-bottom: 56px">
+          <h2 style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 56px; letter-spacing: -0.02em; line-height: 1.05; color: #FFFFFF; margin: 0">Executive <span style="color: #C9B4F2">Board</span></h2>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px">
+
+          <div data-reveal style="display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; transition-delay: 0s">
+            <div style="width: 170px; height: 170px; border-radius: 50%; overflow: hidden; border: 4px solid rgba(201,180,242,0.5)">
+              <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="team-eric" shape="circle" placeholder="Headshot" hint-size="170px,170px" style="width: 100%; height: 100%"></x-import>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 4px">
+              <div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 20px; color: #FFFFFF">Eric Xie</div>
+              <div style="font-family: 'Instrument Serif', serif; font-style: italic; font-size: 17px; color: #C9B4F2">President</div>
+            </div>
+            <div style="display: flex; gap: 10px">
+              <a href="#" aria-label="LinkedIn" style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; color: #FFFFFF; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 13px" style-hover="background: #C9B4F2; color: #2A1057">in</a>
+              <a href="mailto:z4@berkeley.edu" aria-label="Email" style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center" style-hover="background: #C9B4F2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg></a>
+            </div>
+          </div>
+
+          <div data-reveal style="display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; transition-delay: 0.08s">
+            <div style="width: 170px; height: 170px; border-radius: 50%; overflow: hidden; border: 4px solid rgba(201,180,242,0.5)">
+              <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="team-gavin" shape="circle" placeholder="Headshot" hint-size="170px,170px" style="width: 100%; height: 100%"></x-import>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 4px">
+              <div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 20px; color: #FFFFFF">Gavin Pon</div>
+              <div style="font-family: 'Instrument Serif', serif; font-style: italic; font-size: 17px; color: #C9B4F2">Vice President of Consulting</div>
+            </div>
+            <div style="display: flex; gap: 10px">
+              <a href="#" aria-label="LinkedIn" style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; color: #FFFFFF; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 13px" style-hover="background: #C9B4F2; color: #2A1057">in</a>
+              <a href="mailto:gavinpon13@berkeley.edu" aria-label="Email" style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center" style-hover="background: #C9B4F2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg></a>
+            </div>
+          </div>
+
+          <div data-reveal style="display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; transition-delay: 0.16s">
+            <div style="width: 170px; height: 170px; border-radius: 50%; overflow: hidden; border: 4px solid rgba(201,180,242,0.5)">
+              <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="team-sonny" shape="circle" placeholder="Headshot" hint-size="170px,170px" style="width: 100%; height: 100%"></x-import>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 4px">
+              <div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 20px; color: #FFFFFF">Sonny Casteel</div>
+              <div style="font-family: 'Instrument Serif', serif; font-style: italic; font-size: 17px; color: #C9B4F2">Internal Vice President</div>
+            </div>
+            <div style="display: flex; gap: 10px">
+              <a href="#" aria-label="LinkedIn" style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; color: #FFFFFF; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 13px" style-hover="background: #C9B4F2; color: #2A1057">in</a>
+              <a href="mailto:sontron@berkeley.edu" aria-label="Email" style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center" style-hover="background: #C9B4F2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg></a>
+            </div>
+          </div>
+
+          <div data-reveal style="display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; transition-delay: 0.24s">
+            <div style="width: 170px; height: 170px; border-radius: 50%; overflow: hidden; border: 4px solid rgba(201,180,242,0.5)">
+              <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="team-frankco" shape="circle" placeholder="Headshot" hint-size="170px,170px" style="width: 100%; height: 100%"></x-import>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 4px">
+              <div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 20px; color: #FFFFFF">Frankco Wong</div>
+              <div style="font-family: 'Instrument Serif', serif; font-style: italic; font-size: 17px; color: #C9B4F2">External Vice President</div>
+            </div>
+            <div style="display: flex; gap: 10px">
+              <a href="#" aria-label="LinkedIn" style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; color: #FFFFFF; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 13px" style-hover="background: #C9B4F2; color: #2A1057">in</a>
+              <a href="mailto:Frankcowong@berkeley.edu" aria-label="Email" style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center" style-hover="background: #C9B4F2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <svg viewBox="0 0 1440 100" preserveAspectRatio="none" style="width: 100%; height: 90px; display: block; transform: scaleY(-1)">
+      <path d="M0,80 C420,-20 1020,110 1440,30 L1440,100 L0,100 Z" fill="#C9B4F2" opacity="0.45"></path>
+      <path d="M0,92 C440,4 1040,116 1440,44 L1440,100 L0,100 Z" fill="#3B1878"></path>
+    </svg>
+  </div>
+
+  <!-- Directors -->
+  <div style="max-width: 1180px; margin: 0 auto; padding: 72px 40px 112px">
+    <div data-reveal style="text-align: center; margin-bottom: 56px">
+      <h2 style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 56px; letter-spacing: -0.02em; line-height: 1.05; margin: 0">The <span style="color: #3B1878">Directors</span></h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px">
+
+      <div data-reveal style="display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; transition-delay: 0s">
+        <div style="width: 140px; height: 140px; border-radius: 50%; overflow: hidden; border: 4px solid #F2EDFA">
+          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="team-jasir" shape="circle" placeholder="Headshot" hint-size="140px,140px" style="width: 100%; height: 100%"></x-import>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 4px">
+          <div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 18px">Jasir Baig</div>
+          <div style="font-family: 'Instrument Serif', serif; font-style: italic; font-size: 16px; color: #3B1878">Director of Corporate Relations</div>
+        </div>
+        <div style="display: flex; gap: 10px">
+          <a href="#" aria-label="LinkedIn" style="width: 34px; height: 34px; border-radius: 50%; background: #F2EDFA; display: flex; align-items: center; justify-content: center; color: #3B1878; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 13px" style-hover="background: #3B1878; color: #FFFFFF">in</a>
+          <a href="mailto:JasirBaig2@berkeley.edu" aria-label="Email" style="width: 34px; height: 34px; border-radius: 50%; background: #F2EDFA; display: flex; align-items: center; justify-content: center" style-hover="background: #3B1878"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#3B1878" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg></a>
+        </div>
+      </div>
+
+      <div data-reveal style="display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; transition-delay: 0.08s">
+        <div style="width: 140px; height: 140px; border-radius: 50%; overflow: hidden; border: 4px solid #F2EDFA">
+          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="team-elaine" shape="circle" placeholder="Headshot" hint-size="140px,140px" style="width: 100%; height: 100%"></x-import>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 4px">
+          <div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 18px">Elaine Owyoung</div>
+          <div style="font-family: 'Instrument Serif', serif; font-style: italic; font-size: 16px; color: #3B1878">Director of Finance</div>
+        </div>
+        <div style="display: flex; gap: 10px">
+          <a href="#" aria-label="LinkedIn" style="width: 34px; height: 34px; border-radius: 50%; background: #F2EDFA; display: flex; align-items: center; justify-content: center; color: #3B1878; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 13px" style-hover="background: #3B1878; color: #FFFFFF">in</a>
+          <a href="mailto:elaine.owyoung@berkeley.edu" aria-label="Email" style="width: 34px; height: 34px; border-radius: 50%; background: #F2EDFA; display: flex; align-items: center; justify-content: center" style-hover="background: #3B1878"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#3B1878" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg></a>
+        </div>
+      </div>
+
+      <div data-reveal style="display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; transition-delay: 0.16s">
+        <div style="width: 140px; height: 140px; border-radius: 50%; overflow: hidden; border: 4px solid #F2EDFA">
+          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="team-vitalii" shape="circle" placeholder="Headshot" hint-size="140px,140px" style="width: 100%; height: 100%"></x-import>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 4px">
+          <div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 18px">Vitalii Pavlenko</div>
+          <div style="font-family: 'Instrument Serif', serif; font-style: italic; font-size: 16px; color: #3B1878">Director of Marketing</div>
+        </div>
+        <div style="display: flex; gap: 10px">
+          <a href="#" aria-label="LinkedIn" style="width: 34px; height: 34px; border-radius: 50%; background: #F2EDFA; display: flex; align-items: center; justify-content: center; color: #3B1878; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 13px" style-hover="background: #3B1878; color: #FFFFFF">in</a>
+          <a href="mailto:vitalii-pavlenko@berkeley.edu" aria-label="Email" style="width: 34px; height: 34px; border-radius: 50%; background: #F2EDFA; display: flex; align-items: center; justify-content: center" style-hover="background: #3B1878"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#3B1878" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg></a>
+        </div>
+      </div>
+
+      <div data-reveal style="display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; transition-delay: 0.24s">
+        <div style="width: 140px; height: 140px; border-radius: 50%; overflow: hidden; border: 4px solid #F2EDFA">
+          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="team-bonpatrick" shape="circle" placeholder="Headshot" hint-size="140px,140px" style="width: 100%; height: 100%"></x-import>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 4px">
+          <div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 18px">Bonpatrick Estrella</div>
+          <div style="font-family: 'Instrument Serif', serif; font-style: italic; font-size: 16px; color: #3B1878">Director of Professional Development</div>
+        </div>
+        <div style="display: flex; gap: 10px">
+          <a href="#" aria-label="LinkedIn" style="width: 34px; height: 34px; border-radius: 50%; background: #F2EDFA; display: flex; align-items: center; justify-content: center; color: #3B1878; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 13px" style-hover="background: #3B1878; color: #FFFFFF">in</a>
+          <a href="mailto:bonpatricke@berkeley.edu" aria-label="Email" style="width: 34px; height: 34px; border-radius: 50%; background: #F2EDFA; display: flex; align-items: center; justify-content: center" style-hover="background: #3B1878"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#3B1878" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg></a>
+        </div>
+      </div>
+
+      <div data-reveal style="display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; transition-delay: 0.32s">
+        <div style="width: 140px; height: 140px; border-radius: 50%; overflow: hidden; border: 4px solid #F2EDFA">
+          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="team-jeremiah" shape="circle" placeholder="Headshot" hint-size="140px,140px" style="width: 100%; height: 100%"></x-import>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 4px">
+          <div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 18px">Jeremiah Simpson</div>
+          <div style="font-family: 'Instrument Serif', serif; font-style: italic; font-size: 16px; color: #3B1878">Director of Community College Relations</div>
+        </div>
+        <div style="display: flex; gap: 10px">
+          <a href="#" aria-label="LinkedIn" style="width: 34px; height: 34px; border-radius: 50%; background: #F2EDFA; display: flex; align-items: center; justify-content: center; color: #3B1878; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 13px" style-hover="background: #3B1878; color: #FFFFFF">in</a>
+          <a href="mailto:jeremiahsimpson@berkeley.edu" aria-label="Email" style="width: 34px; height: 34px; border-radius: 50%; background: #F2EDFA; display: flex; align-items: center; justify-content: center" style-hover="background: #3B1878"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#3B1878" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Where we work -->
+  <div style="position: relative; background: #2A1057; overflow: hidden">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 88px 40px 0; display: flex; flex-direction: column; gap: 14px; text-align: center; align-items: center">
+      <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #C9B4F2">Where we work</div>
+      <h2 style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 44px; letter-spacing: -0.02em; margin: 0; color: #FFFFFF">Our members go <span style="color: #C9B4F2">everywhere</span></h2>
+    </div>
+    <div style="padding: 48px 0 88px; display: flex; flex-direction: column; gap: 8px">
+      <div style="overflow: hidden">
+        <div style="display: flex; align-items: center; gap: 24px; width: max-content; animation: marquee 60s linear infinite; padding: 14px 0">
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/mckinsey.png" alt="McKinsey & Company" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/bcg.png" alt="BCG" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/bain.png" alt="Bain & Company" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/goldman.png" alt="Goldman Sachs" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/blackrock.png" alt="BlackRock" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/jpmc.png" alt="JPMorgan Chase & Co." style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/oliverwyman.png" alt="Oliver Wyman" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/accenture.png" alt="Accenture" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/visa.png" alt="Visa" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/zs.png" alt="ZS" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/mufg.png" alt="MUFG" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/mastercard.png" alt="Mastercard" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/pfizer.png" alt="Pfizer" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/mckinsey.png" alt="McKinsey & Company" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/bcg.png" alt="BCG" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/bain.png" alt="Bain & Company" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/goldman.png" alt="Goldman Sachs" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/blackrock.png" alt="BlackRock" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/jpmc.png" alt="JPMorgan Chase & Co." style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/oliverwyman.png" alt="Oliver Wyman" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/accenture.png" alt="Accenture" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/visa.png" alt="Visa" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/zs.png" alt="ZS" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/mufg.png" alt="MUFG" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/mastercard.png" alt="Mastercard" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/pfizer.png" alt="Pfizer" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+        </div>
+      </div>
+      <div style="overflow: hidden">
+        <div style="display: flex; align-items: center; gap: 24px; width: max-content; animation: marqueeRev 55s linear infinite; padding: 14px 0">
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/microsoft.png" alt="Microsoft" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/amazon.png" alt="Amazon" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/nvidia.png" alt="NVIDIA" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/amd.png" alt="AMD" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/cisco.png" alt="Cisco" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/ey.png" alt="EY" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/kpmg.png" alt="KPMG" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/deloitte.png" alt="Deloitte" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/pwc.png" alt="PwC" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/bakertilly.png" alt="Baker Tilly" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/cvs.png" alt="CVS" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/nbcu.png" alt="NBCUniversal" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/microsoft.png" alt="Microsoft" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/amazon.png" alt="Amazon" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/nvidia.png" alt="NVIDIA" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/amd.png" alt="AMD" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/cisco.png" alt="Cisco" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/ey.png" alt="EY" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/kpmg.png" alt="KPMG" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/deloitte.png" alt="Deloitte" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/pwc.png" alt="PwC" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/bakertilly.png" alt="Baker Tilly" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/cvs.png" alt="CVS" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/nbcu.png" alt="NBCUniversal" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div style="background: #191322">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 56px 40px 40px; display: flex; align-items: center; justify-content: space-between; gap: 32px">
+      <div style="display: flex; align-items: center; gap: 12px">
+        <img src="assets/logo.png" alt="" style="width: 32px; height: 32px">
+        <span style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 16px; color: #FFFFFF">Core Consulting Group</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 28px">
+        <a href="Home.dc.html" style="font-size: 14px; color: #9C93AC" style-hover="color: #C9B4F2">Home</a>
+        <a href="About.dc.html" style="font-size: 14px; color: #9C93AC" style-hover="color: #C9B4F2">About</a>
+        <a href="Join.dc.html" style="font-size: 14px; color: #9C93AC" style-hover="color: #C9B4F2">Join</a>
+        <a href="mailto:Berkeleyccg@gmail.com" style="font-size: 14px; color: #9C93AC" style-hover="color: #C9B4F2">Berkeleyccg@gmail.com</a>
+        <span style="font-size: 13px; color: #5C5468">© 2026 CCG</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    this._checkReveals = () => {
+      document.querySelectorAll('[data-reveal]:not(.in)').forEach((el) => {
+        const r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight * 0.88 && r.bottom > 0) el.classList.add('in');
+      });
+    };
+    this._onScroll = () => requestAnimationFrame(this._checkReveals);
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    window.addEventListener('resize', this._onScroll);
+    this._revealTimer = setInterval(this._checkReveals, 400);
+    this._checkReveals();
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+    window.removeEventListener('resize', this._onScroll);
+    if (this._revealTimer) clearInterval(this._revealTimer);
+  }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; background: #FAF9FB; }
+    a { color: #3B1878; text-decoration: none; }
+    a:hover { color: #2A1057; }
+    html { scroll-behavior: smooth; }
+    @keyframes heroIn { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+    @keyframes slowZoom { from { transform: scale(1); } to { transform: scale(1.08); } }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    [data-reveal] { opacity: 0; transform: translateY(28px); transition: opacity 0.8s cubic-bezier(0.2,0.6,0.2,1), transform 0.8s cubic-bezier(0.2,0.6,0.2,1); }
+    [data-reveal].in { opacity: 1; transform: none; }
+  </style>
+</helmet>
+
+<div style="font-family: 'Instrument Sans', sans-serif; color: #191322; overflow-x: hidden">
+
+  <!-- Nav -->
+  <div style="position: sticky; top: 0; z-index: 50; background: rgba(250,249,251,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid #E6E1EE">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 16px 40px; display: flex; align-items: center; justify-content: space-between">
+      <a href="#top" style="display: flex; align-items: center; gap: 12px; color: #191322" style-hover="color: #191322">
+        <img src="assets/logo.png" alt="Core Consulting Group" style="width: 36px; height: 36px">
+        <span style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: -0.01em">Core Consulting Group</span>
+      </a>
+      <div style="display: flex; align-items: center; gap: 32px">
+        <a href="About.dc.html" style="font-size: 15px; font-weight: 500; color: #191322" style-hover="color: #3B1878">About</a>
+        <a href="Work.dc.html" style="font-size: 15px; font-weight: 500; color: #191322" style-hover="color: #3B1878">Work</a>
+        <a href="Team.dc.html" style="font-size: 15px; font-weight: 500; color: #191322" style-hover="color: #3B1878">Team</a>
+        <a href="Community College.dc.html" style="font-size: 15px; font-weight: 500; color: #191322" style-hover="color: #3B1878">Outreach</a>
+        <a href="Join.dc.html" style="font-size: 15px; font-weight: 500; color: #191322" style-hover="color: #3B1878">Join</a>
+        <a href="Contact.dc.html" style="font-size: 15px; font-weight: 500; color: #191322" style-hover="color: #3B1878">Contact</a>
+        <a href="Work With Us.dc.html" style="font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 600; color: #FFFFFF; background: #3B1878; padding: 10px 20px; border-radius: 8px" style-hover="background: #2A1057; color: #FFFFFF">Work with us</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <div id="top" style="position: relative; height: 84vh; min-height: 580px; overflow: hidden">
+    <div style="position: absolute; inset: 0; animation: slowZoom 18s ease-out both">
+      <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="hero-photo" shape="rect" placeholder="Drop your club photo here" hint-size="100%,100%" style="position: absolute; inset: 0"></x-import>
+    </div>
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(25,19,34,0.42), rgba(25,19,34,0.68)); pointer-events: none"></div>
+    <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 24px; padding: 0 40px; pointer-events: none">
+      <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: #C9B4F2; animation: heroIn 0.9s cubic-bezier(0.2,0.6,0.2,1) both">UC Berkeley · Student-run consultancy</div>
+      <h1 style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 76px; letter-spacing: -0.03em; line-height: 1.02; color: #FFFFFF; margin: 0; max-width: 900px; animation: heroIn 0.9s cubic-bezier(0.2,0.6,0.2,1) 0.15s both">Core Consulting Group</h1>
+      <div style="font-size: 19px; line-height: 1.6; color: rgba(255,255,255,0.88); max-width: 620px; animation: heroIn 0.9s cubic-bezier(0.2,0.6,0.2,1) 0.3s both">Empowering students from every background with the tools to succeed in consulting — and delivering real results for our clients.</div>
+      <div style="display: flex; gap: 16px; margin-top: 8px; animation: heroIn 0.9s cubic-bezier(0.2,0.6,0.2,1) 0.45s both; pointer-events: auto">
+        <a href="Work With Us.dc.html" style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 15px; color: #191322; background: #FFFFFF; padding: 15px 30px; border-radius: 8px" style-hover="background: #C9B4F2; color: #191322">Work with us</a>
+        <a href="Join.dc.html" style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 15px; color: #FFFFFF; border: 1.5px solid rgba(255,255,255,0.5); padding: 13.5px 30px; border-radius: 8px" style-hover="border-color: #C9B4F2; color: #C9B4F2">Join our team</a>
+      </div>
+    </div>
+    <svg viewBox="0 0 1440 100" preserveAspectRatio="none" style="position: absolute; left: 0; right: 0; bottom: -1px; width: 100%; height: 90px; display: block; pointer-events: none">
+      <path d="M0,60 C360,110 1080,-10 1440,50 L1440,100 L0,100 Z" fill="#C9B4F2" opacity="0.45"></path>
+      <path d="M0,72 C400,116 1060,8 1440,64 L1440,100 L0,100 Z" fill="#2A1057"></path>
+    </svg>
+  </div>
+
+  <!-- Stats (dark navy band) -->
+  <sc-if value="{{ showStats }}" hint-placeholder-val="{{ true }}">
+    <div style="background: #2A1057">
+      <div id="stats-row" style="max-width: 1180px; margin: 0 auto; padding: 48px 40px 64px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px">
+        <div style="display: flex; flex-direction: column; gap: 6px; text-align: center">
+          <div style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 54px; letter-spacing: -0.03em; color: #FFFFFF">{{ statTransfer }}%</div>
+          <div style="font-size: 15px; color: #C9B4F2">Transfer students</div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px; text-align: center">
+          <div style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 54px; letter-spacing: -0.03em; color: #FFFFFF">{{ statIntl }}%</div>
+          <div style="font-size: 15px; color: #C9B4F2">International</div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px; text-align: center">
+          <div style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 54px; letter-spacing: -0.03em; color: #FFFFFF">{{ statFgli }}%</div>
+          <div style="font-size: 15px; color: #C9B4F2">First-gen + low-income</div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px; text-align: center">
+          <div style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 54px; letter-spacing: -0.03em; color: #FFFFFF">{{ statWomen }}%</div>
+          <div style="font-size: 15px; color: #C9B4F2">Women</div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- About: "What is CCG?" -->
+  <div id="about" style="max-width: 1180px; margin: 0 auto; padding: 120px 40px; display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 72px; align-items: center">
+    <div data-reveal style="display: flex; flex-direction: column; gap: 20px">
+      <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #3B1878">Who we are</div>
+      <h2 style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 48px; letter-spacing: -0.03em; line-height: 1.08; margin: 0">What is <span style="color: #3B1878">CCG</span>?</h2>
+      <div style="font-size: 17px; line-height: 1.65; color: #5C5468">CCG aims to democratize business careers for students of diverse and non-traditional backgrounds by cultivating a team of passionate, hardworking professionals who bring fresh perspectives to leadership teams. We prioritize not just counting voices, but making every voice count.</div>
+      <a href="About.dc.html" style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 15px; color: #FFFFFF; background: #3B1878; padding: 14px 28px; border-radius: 8px; align-self: flex-start" style-hover="background: #2A1057; color: #FFFFFF">More about us</a>
+    </div>
+    <div data-reveal style="height: 440px; min-width: 0; overflow: hidden; border-radius: 14px; transition-delay: 0.15s">
+      <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="about-photo" shape="rounded" radius="14" placeholder="Team photo" hint-size="100%,440px" style="width: 100%; height: 440px"></x-import>
+    </div>
+  </div>
+
+  <!-- "What we offer" dark sweep -->
+  <div style="position: relative; background: #FAF9FB">
+    <svg viewBox="0 0 1440 100" preserveAspectRatio="none" style="width: 100%; height: 90px; display: block">
+      <path d="M0,80 C420,-20 1020,110 1440,30 L1440,100 L0,100 Z" fill="#C9B4F2" opacity="0.45"></path>
+      <path d="M0,92 C440,4 1040,116 1440,44 L1440,100 L0,100 Z" fill="#3B1878"></path>
+    </svg>
+    <div style="background: #3B1878">
+      <div id="services" style="max-width: 1180px; margin: 0 auto; padding: 56px 40px 96px">
+        <div data-reveal style="display: flex; flex-direction: column; gap: 16px; max-width: 640px; margin: 0 auto 56px; text-align: center; align-items: center">
+          <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #C9B4F2">Our services</div>
+          <h2 style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 48px; letter-spacing: -0.03em; line-height: 1.08; margin: 0; color: #FFFFFF">What we <span style="color: #C9B4F2">offer</span></h2>
+          <div style="font-size: 17px; line-height: 1.65; color: rgba(255,255,255,0.8)">Each semester our teams take on a small number of engagements, so every client gets our full attention for 10–12 weeks.</div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px">
+          <div data-reveal style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 14px; padding: 32px 28px; display: flex; flex-direction: column; gap: 14px; transition-delay: 0s" style-hover="background: rgba(255,255,255,0.12); transform: translateY(-4px)">
+            <div style="width: 48px; height: 48px; border-radius: 10px; background: rgba(201,180,242,0.18); display: flex; align-items: center; justify-content: center">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9B4F2" stroke-width="1.5"><circle cx="12" cy="12" r="9"></circle><path d="M12 3v18M3 12h18"></path></svg>
+            </div>
+            <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 18px; color: #FFFFFF">Market expansion</div>
+            <div style="font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.75); margin-top: -6px">Sizing, segmentation, and go-to-market strategy for new products and regions.</div>
+          </div>
+          <div data-reveal style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 14px; padding: 32px 28px; display: flex; flex-direction: column; gap: 14px; transition-delay: 0.1s" style-hover="background: rgba(255,255,255,0.12); transform: translateY(-4px)">
+            <div style="width: 48px; height: 48px; border-radius: 10px; background: rgba(201,180,242,0.18); display: flex; align-items: center; justify-content: center">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9B4F2" stroke-width="1.5"><path d="M4 19h16M6 16v-5M11 16V8M16 16v-8"></path></svg>
+            </div>
+            <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 18px; color: #FFFFFF">Data &amp; analytics</div>
+            <div style="font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.75); margin-top: -6px">Statistical modeling and dashboards that turn raw data into decisions.</div>
+          </div>
+          <div data-reveal style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 14px; padding: 32px 28px; display: flex; flex-direction: column; gap: 14px; transition-delay: 0.2s" style-hover="background: rgba(255,255,255,0.12); transform: translateY(-4px)">
+            <div style="width: 48px; height: 48px; border-radius: 10px; background: rgba(201,180,242,0.18); display: flex; align-items: center; justify-content: center">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9B4F2" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2"></rect><path d="M4 10h16M10 10v10"></path></svg>
+            </div>
+            <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 18px; color: #FFFFFF">Growth strategy</div>
+            <div style="font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.75); margin-top: -6px">Pricing, positioning, and roadmaps for startups and established firms alike.</div>
+          </div>
+          <div data-reveal style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 14px; padding: 32px 28px; display: flex; flex-direction: column; gap: 14px; transition-delay: 0.3s" style-hover="background: rgba(255,255,255,0.12); transform: translateY(-4px)">
+            <div style="width: 48px; height: 48px; border-radius: 10px; background: rgba(201,180,242,0.18); display: flex; align-items: center; justify-content: center">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9B4F2" stroke-width="1.5"><circle cx="12" cy="12" r="3"></circle><circle cx="12" cy="12" r="9" stroke-dasharray="4 3"></circle></svg>
+            </div>
+            <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 18px; color: #FFFFFF">Operations</div>
+            <div style="font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.75); margin-top: -6px">Process audits and organizational design that cut cost and friction.</div>
+          </div>
+        </div>
+        <div data-reveal style="display: flex; justify-content: center; margin-top: 48px">
+          <a href="Work.dc.html" style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 15px; color: #191322; background: #FFFFFF; padding: 15px 30px; border-radius: 8px" style-hover="background: #C9B4F2; color: #191322">Explore our services →</a>
+        </div>
+      </div>
+    </div>
+    <svg viewBox="0 0 1440 100" preserveAspectRatio="none" style="width: 100%; height: 90px; display: block; transform: scaleY(-1)">
+      <path d="M0,80 C420,-20 1020,110 1440,30 L1440,100 L0,100 Z" fill="#C9B4F2" opacity="0.45"></path>
+      <path d="M0,92 C440,4 1040,116 1440,44 L1440,100 L0,100 Z" fill="#3B1878"></path>
+    </svg>
+  </div>
+
+  <!-- Clients marquee -->
+  <div id="clients" style="max-width: 1180px; margin: 0 auto; padding: 96px 40px 56px">
+    <div data-reveal style="display: flex; flex-direction: column; gap: 16px; text-align: center; align-items: center; margin-bottom: 48px">
+      <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #3B1878">Our clients</div>
+      <h2 style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 48px; letter-spacing: -0.03em; margin: 0">Trusted by teams of <span style="color: #3B1878">every size</span></h2>
+    </div>
+  </div>
+  <div data-reveal style="overflow: hidden; padding-bottom: 40px">
+    <div style="display: flex; gap: 16px; width: max-content; animation: marquee 45s linear infinite">
+      <div style="width: 200px; height: 84px; border-radius: 10px; background: #FFFFFF; border: 1px solid #E6E1EE; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/apple.png" alt="Apple" style="max-height: 44px; max-width: 140px; width: auto; height: auto"></div>
+      <div style="width: 200px; height: 84px; border-radius: 10px; background: #FFFFFF; border: 1px solid #E6E1EE; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/jpmorgan.png" alt="J.P. Morgan" style="max-height: 44px; max-width: 140px; width: auto; height: auto"></div>
+      <div style="width: 200px; height: 84px; border-radius: 10px; background: #FFFFFF; border: 1px solid #E6E1EE; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/autodesk.png" alt="Autodesk" style="max-height: 44px; max-width: 140px; width: auto; height: auto"></div>
+      <div style="width: 200px; height: 84px; border-radius: 10px; background: #FFFFFF; border: 1px solid #E6E1EE; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/jnj.png" alt="Johnson & Johnson" style="max-height: 44px; max-width: 140px; width: auto; height: auto"></div>
+      <div style="width: 200px; height: 84px; border-radius: 10px; background: #FFFFFF; border: 1px solid #E6E1EE; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/urban.png" alt="Urban Outfitters" style="max-height: 44px; max-width: 140px; width: auto; height: auto"></div>
+      <div style="width: 200px; height: 84px; border-radius: 10px; background: #FFFFFF; border: 1px solid #E6E1EE; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/strom.png" alt="Strom Living" style="max-height: 44px; max-width: 140px; width: auto; height: auto"></div>
+      <div style="width: 200px; height: 84px; border-radius: 10px; background: #FFFFFF; border: 1px solid #E6E1EE; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/raceforward.png" alt="Race Forward" style="max-height: 44px; max-width: 140px; width: auto; height: auto"></div>
+      <div style="width: 200px; height: 84px; border-radius: 10px; background: #FFFFFF; border: 1px solid #E6E1EE; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/adobe.png" alt="Adobe" style="max-height: 44px; max-width: 140px; width: auto; height: auto"></div>
+      <div style="width: 200px; height: 84px; border-radius: 10px; background: #FFFFFF; border: 1px solid #E6E1EE; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/tesla.png" alt="Tesla" style="max-height: 44px; max-width: 140px; width: auto; height: auto"></div>
+      <div style="width: 200px; height: 84px; border-radius: 10px; background: #FFFFFF; border: 1px solid #E6E1EE; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/tiktok.png" alt="TikTok" style="max-height: 44px; max-width: 140px; width: auto; height: auto"></div>
+      <div style="width: 200px; height: 84px; border-radius: 10px; background: #FFFFFF; border: 1px solid #E6E1EE; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/oracle.png" alt="Oracle" style="max-height: 44px; max-width: 140px; width: auto; height: auto"></div>
+      <div style="width: 200px; height: 84px; border-radius: 10px; background: #FFFFFF; border: 1px solid #E6E1EE; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/hny.png" alt="HNY+" style="max-height: 44px; max-width: 140px; width: auto; height: auto"></div>
+      <div style="width: 200px; height: 84px; border-radius: 10px; background: #FFFFFF; border: 1px solid #E6E1EE; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/alaska.png" alt="Alaska Airlines" style="max-height: 44px; max-width: 140px; width: auto; height: auto"></div>
+      <div style="width: 200px; height: 84px; border-radius: 10px; background: #FFFFFF; border: 1px solid #E6E1EE; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/chegg.png" alt="Chegg" style="max-height: 44px; max-width: 140px; width: auto; height: auto"></div>
+      <div style="width: 200px; height: 84px; border-radius: 10px; background: #FFFFFF; border: 1px solid #E6E1EE; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/qualcomm.png" alt="Qualcomm" style="max-height: 44px; max-width: 140px; width: auto; height: auto"></div>
+      <div style="width: 200px; height: 84px; border-radius: 10px; background: #FFFFFF; border: 1px solid #E6E1EE; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/apple.png" alt="Apple" style="max-height: 44px; max-width: 140px; width: auto; height: auto"></div>
+      <div style="width: 200px; height: 84px; border-radius: 10px; background: #FFFFFF; border: 1px solid #E6E1EE; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/jpmorgan.png" alt="J.P. Morgan" style="max-height: 44px; max-width: 140px; width: auto; height: auto"></div>
+      <div style="width: 200px; height: 84px; border-radius: 10px; background: #FFFFFF; border: 1px solid #E6E1EE; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/autodesk.png" alt="Autodesk" style="max-height: 44px; max-width: 140px; width: auto; height: auto"></div>
+      <div style="width: 200px; height: 84px; border-radius: 10px; background: #FFFFFF; border: 1px solid #E6E1EE; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/jnj.png" alt="Johnson & Johnson" style="max-height: 44px; max-width: 140px; width: auto; height: auto"></div>
+      <div style="width: 200px; height: 84px; border-radius: 10px; background: #FFFFFF; border: 1px solid #E6E1EE; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/urban.png" alt="Urban Outfitters" style="max-height: 44px; max-width: 140px; width: auto; height: auto"></div>
+      <div style="width: 200px; height: 84px; border-radius: 10px; background: #FFFFFF; border: 1px solid #E6E1EE; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/strom.png" alt="Strom Living" style="max-height: 44px; max-width: 140px; width: auto; height: auto"></div>
+      <div style="width: 200px; height: 84px; border-radius: 10px; background: #FFFFFF; border: 1px solid #E6E1EE; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/raceforward.png" alt="Race Forward" style="max-height: 44px; max-width: 140px; width: auto; height: auto"></div>
+      <div style="width: 200px; height: 84px; border-radius: 10px; background: #FFFFFF; border: 1px solid #E6E1EE; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/adobe.png" alt="Adobe" style="max-height: 44px; max-width: 140px; width: auto; height: auto"></div>
+      <div style="width: 200px; height: 84px; border-radius: 10px; background: #FFFFFF; border: 1px solid #E6E1EE; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/tesla.png" alt="Tesla" style="max-height: 44px; max-width: 140px; width: auto; height: auto"></div>
+      <div style="width: 200px; height: 84px; border-radius: 10px; background: #FFFFFF; border: 1px solid #E6E1EE; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/tiktok.png" alt="TikTok" style="max-height: 44px; max-width: 140px; width: auto; height: auto"></div>
+      <div style="width: 200px; height: 84px; border-radius: 10px; background: #FFFFFF; border: 1px solid #E6E1EE; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/oracle.png" alt="Oracle" style="max-height: 44px; max-width: 140px; width: auto; height: auto"></div>
+      <div style="width: 200px; height: 84px; border-radius: 10px; background: #FFFFFF; border: 1px solid #E6E1EE; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/hny.png" alt="HNY+" style="max-height: 44px; max-width: 140px; width: auto; height: auto"></div>
+      <div style="width: 200px; height: 84px; border-radius: 10px; background: #FFFFFF; border: 1px solid #E6E1EE; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/alaska.png" alt="Alaska Airlines" style="max-height: 44px; max-width: 140px; width: auto; height: auto"></div>
+      <div style="width: 200px; height: 84px; border-radius: 10px; background: #FFFFFF; border: 1px solid #E6E1EE; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/chegg.png" alt="Chegg" style="max-height: 44px; max-width: 140px; width: auto; height: auto"></div>
+      <div style="width: 200px; height: 84px; border-radius: 10px; background: #FFFFFF; border: 1px solid #E6E1EE; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/qualcomm.png" alt="Qualcomm" style="max-height: 44px; max-width: 140px; width: auto; height: auto"></div>
+    </div>
+  </div>
+  <div data-reveal style="display: flex; justify-content: center; padding-bottom: 96px">
+    <a href="Work.dc.html" style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 15px; color: #3B1878; border-bottom: 2px solid #C9B4F2; padding-bottom: 2px" style-hover="border-color: #3B1878; color: #3B1878">See our client work →</a>
+  </div>
+
+  <!-- Join CTA -->
+  <div id="join" style="max-width: 1180px; margin: 0 auto; padding: 0 40px 120px">
+    <div data-reveal style="background: #2A1057; border-radius: 14px; padding: 72px 64px; display: flex; align-items: center; justify-content: space-between; gap: 40px">
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <div style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 40px; letter-spacing: -0.03em; color: #FFFFFF; line-height: 1.12">Join our <span style="color: #C9B4F2">family</span></div>
+        <div style="font-size: 17px; line-height: 1.6; color: #C9B4F2; max-width: 520px">No consulting experience required — we recruit for curiosity and work ethic, then train the rest. Applications open each semester.</div>
+      </div>
+      <a href="#contact" style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 15px; color: #191322; background: #FFFFFF; padding: 15px 30px; border-radius: 8px; flex-shrink: 0" style-hover="background: #C9B4F2; color: #191322">Apply now</a>
+    </div>
+  </div>
+
+  <!-- Footer / Contact -->
+  <div id="contact" style="background: #191322">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 80px 40px 48px; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 64px">
+      <div style="display: flex; flex-direction: column; gap: 16px">
+        <div style="display: flex; align-items: center; gap: 12px">
+          <img src="assets/logo.png" alt="" style="width: 36px; height: 36px">
+          <span style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 17px; color: #FFFFFF">Core Consulting Group</span>
+        </div>
+        <div style="font-size: 15px; line-height: 1.6; color: #9C93AC; max-width: 380px">A student-run consulting organization at UC Berkeley. We are a student group acting independently of the University of California.</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 14px">
+        <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #C9B4F2">Explore</div>
+        <a href="About.dc.html" style="font-size: 15px; color: #FFFFFF" style-hover="color: #C9B4F2">About us</a>
+        <a href="Work.dc.html" style="font-size: 15px; color: #FFFFFF" style-hover="color: #C9B4F2">Our work</a>
+        <a href="Join.dc.html" style="font-size: 15px; color: #FFFFFF" style-hover="color: #C9B4F2">Join us</a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 14px">
+        <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #C9B4F2">Contact</div>
+        <a href="mailto:Berkeleyccg@gmail.com" style="font-size: 15px; color: #FFFFFF" style-hover="color: #C9B4F2">Berkeleyccg@gmail.com</a>
+        <a href="https://www.instagram.com/berkeleyccg/" style="font-size: 15px; color: #FFFFFF" style-hover="color: #C9B4F2">Instagram</a>
+      </div>
+    </div>
+    <div style="max-width: 1180px; margin: 0 auto; padding: 0 40px 40px">
+      <div style="border-top: 1px solid rgba(255,255,255,0.12); padding-top: 24px; font-size: 13px; color: #9C93AC">© 2026 Core Consulting Group</div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showStats&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Sections&quot;}}">
+class Component extends DCLogic {
+  state = { progress: 0, started: false };
+
+  componentDidMount() {
+    this._startStats = () => {
+      if (this.state.started) return;
+      this.setState({ started: true });
+      const t0 = performance.now();
+      const dur = 1400;
+      const tick = (t) => {
+        const p = Math.min(1, (t - t0) / dur);
+        this.setState({ progress: 1 - Math.pow(1 - p, 3) });
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    };
+    this._checkReveals = () => {
+      document.querySelectorAll('[data-reveal]:not(.in)').forEach((el) => {
+        const r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight * 0.88 && r.bottom > 0) el.classList.add('in');
+      });
+      if (!this.state.started) {
+        const row = document.getElementById('stats-row');
+        if (row) {
+          const r = row.getBoundingClientRect();
+          if (r.top < window.innerHeight && r.bottom > 0) this._startStats();
+        }
+      }
+    };
+    this._onScroll = () => requestAnimationFrame(this._checkReveals);
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    window.addEventListener('resize', this._onScroll);
+    this._revealTimer = setInterval(this._checkReveals, 400);
+    this._checkReveals();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+    window.removeEventListener('resize', this._onScroll);
+    if (this._revealTimer) clearInterval(this._revealTimer);
+  }
+
+  renderVals() {
+    const p = this.state.progress;
+    const n = (v) => Math.round(v * p);
+    return {
+      showStats: this.props.showStats ?? true,
+      statTransfer: n(59),
+      statIntl: n(38),
+      statFgli: n(26),
+      statWomen: n(50),
+    };
+  }
+}
+</script>
+</body>
+</html>

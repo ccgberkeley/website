@@ -1,0 +1,367 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #faf9fb;
+  font-family: 'Instrument Sans', sans-serif;
+  color: #191322;
+}
+
+a {
+  color: #3b1878;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #2a1057;
+}
+
+@keyframes heroIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes slowZoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes drift {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, -22px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marqueeRev {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.8s cubic-bezier(0.2, 0.6, 0.2, 1),
+    transform 0.8s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+
+[data-reveal].in {
+  opacity: 1;
+  transform: none;
+}
+
+/* Hover states from the design's style-hover attributes */
+.nav-link {
+  font-size: 15px;
+  font-weight: 500;
+  color: #191322;
+}
+.nav-link:hover {
+  color: #3b1878;
+}
+
+/* Active nav link and the brand lockup keep their color on hover, per design */
+.nav-link-active {
+  font-size: 15px;
+  font-weight: 600;
+  color: #3b1878;
+}
+.nav-link-active:hover {
+  color: #3b1878;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #191322;
+}
+.nav-brand:hover {
+  color: #191322;
+}
+
+.btn-violet {
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+  color: #ffffff;
+  background: #3b1878;
+  border-radius: 8px;
+  display: inline-block;
+}
+.btn-violet:hover {
+  background: #2a1057;
+  color: #ffffff;
+}
+
+.btn-white {
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: #191322;
+  background: #ffffff;
+  padding: 15px 30px;
+  border-radius: 8px;
+  display: inline-block;
+}
+.btn-white:hover {
+  background: #c9b4f2;
+  color: #191322;
+}
+
+.btn-outline-light {
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  padding: 13.5px 30px;
+  border-radius: 8px;
+  display: inline-block;
+}
+.btn-outline-light:hover {
+  border-color: #c9b4f2;
+  color: #c9b4f2;
+}
+
+.btn-outline-dark {
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: #191322;
+  border: 1.5px solid #191322;
+  padding: 12.5px 28px;
+  border-radius: 8px;
+  display: inline-block;
+}
+.btn-outline-dark:hover {
+  border-color: #3b1878;
+  color: #3b1878;
+}
+
+.footer-link-muted {
+  font-size: 14px;
+  color: #9c93ac;
+}
+.footer-link-muted:hover {
+  color: #c9b4f2;
+}
+
+.work-row {
+  transition:
+    opacity 0.8s cubic-bezier(0.2, 0.6, 0.2, 1),
+    transform 0.8s cubic-bezier(0.2, 0.6, 0.2, 1),
+    border-color 0.2s;
+}
+.work-row:hover {
+  border-color: #c9b4f2 !important;
+}
+
+.service-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.service-card:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-4px) !important;
+}
+
+.link-underline {
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: #3b1878;
+  border-bottom: 2px solid #c9b4f2;
+  padding-bottom: 2px;
+}
+.link-underline:hover {
+  border-color: #3b1878;
+  color: #3b1878;
+}
+
+.footer-link {
+  font-size: 15px;
+  color: #ffffff;
+}
+.footer-link:hover {
+  color: #c9b4f2;
+}
+
+/* Contact / Work-with-us form fields */
+input::placeholder,
+textarea::placeholder {
+  color: #9c93ac;
+}
+
+.form-field {
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 15px;
+  color: #191322;
+  background: #faf9fb;
+  border: 1px solid #e6e1ee;
+  border-radius: 8px;
+  padding: 13px 14px;
+  outline: none;
+}
+.form-field:focus {
+  border-color: #3b1878;
+  background: #ffffff;
+}
+
+.topic-chip {
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 9px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  border: 1px solid #e6e1ee;
+  background: #faf9fb;
+  color: #5c5468;
+}
+.topic-chip.on {
+  border-color: #3b1878;
+  background: #3b1878;
+  color: #ffffff;
+}
+
+.contact-line {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #191322;
+}
+.contact-line:hover {
+  color: #3b1878;
+}
+
+/* Join page scroll timeline */
+[data-tl-event] {
+  opacity: 0.4;
+  transform: scale(0.98);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease,
+    border-color 0.5s ease;
+}
+[data-tl-event].tl-active {
+  opacity: 1;
+  transform: scale(1);
+}
+[data-tl-event].tl-active .tl-dot {
+  background: #3b1878 !important;
+  box-shadow: 0 0 0 6px #f2edfa;
+}
+
+/* Outreach partner-branch cards */
+.branch-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  padding: 24px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.branch-card:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Team page social chips */
+.social-exec {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 13px;
+}
+.social-exec:hover {
+  background: #c9b4f2;
+  color: #2a1057;
+}
+
+.social-director {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #f2edfa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3b1878;
+  font-weight: 700;
+  font-size: 13px;
+}
+.social-director:hover {
+  background: #3b1878;
+  color: #ffffff;
+}
+
+/* Placeholder image slot until real photos are provided */
+.img-slot {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #2a1057, #3b1878 55%, #191322);
+  color: rgba(255, 255, 255, 0.55);
+  font-family: 'Sora', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+.img-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

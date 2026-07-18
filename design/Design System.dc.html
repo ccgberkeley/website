@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; background: #FAF9FB; }
+    a { color: #3B1878; text-decoration: none; }
+    a:hover { color: #2A1057; }
+  </style>
+</helmet>
+
+<div style="font-family: 'Instrument Sans', sans-serif; color: #191322; max-width: 1040px; margin: 0 auto; padding: 72px 40px 120px">
+
+  <!-- Header -->
+  <div style="display: flex; align-items: center; gap: 20px; padding-bottom: 40px; border-bottom: 1px solid #E6E1EE">
+    <img src="assets/logo.png" alt="CCG logo" style="width: 64px; height: 64px">
+    <div style="display: flex; flex-direction: column; gap: 4px">
+      <div style="font-family: 'Sora', sans-serif; font-size: 28px; font-weight: 700; letter-spacing: -0.02em">Core Consulting Group — Design System</div>
+      <div style="font-size: 15px; color: #5C5468">Foundation for ccgberkeley.org · v1 · July 2026</div>
+    </div>
+  </div>
+
+  <!-- Colors -->
+  <div style="font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #3B1878; margin: 64px 0 20px">01 · Color</div>
+  <div style="font-size: 16px; line-height: 1.6; color: #5C5468; max-width: 640px; margin: 0 0 28px">The violet from the logo is the only accent, used sparingly on an ink-and-paper base. Dark sections use ink-purple, not saturated violet — that's what keeps it deep and immersive.</div>
+  <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px">
+    <div style="display: flex; flex-direction: column; gap: 10px">
+      <div style="height: 110px; border-radius: 10px; background: #191322"></div>
+      <div style="font-weight: 600; font-size: 14px">Ink</div>
+      <div style="font-family: monospace; font-size: 13px; color: #5C5468; margin-top: -6px">#191322 · headlines, dark bands</div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 10px">
+      <div style="height: 110px; border-radius: 10px; background: #FAF9FB; border: 1px solid #E6E1EE"></div>
+      <div style="font-weight: 600; font-size: 14px">Paper</div>
+      <div style="font-family: monospace; font-size: 13px; color: #5C5468; margin-top: -6px">#FAF9FB · page background</div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 10px">
+      <div style="height: 110px; border-radius: 10px; background: #3B1878"></div>
+      <div style="font-weight: 600; font-size: 14px">Violet</div>
+      <div style="font-family: monospace; font-size: 13px; color: #5C5468; margin-top: -6px">#3B1878 · buttons, links, accents</div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 10px">
+      <div style="height: 110px; border-radius: 10px; background: linear-gradient(135deg, #8B5CF6, #A855F7)"></div>
+      <div style="font-weight: 600; font-size: 14px">Logo gradient</div>
+      <div style="font-family: monospace; font-size: 13px; color: #5C5468; margin-top: -6px">#8B5CF6 → #A855F7 · logo only</div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 10px">
+      <div style="height: 110px; border-radius: 10px; background: #2A1057"></div>
+      <div style="font-weight: 600; font-size: 14px">Deep</div>
+      <div style="font-family: monospace; font-size: 13px; color: #5C5468; margin-top: -6px">#2A1057 · CTA bands, hero overlay</div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 10px">
+      <div style="height: 110px; border-radius: 10px; background: #C9B4F2"></div>
+      <div style="font-weight: 600; font-size: 14px">Lavender</div>
+      <div style="font-family: monospace; font-size: 13px; color: #5C5468; margin-top: -6px">#C9B4F2 · text on dark, charts</div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 10px">
+      <div style="height: 110px; border-radius: 10px; background: #F2EDFA"></div>
+      <div style="font-weight: 600; font-size: 14px">Tint</div>
+      <div style="font-family: monospace; font-size: 13px; color: #5C5468; margin-top: -6px">#F2EDFA · card fills, alt sections</div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 10px">
+      <div style="height: 110px; border-radius: 10px; background: #FFFFFF; border: 1px solid #E6E1EE; position: relative"><div style="position: absolute; inset: auto 12px 12px; height: 1px; background: #E6E1EE"></div></div>
+      <div style="font-weight: 600; font-size: 14px">White / Border</div>
+      <div style="font-family: monospace; font-size: 13px; color: #5C5468; margin-top: -6px">#FFFFFF · #E6E1EE hairlines</div>
+    </div>
+  </div>
+
+  <!-- Typography -->
+  <div style="font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #3B1878; margin: 72px 0 20px">02 · Typography</div>
+  <div style="font-size: 16px; line-height: 1.6; color: #5C5468; max-width: 640px; margin: 0 0 28px"><strong style="color: #191322">Sora</strong> for headlines — geometric, matches the faceted logo. <strong style="color: #191322">Instrument Sans</strong> for everything else. Never more than these two.</div>
+  <div style="display: flex; flex-direction: column; gap: 28px; background: #FFFFFF; border: 1px solid #E6E1EE; border-radius: 14px; padding: 40px">
+    <div style="display: flex; align-items: baseline; gap: 24px">
+      <div style="font-family: monospace; font-size: 12px; color: #5C5468; width: 170px; flex-shrink: 0">Display · Sora 800 · 64</div>
+      <div style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 64px; letter-spacing: -0.03em; line-height: 1.05">Core Consulting Group</div>
+    </div>
+    <div style="display: flex; align-items: baseline; gap: 24px">
+      <div style="font-family: monospace; font-size: 12px; color: #5C5468; width: 170px; flex-shrink: 0">H2 · Sora 700 · 40</div>
+      <div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 40px; letter-spacing: -0.02em; line-height: 1.15">Bring us any problem</div>
+    </div>
+    <div style="display: flex; align-items: baseline; gap: 24px">
+      <div style="font-family: monospace; font-size: 12px; color: #5C5468; width: 170px; flex-shrink: 0">H3 · Sora 600 · 22</div>
+      <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 22px; letter-spacing: -0.01em">Market research &amp; strategy</div>
+    </div>
+    <div style="display: flex; align-items: baseline; gap: 24px">
+      <div style="font-family: monospace; font-size: 12px; color: #5C5468; width: 170px; flex-shrink: 0">Eyebrow · Sora 600 · 13</div>
+      <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #3B1878">Who we are</div>
+    </div>
+    <div style="display: flex; align-items: baseline; gap: 24px">
+      <div style="font-family: monospace; font-size: 12px; color: #5C5468; width: 170px; flex-shrink: 0">Body · Instrument 400 · 17</div>
+      <div style="font-size: 17px; line-height: 1.65; color: #5C5468; max-width: 560px">Core Consulting Group empowers students from every background with the tools necessary to succeed in a career in consulting.</div>
+    </div>
+  </div>
+
+  <!-- Buttons -->
+  <div style="font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #3B1878; margin: 72px 0 20px">03 · Buttons &amp; links</div>
+  <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap; background: #FFFFFF; border: 1px solid #E6E1EE; border-radius: 14px; padding: 40px">
+    <a href="#" style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 15px; color: #FFFFFF; background: #3B1878; padding: 14px 28px; border-radius: 8px; display: inline-block" style-hover="background: #2A1057; color: #FFFFFF">Work with us</a>
+    <a href="#" style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 15px; color: #191322; background: transparent; border: 1.5px solid #191322; padding: 12.5px 28px; border-radius: 8px; display: inline-block" style-hover="border-color: #3B1878; color: #3B1878">Join our team</a>
+    <a href="#" style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 15px; color: #3B1878; border-bottom: 2px solid #C9B4F2; padding-bottom: 2px" style-hover="border-color: #3B1878; color: #3B1878">Meet the team →</a>
+  </div>
+  <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap; background: #191322; border-radius: 14px; padding: 40px; margin-top: 16px">
+    <a href="#" style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 15px; color: #191322; background: #FFFFFF; padding: 14px 28px; border-radius: 8px; display: inline-block" style-hover="background: #C9B4F2; color: #191322">On dark · primary</a>
+    <a href="#" style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 15px; color: #FFFFFF; border: 1.5px solid rgba(255,255,255,0.4); padding: 12.5px 28px; border-radius: 8px; display: inline-block" style-hover="border-color: #C9B4F2; color: #C9B4F2">On dark · secondary</a>
+    <div style="font-size: 14px; color: #C9B4F2">Text on dark is lavender or white — never saturated violet.</div>
+  </div>
+
+  <!-- Components -->
+  <div style="font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #3B1878; margin: 72px 0 20px">04 · Components</div>
+
+  <div style="font-weight: 600; font-size: 14px; margin: 0 0 10px; color: #5C5468">Navigation</div>
+  <div style="display: flex; align-items: center; justify-content: space-between; background: #FFFFFF; border: 1px solid #E6E1EE; border-radius: 14px; padding: 18px 32px">
+    <div style="display: flex; align-items: center; gap: 12px">
+      <img src="assets/logo.png" alt="" style="width: 36px; height: 36px">
+      <div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: -0.01em">Core Consulting Group</div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 32px">
+      <a href="#" style="font-size: 15px; font-weight: 500; color: #191322" style-hover="color: #3B1878">About</a>
+      <a href="#" style="font-size: 15px; font-weight: 500; color: #191322" style-hover="color: #3B1878">Services</a>
+      <a href="#" style="font-size: 15px; font-weight: 500; color: #191322" style-hover="color: #3B1878">Team</a>
+      <a href="#" style="font-size: 15px; font-weight: 500; color: #191322" style-hover="color: #3B1878">Contact</a>
+      <a href="#" style="font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 600; color: #FFFFFF; background: #3B1878; padding: 10px 20px; border-radius: 8px" style-hover="background: #2A1057; color: #FFFFFF">Apply</a>
+    </div>
+  </div>
+
+  <div style="font-weight: 600; font-size: 14px; margin: 32px 0 10px; color: #5C5468">Stat</div>
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px">
+    <div style="background: #FFFFFF; border: 1px solid #E6E1EE; border-radius: 14px; padding: 32px; display: flex; flex-direction: column; gap: 6px">
+      <div style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 52px; letter-spacing: -0.03em; color: #3B1878">80+</div>
+      <div style="font-size: 15px; color: #5C5468">Projects delivered</div>
+    </div>
+    <div style="background: #FFFFFF; border: 1px solid #E6E1EE; border-radius: 14px; padding: 32px; display: flex; flex-direction: column; gap: 6px">
+      <div style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 52px; letter-spacing: -0.03em; color: #3B1878">48</div>
+      <div style="font-size: 15px; color: #5C5468">Active members</div>
+    </div>
+    <div style="background: #FFFFFF; border: 1px solid #E6E1EE; border-radius: 14px; padding: 32px; display: flex; flex-direction: column; gap: 6px">
+      <div style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 52px; letter-spacing: -0.03em; color: #3B1878">14</div>
+      <div style="font-size: 15px; color: #5C5468">Years on campus</div>
+    </div>
+  </div>
+
+  <div style="font-weight: 600; font-size: 14px; margin: 32px 0 10px; color: #5C5468">Service card — icons are simple 1.5px strokes in violet on a tint chip</div>
+  <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px">
+    <div style="background: #FFFFFF; border: 1px solid #E6E1EE; border-radius: 14px; padding: 32px; display: flex; flex-direction: column; gap: 14px" style-hover="border-color: #C9B4F2">
+      <div style="width: 48px; height: 48px; border-radius: 10px; background: #F2EDFA; display: flex; align-items: center; justify-content: center">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B1878" stroke-width="1.5"><circle cx="12" cy="12" r="9"></circle><path d="M12 3v18M3 12h18"></path></svg>
+      </div>
+      <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 19px">Market expansion</div>
+      <div style="font-size: 15px; line-height: 1.6; color: #5C5468; margin-top: -6px">Sizing, segmentation, and go-to-market strategy for new products and regions.</div>
+    </div>
+    <div style="background: #FFFFFF; border: 1px solid #E6E1EE; border-radius: 14px; padding: 32px; display: flex; flex-direction: column; gap: 14px" style-hover="border-color: #C9B4F2">
+      <div style="width: 48px; height: 48px; border-radius: 10px; background: #F2EDFA; display: flex; align-items: center; justify-content: center">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B1878" stroke-width="1.5"><path d="M4 19h16M6 16v-5M11 16V8M16 16v-8"></path></svg>
+      </div>
+      <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 19px">Data &amp; analytics</div>
+      <div style="font-size: 15px; line-height: 1.6; color: #5C5468; margin-top: -6px">Statistical modeling and dashboards that turn raw data into decisions.</div>
+    </div>
+  </div>
+
+  <div style="font-weight: 600; font-size: 14px; margin: 32px 0 10px; color: #5C5468">Client logo slot — grayscale at 60% opacity, full color on hover</div>
+  <div style="display: flex; gap: 16px">
+    <div style="flex: 1; height: 72px; border-radius: 10px; background: repeating-linear-gradient(45deg, #F2EDFA, #F2EDFA 8px, #FAF9FB 8px, #FAF9FB 16px); border: 1px solid #E6E1EE; display: flex; align-items: center; justify-content: center; font-family: monospace; font-size: 12px; color: #5C5468">client logo</div>
+    <div style="flex: 1; height: 72px; border-radius: 10px; background: repeating-linear-gradient(45deg, #F2EDFA, #F2EDFA 8px, #FAF9FB 8px, #FAF9FB 16px); border: 1px solid #E6E1EE; display: flex; align-items: center; justify-content: center; font-family: monospace; font-size: 12px; color: #5C5468">client logo</div>
+    <div style="flex: 1; height: 72px; border-radius: 10px; background: repeating-linear-gradient(45deg, #F2EDFA, #F2EDFA 8px, #FAF9FB 8px, #FAF9FB 16px); border: 1px solid #E6E1EE; display: flex; align-items: center; justify-content: center; font-family: monospace; font-size: 12px; color: #5C5468">client logo</div>
+    <div style="flex: 1; height: 72px; border-radius: 10px; background: repeating-linear-gradient(45deg, #F2EDFA, #F2EDFA 8px, #FAF9FB 8px, #FAF9FB 16px); border: 1px solid #E6E1EE; display: flex; align-items: center; justify-content: center; font-family: monospace; font-size: 12px; color: #5C5468">client logo</div>
+  </div>
+
+  <div style="font-weight: 600; font-size: 14px; margin: 32px 0 10px; color: #5C5468">CTA band</div>
+  <div style="background: #2A1057; border-radius: 14px; padding: 56px; display: flex; align-items: center; justify-content: space-between; gap: 32px">
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 32px; letter-spacing: -0.02em; color: #FFFFFF">Have a problem worth solving?</div>
+      <div style="font-size: 16px; color: #C9B4F2">Applications for Fall 2026 clients open now.</div>
+    </div>
+    <a href="#" style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 15px; color: #191322; background: #FFFFFF; padding: 14px 28px; border-radius: 8px; flex-shrink: 0" style-hover="background: #C9B4F2; color: #191322">Get in touch</a>
+  </div>
+
+  <!-- Rules -->
+  <div style="font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #3B1878; margin: 72px 0 20px">05 · Rules</div>
+  <div style="display: flex; flex-direction: column; gap: 12px; font-size: 16px; line-height: 1.6; color: #5C5468; max-width: 680px">
+    <div>· Violet is an accent, never a background for text-heavy sections. Dark sections use Ink or Deep.</div>
+    <div>· One gradient in the whole brand: the logo. Never gradient backgrounds.</div>
+    <div>· Corners: 8px buttons, 10px chips, 14px cards. Borders are 1px #E6E1EE hairlines.</div>
+    <div>· Photos of the club are the imagery. No illustrations, no stock clip-art.</div>
+    <div>· Section rhythm: eyebrow → headline → body → action. 120px vertical spacing between sections.</div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

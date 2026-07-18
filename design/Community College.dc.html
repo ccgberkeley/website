@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&amp;family=Instrument+Sans:wght@400;500;600&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; background: #FAF9FB; }
+    a { color: #3B1878; text-decoration: none; }
+    a:hover { color: #2A1057; }
+    html { scroll-behavior: smooth; }
+    @keyframes heroIn { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+    @keyframes drift { 0% { transform: translate(0,0); } 50% { transform: translate(0,-22px); } 100% { transform: translate(0,0); } }
+    [data-reveal] { opacity: 0; transform: translateY(28px); transition: opacity 0.8s cubic-bezier(0.2,0.6,0.2,1), transform 0.8s cubic-bezier(0.2,0.6,0.2,1); }
+    [data-reveal].in { opacity: 1; transform: none; }
+  </style>
+</helmet>
+
+<div style="font-family: 'Instrument Sans', sans-serif; color: #191322; overflow-x: clip">
+
+  <!-- Nav -->
+  <div style="position: sticky; top: 0; z-index: 50; background: rgba(250,249,251,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid #E6E1EE">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 16px 40px; display: flex; align-items: center; justify-content: space-between">
+      <a href="Home.dc.html" style="display: flex; align-items: center; gap: 12px; color: #191322" style-hover="color: #191322">
+        <img src="assets/logo.png" alt="Core Consulting Group" style="width: 36px; height: 36px">
+        <span style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: -0.01em">Core Consulting Group</span>
+      </a>
+      <div style="display: flex; align-items: center; gap: 32px">
+        <a href="About.dc.html" style="font-size: 15px; font-weight: 500; color: #191322" style-hover="color: #3B1878">About</a>
+        <a href="Work.dc.html" style="font-size: 15px; font-weight: 500; color: #191322" style-hover="color: #3B1878">Work</a>
+        <a href="Team.dc.html" style="font-size: 15px; font-weight: 500; color: #191322" style-hover="color: #3B1878">Team</a>
+        <a href="Community College.dc.html" style="font-size: 15px; font-weight: 600; color: #3B1878">Outreach</a>
+        <a href="Join.dc.html" style="font-size: 15px; font-weight: 500; color: #191322" style-hover="color: #3B1878">Join</a>
+        <a href="Contact.dc.html" style="font-size: 15px; font-weight: 500; color: #191322" style-hover="color: #3B1878">Contact</a>
+        <a href="Work With Us.dc.html" style="font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 600; color: #FFFFFF; background: #3B1878; padding: 10px 20px; border-radius: 8px" style-hover="background: #2A1057; color: #FFFFFF">Work with us</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <div style="position: relative; background: #2A1057; overflow: hidden">
+    <div style="position: absolute; top: -140px; right: -160px; width: 520px; height: 520px; border-radius: 50%; background: rgba(59,24,120,0.65); animation: drift 9s ease-in-out infinite"></div>
+    <div style="position: absolute; bottom: -60px; left: -120px; width: 380px; height: 380px; border-radius: 50%; background: rgba(201,180,242,0.10); animation: drift 12s ease-in-out infinite reverse"></div>
+    <div style="position: relative; max-width: 1180px; margin: 0 auto; padding: 120px 40px 80px; display: flex; flex-direction: column; gap: 24px; align-items: flex-start">
+      <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #C9B4F2; animation: heroIn 0.9s cubic-bezier(0.2,0.6,0.2,1) both">Community College Outreach</div>
+      <h1 style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 64px; letter-spacing: -0.03em; line-height: 1.05; color: #FFFFFF; margin: 0; max-width: 860px; animation: heroIn 0.9s cubic-bezier(0.2,0.6,0.2,1) 0.12s both">We came from community college.<br><span style="color: #C9B4F2">Now we're giving back.</span></h1>
+      <div style="font-size: 19px; line-height: 1.65; color: rgba(255,255,255,0.82); max-width: 640px; animation: heroIn 0.9s cubic-bezier(0.2,0.6,0.2,1) 0.24s both">Many of us are transfers ourselves. We know how few doors are open to community college students who want a business career — so we're building them, one CCG branch at a time.</div>
+    </div>
+    <svg viewBox="0 0 1440 100" preserveAspectRatio="none" style="width: 100%; height: 80px; display: block; position: relative; pointer-events: none">
+      <path d="M0,10 C400,90 1040,-20 1440,50 L1440,100 L0,100 Z" fill="#C9B4F2" opacity="0.45"></path>
+      <path d="M0,30 C420,104 1060,0 1440,66 L1440,100 L0,100 Z" fill="#FAF9FB"></path>
+    </svg>
+  </div>
+
+  <!-- Our story -->
+  <div style="max-width: 1180px; margin: 0 auto; padding: 96px 40px 104px; display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 72px; align-items: center">
+    <div data-reveal="" style="display: flex; flex-direction: column; gap: 20px">
+      <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #3B1878">Our story</div>
+      <h2 style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 44px; letter-spacing: -0.03em; line-height: 1.1; margin: 0">Giving back to <span style="color: #3B1878">our roots</span></h2>
+      <div style="font-size: 17px; line-height: 1.65; color: #5C5468">Over half of CCG is transfer students. Before Berkeley, we were at community colleges wondering how anyone breaks into consulting — no clubs, no case prep, no network. That gap is exactly why this program exists.</div>
+      <div style="font-size: 17px; line-height: 1.65; color: #5C5468">We partner with community colleges across California to found student-run CCG branches: real consulting clubs, run by their own students, backed by our training, materials, and mentorship.</div>
+    </div>
+    <div data-reveal="" style="height: 420px; min-width: 0; overflow: hidden; border-radius: 14px; transition-delay: 0.15s">
+      <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="ccr-story-photo" shape="rounded" radius="14" placeholder="Drop a photo — transfer members or an outreach event" hint-size="100%,420px" style="width: 100%; height: 420px"></x-import>
+    </div>
+  </div>
+
+  <!-- Partner branches: violet band -->
+  <div style="position: relative">
+    <svg viewBox="0 0 1440 100" preserveAspectRatio="none" style="width: 100%; height: 90px; display: block; pointer-events: none">
+      <path d="M0,80 C420,-20 1020,110 1440,30 L1440,100 L0,100 Z" fill="#C9B4F2" opacity="0.45"></path>
+      <path d="M0,92 C440,4 1040,116 1440,44 L1440,100 L0,100 Z" fill="#3B1878"></path>
+    </svg>
+    <div style="background: #3B1878">
+      <div style="max-width: 1180px; margin: 0 auto; padding: 48px 40px 88px">
+        <div data-reveal="" style="display: flex; flex-direction: column; gap: 14px; text-align: center; align-items: center; margin-bottom: 48px">
+          <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #C9B4F2">Our network</div>
+          <h2 style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 48px; letter-spacing: -0.02em; margin: 0; color: #FFFFFF">Partner <span style="color: #C9B4F2">branches</span></h2>
+          <div style="font-size: 17px; line-height: 1.6; color: rgba(255,255,255,0.78); max-width: 560px">Student-founded CCG branches at community colleges across California — each one its own club, its own board, its own projects.</div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px">
+          <sc-for list="{{ branches }}" as="b" hint-placeholder-count="9">
+            <div data-reveal="" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 12px; padding: 24px 26px; display: flex; flex-direction: column; gap: 4px" style-hover="background: rgba(255,255,255,0.12)">
+              <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 17px; color: #FFFFFF">{{ b.name }}</div>
+              <div style="font-size: 14px; color: #C9B4F2">{{ b.region }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <div data-reveal="" style="text-align: center; margin-top: 36px; font-size: 15px; color: rgba(255,255,255,0.7)"><br></div>
+      </div>
+    </div>
+    <svg viewBox="0 0 1440 100" preserveAspectRatio="none" style="width: 100%; height: 90px; display: block; transform: scaleY(-1); pointer-events: none">
+      <path d="M0,80 C420,-20 1020,110 1440,30 L1440,100 L0,100 Z" fill="#C9B4F2" opacity="0.45"></path>
+      <path d="M0,92 C440,4 1040,116 1440,44 L1440,100 L0,100 Z" fill="#3B1878"></path>
+    </svg>
+  </div>
+
+  <!-- What branches get -->
+  <div style="max-width: 1180px; margin: 0 auto; padding: 80px 40px 104px">
+    <div data-reveal="" style="display: flex; flex-direction: column; gap: 14px; text-align: center; align-items: center; margin-bottom: 52px">
+      <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #3B1878">The partnership</div>
+      <h2 style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 44px; letter-spacing: -0.02em; margin: 0">What every branch <span style="color: #3B1878">gets</span></h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px">
+      <div data-reveal="" style="background: #FFFFFF; border: 1px solid #E6E1EE; border-radius: 14px; padding: 34px 30px; display: flex; flex-direction: column; gap: 13px">
+        <div style="width: 48px; height: 48px; border-radius: 10px; background: #F2EDFA; display: flex; align-items: center; justify-content: center">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B1878" stroke-width="1.5"><path d="M4 19V6a2 2 0 0 1 2-2h13v13H6a2 2 0 0 0-2 2zm0 0a2 2 0 0 0 2 2h13"></path><path d="M9 8h6M9 11h4"></path></svg>
+        </div>
+        <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 19px">Full training curriculum</div>
+        <div style="font-size: 15px; line-height: 1.6; color: #5C5468; margin-top: -5px">75+ slides of new-member training — consulting foundations, MECE, storytelling, decking, and mock cases — so new branches can teach consulting from day one.</div>
+      </div>
+      <div data-reveal="" style="background: #FFFFFF; border: 1px solid #E6E1EE; border-radius: 14px; padding: 34px 30px; display: flex; flex-direction: column; gap: 13px; transition-delay: 0.08s">
+        <div style="width: 48px; height: 48px; border-radius: 10px; background: #F2EDFA; display: flex; align-items: center; justify-content: center">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B1878" stroke-width="1.5"><circle cx="9" cy="8" r="3.5"></circle><circle cx="16.5" cy="10" r="2.5"></circle><path d="M3.5 19c.7-3 3-4.5 5.5-4.5s4.8 1.5 5.5 4.5M14.5 14.7c2 .2 3.6 1.4 4.2 3.3"></path></svg>
+        </div>
+        <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 19px">A dedicated mentor</div>
+        <div style="font-size: 15px; line-height: 1.6; color: #5C5468; margin-top: -5px">Every branch is paired with a member of our Community College Relations committee — regular check-ins, answers to any question, and support from founding through their first project.</div>
+      </div>
+      <div data-reveal="" style="background: #FFFFFF; border: 1px solid #E6E1EE; border-radius: 14px; padding: 34px 30px; display: flex; flex-direction: column; gap: 13px; transition-delay: 0.16s">
+        <div style="width: 48px; height: 48px; border-radius: 10px; background: #F2EDFA; display: flex; align-items: center; justify-content: center">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B1878" stroke-width="1.5"><path d="M12 3v4M12 3l3 3M12 3L9 6"></path><rect x="4" y="10" width="16" height="10" rx="2"></rect><path d="M8 15h8"></path></svg>
+        </div>
+        <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 19px">Real first projects</div>
+        <div style="font-size: 15px; line-height: 1.6; color: #5C5468; margin-top: -5px">We help branches land their first engagements with local businesses — small-scale, low-stakes projects built for learning, not pressure.</div>
+      </div>
+      <div data-reveal="" style="background: #FFFFFF; border: 1px solid #E6E1EE; border-radius: 14px; padding: 34px 30px; display: flex; flex-direction: column; gap: 13px">
+        <div style="width: 48px; height: 48px; border-radius: 10px; background: #F2EDFA; display: flex; align-items: center; justify-content: center">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B1878" stroke-width="1.5"><rect x="3" y="5" width="18" height="12" rx="2"></rect><path d="M8 21h8M12 17v4"></path></svg>
+        </div>
+        <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 19px">Panels &amp; workshops</div>
+        <div style="font-size: 15px; line-height: 1.6; color: #5C5468; margin-top: -5px">Intro-to-consulting panels, transfer panels with recent transfers, resume workshops, and case competitions — hosted virtually so every branch can join.</div>
+      </div>
+      <div data-reveal="" style="background: #FFFFFF; border: 1px solid #E6E1EE; border-radius: 14px; padding: 34px 30px; display: flex; flex-direction: column; gap: 13px; transition-delay: 0.08s">
+        <div style="width: 48px; height: 48px; border-radius: 10px; background: #F2EDFA; display: flex; align-items: center; justify-content: center">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B1878" stroke-width="1.5"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
+        </div>
+        <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 19px">Transfer guidance</div>
+        <div style="font-size: 15px; line-height: 1.6; color: #5C5468; margin-top: -5px">Honest advice from people who made the jump — application strategy, GPA planning, and what actually helped us land at Berkeley.</div>
+      </div>
+      <div data-reveal="" style="background: #FFFFFF; border: 1px solid #E6E1EE; border-radius: 14px; padding: 34px 30px; display: flex; flex-direction: column; gap: 13px; transition-delay: 0.16s">
+        <div style="width: 48px; height: 48px; border-radius: 10px; background: #F2EDFA; display: flex; align-items: center; justify-content: center">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B1878" stroke-width="1.5"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9s1-6.5 3.5-9z"></path></svg>
+        </div>
+        <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 19px">A statewide network</div>
+        <div style="font-size: 15px; line-height: 1.6; color: #5C5468; margin-top: -5px">Joint socials, branch mixers, and a growing community of consultants across California — plus the weight of an established name behind your club.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- How a branch starts -->
+  <div id="found" style="background: #FFFFFF; border-top: 1px solid #E6E1EE">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 96px 40px 112px; display: grid; grid-template-columns: minmax(0,0.9fr) minmax(0,1.1fr); gap: 72px; align-items: start">
+      <div data-reveal="" style="position: sticky; top: 110px; display: flex; flex-direction: column; gap: 18px">
+        <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #3B1878">Start a branch</div>
+        <h2 style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 44px; letter-spacing: -0.03em; line-height: 1.1; margin: 0">From first email to first <span style="color: #3B1878">client</span></h2>
+        <div style="font-size: 17px; line-height: 1.65; color: #5C5468">No consulting experience needed — most branch founders have never touched a case before. We walk you through every step.</div>
+        <a href="Contact.dc.html" style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 15px; color: #FFFFFF; background: #3B1878; padding: 14px 28px; border-radius: 8px; align-self: flex-start; margin-top: 8px" style-hover="background: #2A1057; color: #FFFFFF">Start a branch at your college</a>
+      </div>
+      <div style="display: flex; flex-direction: column">
+        <sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+          <div data-reveal="" style="display: grid; grid-template-columns: 56px 1fr; gap: 24px; padding: 26px 0; border-bottom: 1px solid #E6E1EE">
+            <div style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 32px; color: #C9B4F2">{{ s.num }}</div>
+            <div style="display: flex; flex-direction: column; gap: 8px">
+              <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 20px">{{ s.title }}</div>
+              <div style="font-size: 15.5px; line-height: 1.65; color: #5C5468">{{ s.body }}</div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div style="position: relative; background: #2A1057; overflow: hidden">
+    <div style="position: absolute; top: -120px; left: -140px; width: 420px; height: 420px; border-radius: 50%; background: rgba(59,24,120,0.65); animation: drift 10s ease-in-out infinite"></div>
+    <div style="position: relative; max-width: 1180px; margin: 0 auto; padding: 88px 40px 96px; display: flex; align-items: center; justify-content: space-between; gap: 40px">
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <div style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 40px; letter-spacing: -0.03em; color: #FFFFFF; line-height: 1.15">Bring CCG to <span style="color: #C9B4F2">your campus</span></div>
+        <div style="font-size: 17px; line-height: 1.6; color: #C9B4F2">At a community college and interested in consulting? We want to hear from you.</div>
+      </div>
+      <a href="Contact.dc.html" style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 15px; color: #191322; background: #FFFFFF; padding: 15px 30px; border-radius: 8px; flex-shrink: 0" style-hover="background: #C9B4F2; color: #191322">Get in touch</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div style="background: #191322">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 56px 40px 40px; display: flex; align-items: center; justify-content: space-between; gap: 32px">
+      <div style="display: flex; align-items: center; gap: 12px">
+        <img src="assets/logo.png" alt="" style="width: 32px; height: 32px">
+        <span style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 16px; color: #FFFFFF">Core Consulting Group</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 28px">
+        <a href="Home.dc.html" style="font-size: 14px; color: #9C93AC" style-hover="color: #C9B4F2">Home</a>
+        <a href="About.dc.html" style="font-size: 14px; color: #9C93AC" style-hover="color: #C9B4F2">About</a>
+        <a href="Join.dc.html" style="font-size: 14px; color: #9C93AC" style-hover="color: #C9B4F2">Join</a>
+        <a href="mailto:Berkeleyccg@gmail.com" style="font-size: 14px; color: #9C93AC" style-hover="color: #C9B4F2">Berkeleyccg@gmail.com</a>
+        <span style="font-size: 13px; color: #5C5468">© 2026 CCG</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    this._checkReveals = () => {
+      document.querySelectorAll('[data-reveal]:not(.in)').forEach((el) => {
+        const r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight * 0.88 && r.bottom > 0) el.classList.add('in');
+      });
+    };
+    this._onScroll = () => requestAnimationFrame(this._checkReveals);
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    window.addEventListener('resize', this._onScroll);
+    this._revealTimer = setInterval(this._checkReveals, 400);
+    this._checkReveals();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+    window.removeEventListener('resize', this._onScroll);
+    if (this._revealTimer) clearInterval(this._revealTimer);
+  }
+
+  renderVals() {
+    return {
+      branches: [
+        { name: 'Pasadena City College', region: 'Pasadena' },
+        { name: 'Irvine Valley College', region: 'Irvine' },
+        { name: 'Folsom Lake College', region: 'Folsom' },
+        { name: 'De Anza College', region: 'Cupertino' },
+        { name: 'College of San Mateo', region: 'San Mateo' },
+        { name: 'Sacramento City College', region: 'Sacramento' },
+        { name: 'El Camino College', region: 'Torrance' },
+        { name: 'Long Beach City College', region: 'Long Beach' },
+        { name: 'Solano Community College', region: 'Fairfield — coming soon' },
+      ],
+      steps: [
+        { num: '01', title: 'Reach out', body: "Message us — or we may find you. We look for motivated students at community colleges with strong transfer communities who want to bring consulting to their campus." },
+        { num: '02', title: 'Meet the team', body: 'A 30-minute call where we walk through who CCG is, what consulting looks like, what our branches do, and where our consultants end up. All questions welcome.' },
+        { num: '03', title: 'Found your club', body: "Build an executive board, find a faculty advisor, and register on your campus. We support you through all of it — and our name helps you recruit your first members." },
+        { num: '04', title: 'Train your members', body: 'You get our full training materials and a dedicated mentor from our committee, so your board can teach consulting confidently even if no one has done it before.' },
+        { num: '05', title: 'Land your first project', body: 'We help you source a first engagement from local businesses and personal connections — small in scale, real in impact, perfect for learning.' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

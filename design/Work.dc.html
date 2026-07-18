@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&amp;family=Instrument+Sans:wght@400;500;600&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; background: #FAF9FB; }
+    a { color: #3B1878; text-decoration: none; }
+    a:hover { color: #2A1057; }
+    html { scroll-behavior: smooth; }
+    @keyframes heroIn { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @keyframes marqueeRev { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+    [data-reveal] { opacity: 0; transform: translateY(28px); transition: opacity 0.8s cubic-bezier(0.2,0.6,0.2,1), transform 0.8s cubic-bezier(0.2,0.6,0.2,1); }
+    [data-reveal].in { opacity: 1; transform: none; }
+  </style>
+</helmet>
+
+<div style="font-family: 'Instrument Sans', sans-serif; color: #191322; overflow-x: hidden">
+
+  <!-- Nav -->
+  <div style="position: sticky; top: 0; z-index: 50; background: rgba(250,249,251,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid #E6E1EE">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 16px 40px; display: flex; align-items: center; justify-content: space-between">
+      <a href="Home.dc.html" style="display: flex; align-items: center; gap: 12px; color: #191322" style-hover="color: #191322">
+        <img src="assets/logo.png" alt="Core Consulting Group" style="width: 36px; height: 36px">
+        <span style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: -0.01em">Core Consulting Group</span>
+      </a>
+      <div style="display: flex; align-items: center; gap: 32px">
+        <a href="About.dc.html" style="font-size: 15px; font-weight: 500; color: #191322" style-hover="color: #3B1878">About</a>
+        <a href="Work.dc.html" style="font-size: 15px; font-weight: 600; color: #3B1878">Work</a>
+        <a href="Team.dc.html" style="font-size: 15px; font-weight: 500; color: #191322" style-hover="color: #3B1878">Team</a>
+        <a href="Community College.dc.html" style="font-size: 15px; font-weight: 500; color: #191322" style-hover="color: #3B1878">Outreach</a>
+        <a href="Join.dc.html" style="font-size: 15px; font-weight: 500; color: #191322" style-hover="color: #3B1878">Join</a>
+        <a href="Contact.dc.html" style="font-size: 15px; font-weight: 500; color: #191322" style-hover="color: #3B1878">Contact</a>
+        <a href="Work With Us.dc.html" style="font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 600; color: #FFFFFF; background: #3B1878; padding: 10px 20px; border-radius: 8px" style-hover="background: #2A1057; color: #FFFFFF">Work with us</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero: campus photo backdrop + rotating project showcase -->
+  <div style="position: relative; background: #2A1057; overflow: hidden">
+    <img src="assets/berkeley-campus.png" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; opacity: 0.38; pointer-events: none">
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(42,16,87,0.55) 0%, rgba(42,16,87,0.75) 55%, #2A1057 100%); pointer-events: none"></div>
+
+    <div style="position: relative; max-width: 1180px; margin: 0 auto; padding: 88px 40px 48px; display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center">
+      <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #C9B4F2; animation: heroIn 0.9s cubic-bezier(0.2,0.6,0.2,1) both">Our work</div>
+      <h1 style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 56px; letter-spacing: -0.03em; line-height: 1.05; color: #FFFFFF; margin: 0; animation: heroIn 0.9s cubic-bezier(0.2,0.6,0.2,1) 0.12s both">Partnering with <span style="color: #C9B4F2">purpose</span></h1>
+
+      <!-- Rotating project cutouts -->
+      <div style="position: relative; width: min(760px, 100%); height: 440px; margin-top: 16px; animation: heroIn 0.9s cubic-bezier(0.2,0.6,0.2,1) 0.24s both">
+        <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; gap: 16px; opacity: {{ op0 }}; z-index: {{ z0 }}; pointer-events: {{ pe0 }}; transition: opacity 0.9s ease">
+          <div style="width: 100%; flex: 1; min-height: 0">
+            <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="work-team-1" shape="rect" placeholder="Project team cutout photo (transparent PNG)" hint-size="100%,360px" style="width: 100%; height: 100%"></x-import>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 2px">
+            <span style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 34px; letter-spacing: -0.02em; color: #F5F1FC; text-shadow: 0 0 24px rgba(201,180,242,0.55), 0 2px 18px rgba(25,19,34,0.6)">Project name one</span>
+            <span style="font-family: 'Instrument Serif', serif; font-style: italic; font-size: 22px; color: #C9B4F2; text-shadow: 0 0 18px rgba(201,180,242,0.6)">Fall 2025</span>
+          </div>
+        </div>
+        <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; gap: 16px; opacity: {{ op1 }}; z-index: {{ z1 }}; pointer-events: {{ pe1 }}; transition: opacity 0.9s ease">
+          <div style="width: 100%; flex: 1; min-height: 0">
+            <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="work-team-2" shape="rect" placeholder="Project team cutout photo (transparent PNG)" hint-size="100%,360px" style="width: 100%; height: 100%"></x-import>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 2px">
+            <span style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 34px; letter-spacing: -0.02em; color: #F5F1FC; text-shadow: 0 0 24px rgba(201,180,242,0.55), 0 2px 18px rgba(25,19,34,0.6)">Project name two</span>
+            <span style="font-family: 'Instrument Serif', serif; font-style: italic; font-size: 22px; color: #C9B4F2; text-shadow: 0 0 18px rgba(201,180,242,0.6)">Spring 2026</span>
+          </div>
+        </div>
+        <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; gap: 16px; opacity: {{ op2 }}; z-index: {{ z2 }}; pointer-events: {{ pe2 }}; transition: opacity 0.9s ease">
+          <div style="width: 100%; flex: 1; min-height: 0">
+            <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="work-team-3" shape="rect" placeholder="Project team cutout photo (transparent PNG)" hint-size="100%,360px" style="width: 100%; height: 100%"></x-import>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 2px">
+            <span style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 34px; letter-spacing: -0.02em; color: #F5F1FC; text-shadow: 0 0 24px rgba(201,180,242,0.55), 0 2px 18px rgba(25,19,34,0.6)">Intel</span>
+            <span style="font-family: 'Instrument Serif', serif; font-style: italic; font-size: 22px; color: #C9B4F2; text-shadow: 0 0 18px rgba(201,180,242,0.6)">Fall 2026</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dots -->
+      <div style="display: flex; gap: 10px; margin-top: 6px">
+        <button onClick="{{ goTo0 }}" aria-label="Project 1" style="width: 10px; height: 10px; border-radius: 50%; border: none; padding: 0; cursor: pointer; background: {{ dot0 }}; transition: background 0.3s"></button>
+        <button onClick="{{ goTo1 }}" aria-label="Project 2" style="width: 10px; height: 10px; border-radius: 50%; border: none; padding: 0; cursor: pointer; background: {{ dot1 }}; transition: background 0.3s"></button>
+        <button onClick="{{ goTo2 }}" aria-label="Project 3" style="width: 10px; height: 10px; border-radius: 50%; border: none; padding: 0; cursor: pointer; background: {{ dot2 }}; transition: background 0.3s"></button>
+      </div>
+    </div>
+
+    <svg viewBox="0 0 1440 100" preserveAspectRatio="none" style="position: relative; width: 100%; height: 80px; display: block">
+      <path d="M0,10 C400,90 1040,-20 1440,50 L1440,100 L0,100 Z" fill="#C9B4F2" opacity="0.45"></path>
+      <path d="M0,30 C420,104 1060,0 1440,66 L1440,100 L0,100 Z" fill="#FAF9FB"></path>
+    </svg>
+  </div>
+
+  <!-- Numbered service rows -->
+  <div id="services" style="max-width: 1080px; margin: 0 auto; padding: 72px 40px 40px; display: flex; flex-direction: column; gap: 24px">
+    <div data-reveal="" style="display: flex; flex-direction: column; gap: 14px; text-align: center; align-items: center; margin-bottom: 24px">
+      <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #3B1878">Our services</div>
+      <h2 style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 44px; letter-spacing: -0.03em; margin: 0">Bring us <span style="color: #3B1878">any problem</span></h2>
+    </div>
+
+    <div data-reveal="" style="display: grid; grid-template-columns: 120px minmax(0,1fr) 340px; gap: 40px; align-items: center; background: #FFFFFF; border: 1px solid #E6E1EE; border-radius: 14px; padding: 48px" style-hover="border-color: #C9B4F2">
+      <div style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 64px; letter-spacing: -0.03em; color: #C9B4F2">01</div>
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 26px; letter-spacing: -0.01em">Market expansion</div>
+        <div style="font-size: 16px; line-height: 1.65; color: #5C5468">Market sizing, customer segmentation, competitive landscaping, and go-to-market strategy for teams launching new products or entering new regions. Past work includes international expansion guides and channel strategies.</div>
+      </div>
+      <div style="height: 180px; min-width: 0; overflow: hidden; border-radius: 10px">
+        <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="svc-1" shape="rounded" radius="10" placeholder="Project photo" hint-size="340px,180px" style="width: 100%; height: 180px"></x-import>
+      </div>
+    </div>
+
+    <div data-reveal="" style="display: grid; grid-template-columns: 340px minmax(0,1fr) 120px; gap: 40px; align-items: center; background: #FFFFFF; border: 1px solid #E6E1EE; border-radius: 14px; padding: 48px" style-hover="border-color: #C9B4F2">
+      <div style="height: 180px; min-width: 0; overflow: hidden; border-radius: 10px">
+        <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="svc-2" shape="rounded" radius="10" placeholder="Project photo" hint-size="340px,180px" style="width: 100%; height: 180px"></x-import>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 26px; letter-spacing: -0.01em">Data &amp; analytics</div>
+        <div style="font-size: 16px; line-height: 1.65; color: #5C5468">Statistical modeling, forecasting, survey design, and dashboards that turn raw data into clear decisions. We've tackled immense data-driven projects involving quantitative models and white papers.</div>
+      </div>
+      <div style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 64px; letter-spacing: -0.03em; color: #C9B4F2; text-align: right">02</div>
+    </div>
+
+    <div data-reveal="" style="display: grid; grid-template-columns: 120px minmax(0,1fr) 340px; gap: 40px; align-items: center; background: #FFFFFF; border: 1px solid #E6E1EE; border-radius: 14px; padding: 48px" style-hover="border-color: #C9B4F2">
+      <div style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 64px; letter-spacing: -0.03em; color: #C9B4F2">03</div>
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 26px; letter-spacing: -0.01em">Growth strategy</div>
+        <div style="font-size: 16px; line-height: 1.65; color: #5C5468">Pricing, positioning, brand audits, and product roadmaps for startups and established firms alike. Deliverables include slide decks, written reports, and midpoint plus final presentations.</div>
+      </div>
+      <div style="height: 180px; min-width: 0; overflow: hidden; border-radius: 10px">
+        <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="svc-3" shape="rounded" radius="10" placeholder="Project photo" hint-size="340px,180px" style="width: 100%; height: 180px"></x-import>
+      </div>
+    </div>
+
+    <div data-reveal="" style="display: grid; grid-template-columns: 340px minmax(0,1fr) 120px; gap: 40px; align-items: center; background: #FFFFFF; border: 1px solid #E6E1EE; border-radius: 14px; padding: 48px" style-hover="border-color: #C9B4F2">
+      <div style="height: 180px; min-width: 0; overflow: hidden; border-radius: 10px">
+        <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="svc-4" shape="rounded" radius="10" placeholder="Project photo" hint-size="340px,180px" style="width: 100%; height: 180px"></x-import>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 26px; letter-spacing: -0.01em">Operations</div>
+        <div style="font-size: 16px; line-height: 1.65; color: #5C5468">Process audits, cost analysis, and organizational design that cut friction. Each recommendation comes with an implementation plan your team can act on the day we hand it off.</div>
+      </div>
+      <div style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 64px; letter-spacing: -0.03em; color: #C9B4F2; text-align: right">04</div>
+    </div>
+  </div>
+
+  <!-- Process timeline -->
+  <div style="max-width: 1080px; margin: 0 auto; padding: 80px 40px 64px">
+    <div data-reveal="" style="display: flex; flex-direction: column; gap: 14px; text-align: center; align-items: center; margin-bottom: 56px">
+      <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #3B1878">How we work</div>
+      <h2 style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 44px; letter-spacing: -0.03em; margin: 0">A 10-week <span style="color: #3B1878">engagement</span></h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px">
+      <div data-reveal="" style="display: flex; flex-direction: column; gap: 12px; padding: 28px; background: #F2EDFA; border-radius: 14px; transition-delay: 0s">
+        <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #3B1878">Weeks 1–2</div>
+        <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 19px">Scope</div>
+        <div style="font-size: 15px; line-height: 1.6; color: #5C5468">Initial meetings to define the challenge, success metrics, and deliverables.</div>
+      </div>
+      <div data-reveal="" style="display: flex; flex-direction: column; gap: 12px; padding: 28px; background: #F2EDFA; border-radius: 14px; transition-delay: 0.1s">
+        <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #3B1878">Weeks 3–5</div>
+        <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 19px">Research</div>
+        <div style="font-size: 15px; line-height: 1.6; color: #5C5468">Primary and secondary research, data collection, and expert interviews.</div>
+      </div>
+      <div data-reveal="" style="display: flex; flex-direction: column; gap: 12px; padding: 28px; background: #F2EDFA; border-radius: 14px; transition-delay: 0.2s">
+        <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #3B1878">Weeks 6–8</div>
+        <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 19px">Analysis</div>
+        <div style="font-size: 15px; line-height: 1.6; color: #5C5468">Modeling and synthesis, with a midpoint presentation to check direction.</div>
+      </div>
+      <div data-reveal="" style="display: flex; flex-direction: column; gap: 12px; padding: 28px; background: #F2EDFA; border-radius: 14px; transition-delay: 0.3s">
+        <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #3B1878">Weeks 9–10</div>
+        <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 19px">Deliver</div>
+        <div style="font-size: 15px; line-height: 1.6; color: #5C5468">Final deliverable and presentation, with an implementation roadmap.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Animated CTA band -->
+  <div style="position: relative; background: #2A1057; overflow: hidden">
+    <div style="padding: 72px 0 0; display: flex; flex-direction: column; gap: 24px">
+      <div style="max-width: 1180px; margin: 0 auto; padding: 0 40px; box-sizing: border-box; width: 100%; text-align: center">
+        <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #C9B4F2">Our clients</div>
+      </div>
+      <div style="overflow: hidden">
+        <div style="display: flex; align-items: center; gap: 24px; width: max-content; animation: marquee 55s linear infinite; padding: 14px 0">
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/apple.png" alt="Apple" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/jpmorgan.png" alt="J.P. Morgan" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/autodesk.png" alt="Autodesk" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/jnj.png" alt="Johnson & Johnson" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/urban.png" alt="Urban Outfitters" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/strom.png" alt="Strom Living" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/raceforward.png" alt="Race Forward" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/adobe.png" alt="Adobe" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/tesla.png" alt="Tesla" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/tiktok.png" alt="TikTok" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/oracle.png" alt="Oracle" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/hny.png" alt="HNY+" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/alaska.png" alt="Alaska Airlines" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/chegg.png" alt="Chegg" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/qualcomm.png" alt="Qualcomm" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/apple.png" alt="Apple" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/jpmorgan.png" alt="J.P. Morgan" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/autodesk.png" alt="Autodesk" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/jnj.png" alt="Johnson & Johnson" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/urban.png" alt="Urban Outfitters" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/strom.png" alt="Strom Living" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/raceforward.png" alt="Race Forward" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/adobe.png" alt="Adobe" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/tesla.png" alt="Tesla" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/tiktok.png" alt="TikTok" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/oracle.png" alt="Oracle" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/hny.png" alt="HNY+" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/alaska.png" alt="Alaska Airlines" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/chegg.png" alt="Chegg" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+          <div style="background: #FFFFFF; border-radius: 12px; padding: 0 32px; height: 84px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><img src="assets/logos/qualcomm.png" alt="Qualcomm" style="max-height: 44px; max-width: 150px; width: auto; height: auto"></div>
+        </div>
+      </div>
+    </div>
+    <div style="position: relative; max-width: 1180px; margin: 0 auto; padding: 72px 40px 96px; display: flex; align-items: center; justify-content: space-between; gap: 40px">
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <div style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 40px; letter-spacing: -0.03em; color: #FFFFFF; line-height: 1.15">Become our next client</div>
+        <div style="font-size: 17px; line-height: 1.6; color: #C9B4F2">Applications for Fall 2026 are open — reach out at Berkeleyccg@gmail.com.</div>
+      </div>
+      <a href="Work With Us.dc.html" style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 15px; color: #191322; background: #FFFFFF; padding: 15px 30px; border-radius: 8px; flex-shrink: 0" style-hover="background: #C9B4F2; color: #191322">Get in touch</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div style="background: #191322">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 56px 40px 40px; display: flex; align-items: center; justify-content: space-between; gap: 32px">
+      <div style="display: flex; align-items: center; gap: 12px">
+        <img src="assets/logo.png" alt="" style="width: 32px; height: 32px">
+        <span style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 16px; color: #FFFFFF">Core Consulting Group</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 28px">
+        <a href="Home.dc.html" style="font-size: 14px; color: #9C93AC" style-hover="color: #C9B4F2">Home</a>
+        <a href="About.dc.html" style="font-size: 14px; color: #9C93AC" style-hover="color: #C9B4F2">About</a>
+        <a href="Work With Us.dc.html" style="font-size: 14px; color: #9C93AC" style-hover="color: #C9B4F2">Contact</a>
+        <a href="mailto:Berkeleyccg@gmail.com" style="font-size: 14px; color: #9C93AC" style-hover="color: #C9B4F2">Berkeleyccg@gmail.com</a>
+        <span style="font-size: 13px; color: #5C5468">© 2026 CCG</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { slide: 0 };
+
+  componentDidMount() {
+    this._checkReveals = () => {
+      document.querySelectorAll('[data-reveal]:not(.in)').forEach((el) => {
+        const r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight * 0.88 && r.bottom > 0) el.classList.add('in');
+      });
+    };
+    this._onScroll = () => requestAnimationFrame(this._checkReveals);
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    window.addEventListener('resize', this._onScroll);
+    this._revealTimer = setInterval(this._checkReveals, 400);
+    this._checkReveals();
+
+    this._startRotation = () => {
+      if (this._rotTimer) clearInterval(this._rotTimer);
+      this._rotTimer = setInterval(() => {
+        this.setState((s) => ({ slide: (s.slide + 1) % 3 }));
+      }, 5000);
+    };
+    this._startRotation();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+    window.removeEventListener('resize', this._onScroll);
+    if (this._revealTimer) clearInterval(this._revealTimer);
+    if (this._rotTimer) clearInterval(this._rotTimer);
+  }
+
+  renderVals() {
+    const s = this.state.slide;
+    const goTo = (i) => () => { this.setState({ slide: i }); this._startRotation(); };
+    const vals = {};
+    for (let i = 0; i < 3; i++) {
+      vals['op' + i] = s === i ? 1 : 0;
+      vals['z' + i] = s === i ? 2 : 1;
+      vals['pe' + i] = s === i ? 'auto' : 'none';
+      vals['dot' + i] = s === i ? '#C9B4F2' : 'rgba(255,255,255,0.35)';
+      vals['goTo' + i] = goTo(i);
+    }
+    return vals;
+  }
+}
+</script>
+</body>
+</html>

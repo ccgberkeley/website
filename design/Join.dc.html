@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&amp;family=Instrument+Sans:wght@400;500;600&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; background: #FAF9FB; }
+    a { color: #3B1878; text-decoration: none; }
+    a:hover { color: #2A1057; }
+    html { scroll-behavior: smooth; }
+    @keyframes heroIn { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+    [data-reveal] { opacity: 0; transform: translateY(28px); transition: opacity 0.8s cubic-bezier(0.2,0.6,0.2,1), transform 0.8s cubic-bezier(0.2,0.6,0.2,1); }
+    [data-reveal].in { opacity: 1; transform: none; }
+    [data-tl-event] { opacity: 0.4; transform: scale(0.98); transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.5s ease; }
+    [data-tl-event].tl-active { opacity: 1; transform: scale(1); }
+    [data-tl-event].tl-active .tl-dot { background: #3B1878; box-shadow: 0 0 0 6px #F2EDFA; }
+  </style>
+</helmet>
+
+<div style="font-family: 'Instrument Sans', sans-serif; color: #191322; overflow-x: clip">
+
+  <!-- Nav -->
+  <div style="position: sticky; top: 0; z-index: 50; background: rgba(250,249,251,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid #E6E1EE">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 16px 40px; display: flex; align-items: center; justify-content: space-between">
+      <a href="Home.dc.html" style="display: flex; align-items: center; gap: 12px; color: #191322" style-hover="color: #191322">
+        <img src="assets/logo.png" alt="Core Consulting Group" style="width: 36px; height: 36px">
+        <span style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: -0.01em">Core Consulting Group</span>
+      </a>
+      <div style="display: flex; align-items: center; gap: 32px">
+        <a href="About.dc.html" style="font-size: 15px; font-weight: 500; color: #191322" style-hover="color: #3B1878">About</a>
+        <a href="Work.dc.html" style="font-size: 15px; font-weight: 500; color: #191322" style-hover="color: #3B1878">Work</a>
+        <a href="Team.dc.html" style="font-size: 15px; font-weight: 500; color: #191322" style-hover="color: #3B1878">Team</a>
+        <a href="Community College.dc.html" style="font-size: 15px; font-weight: 500; color: #191322" style-hover="color: #3B1878">Outreach</a>
+        <a href="Join.dc.html" style="font-size: 15px; font-weight: 600; color: #3B1878">Join</a>
+        <a href="Contact.dc.html" style="font-size: 15px; font-weight: 500; color: #191322" style-hover="color: #3B1878">Contact</a>
+        <a href="Work With Us.dc.html" style="font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 600; color: #FFFFFF; background: #3B1878; padding: 10px 20px; border-radius: 8px" style-hover="background: #2A1057; color: #FFFFFF">Work with us</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <div style="position: relative; background: #2A1057; overflow: hidden">
+    <img src="assets/berkeley-campus.png" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; opacity: 0.3; pointer-events: none">
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(42,16,87,0.6) 0%, rgba(42,16,87,0.8) 55%, #2A1057 100%); pointer-events: none"></div>
+    <div style="position: relative; max-width: 1180px; margin: 0 auto; padding: 110px 40px 80px; display: flex; flex-direction: column; gap: 22px; align-items: center; text-align: center">
+      <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #C9B4F2; animation: heroIn 0.9s cubic-bezier(0.2,0.6,0.2,1) both">Spring 2026 recruitment</div>
+      <h1 style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 64px; letter-spacing: -0.03em; line-height: 1.05; color: #FFFFFF; margin: 0; animation: heroIn 0.9s cubic-bezier(0.2,0.6,0.2,1) 0.12s both">Join our <span style="color: #C9B4F2">family</span></h1>
+      <div style="font-size: 18px; line-height: 1.65; color: rgba(255,255,255,0.85); max-width: 600px; animation: heroIn 0.9s cubic-bezier(0.2,0.6,0.2,1) 0.24s both">No consulting experience required — we recruit for curiosity and work ethic, then train the rest. Scroll through the recruitment timeline below.</div>
+      <div style="display: flex; gap: 16px; margin-top: 6px; animation: heroIn 0.9s cubic-bezier(0.2,0.6,0.2,1) 0.36s both">
+        <a href="https://www.instagram.com/berkeleyccg/" style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 15px; color: #191322; background: #FFFFFF; padding: 15px 30px; border-radius: 8px" style-hover="background: #C9B4F2; color: #191322">Apply now</a>
+        <a href="#timeline" style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 15px; color: #FFFFFF; border: 1.5px solid rgba(255,255,255,0.5); padding: 13.5px 30px; border-radius: 8px" style-hover="border-color: #C9B4F2; color: #C9B4F2">See the timeline ↓</a>
+      </div>
+    </div>
+    <svg viewBox="0 0 1440 100" preserveAspectRatio="none" style="position: relative; width: 100%; height: 80px; display: block">
+      <path d="M0,10 C400,90 1040,-20 1440,50 L1440,100 L0,100 Z" fill="#C9B4F2" opacity="0.45"></path>
+      <path d="M0,30 C420,104 1060,0 1440,66 L1440,100 L0,100 Z" fill="#FAF9FB"></path>
+    </svg>
+  </div>
+
+  <!-- Scrolling timeline -->
+  <div id="timeline" style="max-width: 1180px; margin: 0 auto; padding: 88px 40px 40px; display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.15fr); gap: 72px; align-items: start">
+
+    <!-- Sticky date panel -->
+    <div style="position: sticky; top: 96px; display: flex; flex-direction: column; gap: 18px; padding-bottom: 40px">
+      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px">
+        <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #3B1878">Recruitment timeline</div>
+        <div style="font-family: 'Instrument Serif', serif; font-style: italic; font-size: 20px; color: #5C5468"><br></div>
+      </div>
+      <div style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 112px; letter-spacing: -0.04em; line-height: 1; color: #3B1878; transition: opacity 0.3s">{{ tlDate }}</div>
+      <div style="font-family: 'Instrument Serif', serif; font-style: italic; font-size: 32px; color: #191322; margin-top: -6px">{{ tlName }}</div>
+      <div style="font-size: 16px; line-height: 1.6; color: #5C5468; max-width: 400px">{{ tlDetail }}</div>
+      <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 6px; max-width: 400px">
+        <div style="display: flex; justify-content: space-between; font-family: 'Sora', sans-serif; font-weight: 600; font-size: 13px; color: #5C5468">
+          <span>Step {{ tlStep }} of 7</span>
+          <span style="color: #3B1878">{{ tlPct }}%</span>
+        </div>
+        <div style="height: 6px; border-radius: 999px; background: #E6E1EE; overflow: hidden">
+          <div style="height: 100%; border-radius: 999px; background: #3B1878; width: {{ tlPct }}%; transition: width 0.5s cubic-bezier(0.2,0.6,0.2,1)"></div>
+        </div>
+      </div>
+      <div style="display: flex; gap: 20px; margin-top: 18px">
+        <div style="width: 190px; height: 220px; transform: rotate(-4deg); border-radius: 12px; overflow: hidden; box-shadow: 0 12px 32px rgba(25,19,34,0.16); border: 6px solid #FFFFFF">
+          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="join-photo-1" shape="rect" placeholder="Recruitment event photo" hint-size="190px,220px" style="width: 100%; height: 100%"></x-import>
+        </div>
+        <div style="width: 190px; height: 220px; transform: rotate(3deg) translateY(14px); border-radius: 12px; overflow: hidden; box-shadow: 0 12px 32px rgba(25,19,34,0.16); border: 6px solid #FFFFFF">
+          <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="join-photo-2" shape="rect" placeholder="Social night photo" hint-size="190px,220px" style="width: 100%; height: 100%"></x-import>
+        </div>
+      </div>
+    </div>
+
+    <!-- Events -->
+    <div style="display: flex; flex-direction: column; gap: 0; position: relative; padding: 8px 0 40px">
+      <div style="position: absolute; left: 11px; top: 20px; bottom: 60px; width: 2px; background: #E6E1EE"></div>
+
+      <div data-tl-event="" data-tl-date="1/20–1/29" data-tl-name="Coffee Chats" data-tl-detail="Meet current members one-on-one — sign up via our Instagram bio!" style="display: grid; grid-template-columns: 24px minmax(0,1fr); gap: 24px; padding: 20px 0">
+        <div class="tl-dot" style="width: 16px; height: 16px; border-radius: 50%; background: #C9B4F2; margin: 6px 0 0 4px; position: relative; z-index: 1; transition: background 0.4s, box-shadow 0.4s"></div>
+        <div style="background: #FFFFFF; border: 1px solid #E6E1EE; border-radius: 14px; padding: 28px 32px; display: flex; flex-direction: column; gap: 8px">
+          <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #3B1878">Jan 20 – 29</div>
+          <div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 24px; letter-spacing: -0.01em">Coffee Chats</div>
+          <div style="font-size: 15.5px; line-height: 1.6; color: #5C5468">Meet current members one-on-one. Sign up via our Instagram bio!</div>
+        </div>
+      </div>
+
+      <div data-tl-event="" data-tl-date="1/22" data-tl-name="Calapalooza" data-tl-detail="Come find our table at Upper Sproul Plaza, 10 am – 4 pm." style="display: grid; grid-template-columns: 24px minmax(0,1fr); gap: 24px; padding: 20px 0">
+        <div class="tl-dot" style="width: 16px; height: 16px; border-radius: 50%; background: #C9B4F2; margin: 6px 0 0 4px; position: relative; z-index: 1; transition: background 0.4s, box-shadow 0.4s"></div>
+        <div style="background: #FFFFFF; border: 1px solid #E6E1EE; border-radius: 14px; padding: 28px 32px; display: flex; flex-direction: column; gap: 8px">
+          <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #3B1878">Jan 22 · 10 am – 4 pm</div>
+          <div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 24px; letter-spacing: -0.01em">Calapalooza</div>
+          <div style="font-size: 15.5px; line-height: 1.6; color: #5C5468">@ Upper Sproul Plaza</div>
+        </div>
+      </div>
+
+      <div data-tl-event="" data-tl-date="1/27" data-tl-name="Info Session 1" data-tl-detail="Learn what CCG is all about, 8 – 9 pm in Anthropology &amp; Art Practice 155." style="display: grid; grid-template-columns: 24px minmax(0,1fr); gap: 24px; padding: 20px 0">
+        <div class="tl-dot" style="width: 16px; height: 16px; border-radius: 50%; background: #C9B4F2; margin: 6px 0 0 4px; position: relative; z-index: 1; transition: background 0.4s, box-shadow 0.4s"></div>
+        <div style="background: #FFFFFF; border: 1px solid #E6E1EE; border-radius: 14px; padding: 28px 32px; display: flex; flex-direction: column; gap: 8px">
+          <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #3B1878">Jan 27 · 8 – 9 pm</div>
+          <div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 24px; letter-spacing: -0.01em">Info Session 1</div>
+          <div style="font-size: 15.5px; line-height: 1.6; color: #5C5468">@ Anthropology &amp; Art Practice 155</div>
+        </div>
+      </div>
+
+      <div data-tl-event="" data-tl-date="1/28" data-tl-name="Info Session 2" data-tl-detail="A second chance to meet us, 8 – 9 pm in Social Sciences 60." style="display: grid; grid-template-columns: 24px minmax(0,1fr); gap: 24px; padding: 20px 0">
+        <div class="tl-dot" style="width: 16px; height: 16px; border-radius: 50%; background: #C9B4F2; margin: 6px 0 0 4px; position: relative; z-index: 1; transition: background 0.4s, box-shadow 0.4s"></div>
+        <div style="background: #FFFFFF; border: 1px solid #E6E1EE; border-radius: 14px; padding: 28px 32px; display: flex; flex-direction: column; gap: 8px">
+          <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #3B1878">Jan 28 · 8 – 9 pm</div>
+          <div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 24px; letter-spacing: -0.01em">Info Session 2</div>
+          <div style="font-size: 15.5px; line-height: 1.6; color: #5C5468">@ Social Sciences 60</div>
+        </div>
+      </div>
+
+      <div data-tl-event="" data-tl-date="1/29" data-tl-name="Social Night" data-tl-detail="Hang out with the whole club, 7 – 9 pm at Haas Courtyard." style="display: grid; grid-template-columns: 24px minmax(0,1fr); gap: 24px; padding: 20px 0">
+        <div class="tl-dot" style="width: 16px; height: 16px; border-radius: 50%; background: #C9B4F2; margin: 6px 0 0 4px; position: relative; z-index: 1; transition: background 0.4s, box-shadow 0.4s"></div>
+        <div style="background: #FFFFFF; border: 1px solid #E6E1EE; border-radius: 14px; padding: 28px 32px; display: flex; flex-direction: column; gap: 8px">
+          <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #3B1878">Jan 29 · 7 – 9 pm</div>
+          <div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 24px; letter-spacing: -0.01em">Social Night</div>
+          <div style="font-size: 15.5px; line-height: 1.6; color: #5C5468">@ Haas Courtyard</div>
+        </div>
+      </div>
+
+      <div data-tl-event="" data-tl-date="1/29" data-tl-name="Application Due" data-tl-detail="Applications close at 11 pm sharp — apply via the link in our Instagram bio." style="display: grid; grid-template-columns: 24px minmax(0,1fr); gap: 24px; padding: 20px 0">
+        <div class="tl-dot" style="width: 16px; height: 16px; border-radius: 50%; background: #C9B4F2; margin: 6px 0 0 4px; position: relative; z-index: 1; transition: background 0.4s, box-shadow 0.4s"></div>
+        <div style="background: #2A1057; border: 1px solid #2A1057; border-radius: 14px; padding: 28px 32px; display: flex; flex-direction: column; gap: 8px">
+          <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #C9B4F2">Jan 29 · 11 pm</div>
+          <div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 24px; letter-spacing: -0.01em; color: #FFFFFF">Application Due</div>
+          <div style="font-size: 15.5px; line-height: 1.6; color: rgba(255,255,255,0.8)">Apply via the link in our Instagram bio — don't wait until the last minute.</div>
+        </div>
+      </div>
+
+      <div data-tl-event="" data-tl-date="1/31–2/1" data-tl-name="Interviews" data-tl-detail="Selected applicants interview over the weekend. Offers go out shortly after." style="display: grid; grid-template-columns: 24px minmax(0,1fr); gap: 24px; padding: 20px 0">
+        <div class="tl-dot" style="width: 16px; height: 16px; border-radius: 50%; background: #C9B4F2; margin: 6px 0 0 4px; position: relative; z-index: 1; transition: background 0.4s, box-shadow 0.4s"></div>
+        <div style="background: #FFFFFF; border: 1px solid #E6E1EE; border-radius: 14px; padding: 28px 32px; display: flex; flex-direction: column; gap: 8px">
+          <div style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #3B1878">Jan 31 – Feb 1</div>
+          <div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 24px; letter-spacing: -0.01em">Interviews</div>
+          <div style="font-size: 15.5px; line-height: 1.6; color: #5C5468">Selected applicants interview over the weekend. Offers go out shortly after.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Photo strip -->
+  <div style="max-width: 1180px; margin: 0 auto; padding: 64px 40px 96px">
+    <div data-reveal="" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px">
+      <div style="height: 260px; overflow: hidden; border-radius: 14px; transform: rotate(-1.5deg)">
+        <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="join-strip-1" shape="rounded" radius="14" placeholder="Info session photo" hint-size="100%,260px" style="width: 100%; height: 260px"></x-import>
+      </div>
+      <div style="height: 260px; overflow: hidden; border-radius: 14px; transform: rotate(1deg) translateY(10px)">
+        <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="join-strip-2" shape="rounded" radius="14" placeholder="New member class photo" hint-size="100%,260px" style="width: 100%; height: 260px"></x-import>
+      </div>
+      <div style="height: 260px; overflow: hidden; border-radius: 14px; transform: rotate(-1deg)">
+        <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="join-strip-3" shape="rounded" radius="14" placeholder="Retreat photo" hint-size="100%,260px" style="width: 100%; height: 260px"></x-import>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div style="max-width: 1180px; margin: 0 auto; padding: 0 40px 120px">
+    <div data-reveal="" style="background: #2A1057; border-radius: 14px; padding: 72px 64px; display: flex; align-items: center; justify-content: space-between; gap: 40px">
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <div style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: 36px; letter-spacing: -0.03em; color: #FFFFFF; line-height: 1.15">Ready to apply?</div>
+        <div style="font-size: 17px; line-height: 1.6; color: #C9B4F2">Applications for Spring 2026 close Jan 29 at 11 pm.</div>
+      </div>
+      <a href="https://www.instagram.com/berkeleyccg/" style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: 15px; color: #191322; background: #FFFFFF; padding: 15px 30px; border-radius: 8px; flex-shrink: 0" style-hover="background: #C9B4F2; color: #191322">Apply now</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div style="background: #191322">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 56px 40px 40px; display: flex; align-items: center; justify-content: space-between; gap: 32px">
+      <div style="display: flex; align-items: center; gap: 12px">
+        <img src="assets/logo.png" alt="" style="width: 32px; height: 32px">
+        <span style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 16px; color: #FFFFFF">Core Consulting Group</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 28px">
+        <a href="Home.dc.html" style="font-size: 14px; color: #9C93AC" style-hover="color: #C9B4F2">Home</a>
+        <a href="About.dc.html" style="font-size: 14px; color: #9C93AC" style-hover="color: #C9B4F2">About</a>
+        <a href="Work.dc.html" style="font-size: 14px; color: #9C93AC" style-hover="color: #C9B4F2">Our work</a>
+        <a href="mailto:Berkeleyccg@gmail.com" style="font-size: 14px; color: #9C93AC" style-hover="color: #C9B4F2">Berkeleyccg@gmail.com</a>
+        <span style="font-size: 13px; color: #5C5468">© 2026 CCG</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { active: 0, date: '1/20–1/29', name: 'Coffee Chats', detail: 'Meet current members one-on-one — sign up via our Instagram bio!' };
+
+  componentDidMount() {
+    this._checkReveals = () => {
+      document.querySelectorAll('[data-reveal]:not(.in)').forEach((el) => {
+        const r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight * 0.88 && r.bottom > 0) el.classList.add('in');
+      });
+      this._checkTimeline();
+    };
+    this._checkTimeline = () => {
+      const events = document.querySelectorAll('[data-tl-event]');
+      if (!events.length) return;
+      const target = window.innerHeight * 0.42;
+      let best = -1, bestDist = Infinity;
+      events.forEach((el, i) => {
+        const r = el.getBoundingClientRect();
+        const center = r.top + r.height / 2;
+        const d = Math.abs(center - target);
+        if (d < bestDist) { bestDist = d; best = i; }
+      });
+      if (best < 0) return;
+      events.forEach((el, i) => el.classList.toggle('tl-active', i === best));
+      const el = events[best];
+      if (this.state.active !== best) {
+        this.setState({
+          active: best,
+          date: el.getAttribute('data-tl-date'),
+          name: el.getAttribute('data-tl-name'),
+          detail: el.getAttribute('data-tl-detail'),
+        });
+      }
+    };
+    this._onScroll = () => requestAnimationFrame(this._checkReveals);
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    window.addEventListener('resize', this._onScroll);
+    this._revealTimer = setInterval(this._checkReveals, 400);
+    this._checkReveals();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+    window.removeEventListener('resize', this._onScroll);
+    if (this._revealTimer) clearInterval(this._revealTimer);
+  }
+
+  renderVals() {
+    return {
+      tlDate: this.state.date,
+      tlName: this.state.name,
+      tlDetail: this.state.detail,
+      tlStep: this.state.active + 1,
+      tlPct: Math.round(((this.state.active + 1) / 7) * 100),
+    };
+  }
+}
+</script>
+</body>
+</html>
