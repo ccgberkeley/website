@@ -453,7 +453,7 @@ export default function Join() {
           style={{
             maxWidth: 1180,
             margin: '0 auto',
-            padding: '56px 40px 40px',
+            padding: '56px 40px 24px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
@@ -481,6 +481,35 @@ export default function Join() {
             </a>
             <span style={{ fontSize: 13, color: '#5C5468' }}>© 2026 CCG</span>
           </div>
+        </div>
+        <div
+          style={{
+            maxWidth: 1180,
+            margin: '0 auto',
+            padding: '0 40px 32px',
+            borderTop: '1px solid rgba(255,255,255,0.12)',
+            paddingTop: 20,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: 12,
+            fontSize: 12,
+            color: '#5C5468',
+          }}
+        >
+          <span style={{ maxWidth: 620 }}>
+            We are a student group acting independently of the University of California. We take
+            full responsibility for our organization and this web site.
+          </span>
+          <a
+            href="https://www.ocf.berkeley.edu/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: '#5C5468' }}
+          >
+            Hosted by the OCF
+          </a>
         </div>
       </div>
     </div>
