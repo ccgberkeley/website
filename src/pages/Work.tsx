@@ -558,14 +558,23 @@ export default function Work() {
             We are a student group acting independently of the University of California. We take
             full responsibility for our organization and this web site.
           </span>
-          <a
-            href="https://www.ocf.berkeley.edu/"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ color: '#5C5468' }}
-          >
-            Hosted by the OCF
-          </a>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 8 }}>
+            <a
+              href="https://www.ocf.berkeley.edu/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: '#5C5468' }}
+            >
+              Hosted by the OCF
+            </a>
+            <a href="https://www.ocf.berkeley.edu/" target="_blank" rel="noopener noreferrer">
+              <img
+                src="/assets/ocf-hosted-penguin-dark.svg"
+                alt="Hosted by the OCF"
+                style={{ border: 0, height: 32 }}
+              />
+            </a>
+          </div>
         </div>
       </div>
     </div>
