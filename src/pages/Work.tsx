@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Nav from '../components/Nav'
 import ImageSlot from '../components/ImageSlot'
 import { useReveal } from '../hooks/useReveal'
+import { withBase } from '../lib/withBase'
 
 const sora = "'Sora', sans-serif"
 
@@ -87,7 +88,7 @@ function LogoCard({ slug, name }: { slug: string; name: string }) {
         <span style={{ fontFamily: sora, fontSize: 14, fontWeight: 600, color: '#5C5468' }}>{name}</span>
       ) : (
         <img
-          src={`/assets/logos/${slug}.png`}
+          src={withBase(`/assets/logos/${slug}.png`)}
           alt={name}
           style={{ maxHeight: 44, maxWidth: 150, width: 'auto', height: 'auto' }}
           onError={() => setFailed(true)}
@@ -124,7 +125,7 @@ export default function Work() {
       {/* Hero: campus photo backdrop + rotating project showcase */}
       <div style={{ position: 'relative', background: '#2A1057', overflow: 'hidden' }}>
         <img
-          src="/assets/berkeley-campus.png"
+          src={withBase('/assets/berkeley-campus.png')}
           alt=""
           style={{
             position: 'absolute',
@@ -517,7 +518,7 @@ export default function Work() {
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-            <img src="/assets/logo.png" alt="" style={{ width: 32, height: 32 }} />
+            <img src={withBase('/assets/logo.png')} alt="" style={{ width: 32, height: 32 }} />
             <span style={{ fontFamily: sora, fontWeight: 700, fontSize: 16, color: '#FFFFFF' }}>
               Core Consulting Group
             </span>
@@ -569,7 +570,7 @@ export default function Work() {
             </a>
             <a href="https://www.ocf.berkeley.edu/" target="_blank" rel="noopener noreferrer">
               <img
-                src="/assets/ocf-hosted-penguin-dark.svg"
+                src={withBase('/assets/ocf-hosted-penguin-dark.svg')}
                 alt="Hosted by the OCF"
                 style={{ border: 0, height: 32 }}
               />

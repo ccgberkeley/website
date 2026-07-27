@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { withBase } from '../lib/withBase'
 
 const links = [
   { label: 'About', to: '/about' },
@@ -33,7 +34,7 @@ export default function Nav({ active }: { active?: string }) {
         }}
       >
         <Link to="/" className="nav-brand">
-          <img src="/assets/logo.png" alt="Core Consulting Group" style={{ width: 36, height: 36 }} />
+          <img src={withBase('/assets/logo.png')} alt="Core Consulting Group" style={{ width: 36, height: 36 }} />
           <span
             style={{
               fontFamily: "'Sora', sans-serif",

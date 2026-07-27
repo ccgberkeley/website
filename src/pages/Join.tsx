@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Nav from '../components/Nav'
 import ImageSlot from '../components/ImageSlot'
 import { useReveal } from '../hooks/useReveal'
+import { withBase } from '../lib/withBase'
 
 const sora = "'Sora', sans-serif"
 
@@ -113,7 +114,7 @@ export default function Join() {
       {/* Hero */}
       <div style={{ position: 'relative', background: '#2A1057', overflow: 'hidden' }}>
         <img
-          src="/assets/berkeley-campus.png"
+          src={withBase('/assets/berkeley-campus.png')}
           alt=""
           style={{
             position: 'absolute',
@@ -461,7 +462,7 @@ export default function Join() {
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-            <img src="/assets/logo.png" alt="" style={{ width: 32, height: 32 }} />
+            <img src={withBase('/assets/logo.png')} alt="" style={{ width: 32, height: 32 }} />
             <span style={{ fontFamily: sora, fontWeight: 700, fontSize: 16, color: '#FFFFFF' }}>
               Core Consulting Group
             </span>
@@ -513,7 +514,7 @@ export default function Join() {
             </a>
             <a href="https://www.ocf.berkeley.edu/" target="_blank" rel="noopener noreferrer">
               <img
-                src="/assets/ocf-hosted-penguin-dark.svg"
+                src={withBase('/assets/ocf-hosted-penguin-dark.svg')}
                 alt="Hosted by the OCF"
                 style={{ border: 0, height: 32 }}
               />

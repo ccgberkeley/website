@@ -5,6 +5,7 @@ import Footer from '../components/Footer'
 import ImageSlot from '../components/ImageSlot'
 import { useReveal } from '../hooks/useReveal'
 import { useCountUp } from '../hooks/useCountUp'
+import { withBase } from '../lib/withBase'
 
 const sora = "'Sora', sans-serif"
 
@@ -118,7 +119,7 @@ function LogoCard({ slug, name }: { slug: string; name: string }) {
         <span style={{ fontFamily: sora, fontSize: 14, fontWeight: 600, color: '#5C5468' }}>{name}</span>
       ) : (
         <img
-          src={`/assets/logos/${slug}.png`}
+          src={withBase(`/assets/logos/${slug}.png`)}
           alt={name}
           style={{ maxHeight: 44, maxWidth: 140, width: 'auto', height: 'auto' }}
           onError={() => setFailed(true)}
