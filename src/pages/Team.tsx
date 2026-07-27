@@ -4,6 +4,7 @@ import Nav from '../components/Nav'
 import ImageSlot from '../components/ImageSlot'
 import VideoSlot from '../components/VideoSlot'
 import { useReveal } from '../hooks/useReveal'
+import { withBase } from '../lib/withBase'
 
 const sora = "'Sora', sans-serif"
 const serifItalic: React.CSSProperties = { fontFamily: "'Instrument Serif', serif", fontStyle: 'italic' }
@@ -84,7 +85,7 @@ function LogoCard({ slug, name }: { slug: string; name: string }) {
         <span style={{ fontFamily: sora, fontSize: 14, fontWeight: 600, color: '#5C5468' }}>{name}</span>
       ) : (
         <img
-          src={`/assets/logos/${slug}.png`}
+          src={withBase(`/assets/logos/${slug}.png`)}
           alt={name}
           style={{ maxHeight: 44, maxWidth: 150, width: 'auto', height: 'auto' }}
           onError={() => setFailed(true)}
@@ -104,7 +105,7 @@ export default function Team() {
       {/* Hero with member video */}
       <div style={{ position: 'relative', background: '#2A1057', overflow: 'hidden' }}>
         <img
-          src="/assets/berkeley-campus.png"
+          src={withBase('/assets/berkeley-campus.png')}
           alt=""
           style={{
             position: 'absolute',
@@ -235,7 +236,7 @@ export default function Team() {
             }}
           >
             <img
-              src="/assets/logo.png"
+              src={withBase('/assets/logo.png')}
               alt=""
               style={{ width: 80, height: 80, filter: 'drop-shadow(0 4px 16px rgba(25,19,34,0.5))' }}
             />
@@ -488,7 +489,7 @@ export default function Team() {
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-            <img src="/assets/logo.png" alt="" style={{ width: 32, height: 32 }} />
+            <img src={withBase('/assets/logo.png')} alt="" style={{ width: 32, height: 32 }} />
             <span style={{ fontFamily: sora, fontWeight: 700, fontSize: 16, color: '#FFFFFF' }}>
               Core Consulting Group
             </span>
@@ -540,7 +541,7 @@ export default function Team() {
             </a>
             <a href="https://www.ocf.berkeley.edu/" target="_blank" rel="noopener noreferrer">
               <img
-                src="/assets/ocf-hosted-penguin-dark.svg"
+                src={withBase('/assets/ocf-hosted-penguin-dark.svg')}
                 alt="Hosted by the OCF"
                 style={{ border: 0, height: 32 }}
               />

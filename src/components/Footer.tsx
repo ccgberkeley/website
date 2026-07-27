@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { withBase } from '../lib/withBase'
 
 export default function Footer() {
   return (
@@ -15,7 +16,7 @@ export default function Footer() {
       >
         <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-            <img src="/assets/logo.png" alt="" style={{ width: 36, height: 36 }} />
+            <img src={withBase('/assets/logo.png')} alt="" style={{ width: 36, height: 36 }} />
             <span
               style={{
                 fontFamily: "'Sora', sans-serif",
@@ -103,7 +104,7 @@ export default function Footer() {
             </a>
             <a href="https://www.ocf.berkeley.edu/" target="_blank" rel="noopener noreferrer">
               <img
-                src="/assets/ocf-hosted-penguin-dark.svg"
+                src={withBase('/assets/ocf-hosted-penguin-dark.svg')}
                 alt="Hosted by the OCF"
                 style={{ border: 0, height: 32 }}
               />
