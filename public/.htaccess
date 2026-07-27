@@ -1,10 +1,12 @@
 RewriteEngine On
-RewriteBase /
 
 # Serve real files/directories directly
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-# Everything else falls through to the SPA router
-RewriteRule ^ index.html [L]
+# Everything else falls through to the SPA router.
+# No RewriteBase: mod_rewrite infers it from this file's own directory, so
+# this works whether the site is served from a subpath (OCF's
+# ~coreconsultinggr/) or a domain root (the future studentorg.berkeley.edu).
+RewriteRule ^(.*)$ index.html [L]

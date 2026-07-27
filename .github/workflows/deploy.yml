@@ -7,6 +7,11 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    # Remove this env block (or set VITE_BASE_PATH: /) once the
+    # studentorg.berkeley.edu vhost is approved and the site moves to a
+    # domain root — until then OCF serves it from this home-dir subpath.
+    env:
+      VITE_BASE_PATH: /~coreconsultinggr/
     steps:
       - uses: actions/checkout@v4
 
