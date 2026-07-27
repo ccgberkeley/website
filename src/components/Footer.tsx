@@ -29,7 +29,8 @@ export default function Footer() {
           </div>
           <div style={{ fontSize: 15, lineHeight: 1.6, color: '#9C93AC', maxWidth: 380 }}>
             A student-run consulting organization at UC Berkeley. We are a student group acting
-            independently of the University of California.
+            independently of the University of California. We take full responsibility for our
+            organization and this web site.
           </div>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
@@ -83,9 +84,31 @@ export default function Footer() {
             paddingTop: 24,
             fontSize: 13,
             color: '#9C93AC',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: 12,
           }}
         >
-          © 2026 Core Consulting Group
+          <span>© 2026 Core Consulting Group</span>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 8 }}>
+            <a
+              href="https://www.ocf.berkeley.edu/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: '#9C93AC' }}
+            >
+              Hosted by the OCF
+            </a>
+            <a href="https://www.ocf.berkeley.edu/" target="_blank" rel="noopener noreferrer">
+              <img
+                src="/assets/ocf-hosted-penguin-dark.svg"
+                alt="Hosted by the OCF"
+                style={{ border: 0, height: 32 }}
+              />
+            </a>
+          </div>
         </div>
       </div>
     </div>
