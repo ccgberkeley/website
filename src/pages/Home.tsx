@@ -92,6 +92,7 @@ const CLIENTS = [
   ['alaska', 'Alaska Airlines'],
   ['chegg', 'Chegg'],
   ['qualcomm', 'Qualcomm'],
+  ['intel', 'Intel'],
 ] as const
 
 function heroIn(delay: number): React.CSSProperties {
@@ -368,11 +369,6 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <div data-reveal style={{ display: 'flex', justifyContent: 'center', marginTop: 48 }}>
-              <Link to="/work" className="btn-white">
-                Explore our services →
-              </Link>
-            </div>
           </div>
         </div>
         <svg
@@ -414,44 +410,6 @@ export default function Home() {
         <Link to="/work" className="link-underline">
           See our client work →
         </Link>
-      </div>
-
-      {/* Join CTA */}
-      <div id="join" style={{ maxWidth: 1180, margin: '0 auto', padding: '0 40px 120px' }}>
-        <div
-          data-reveal
-          style={{
-            background: violetGrain,
-            borderRadius: 14,
-            padding: '72px 64px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: 40,
-          }}
-        >
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-            <div
-              style={{
-                fontFamily: playfair,
-                fontWeight: 700,
-                fontSize: 40,
-                letterSpacing: '-0.01em',
-                color: '#FFFFFF',
-                lineHeight: 1.12,
-              }}
-            >
-              Join our <span style={{ color: '#C9B4F2' }}>family</span>
-            </div>
-            <div style={{ fontSize: 17, lineHeight: 1.6, color: '#C9B4F2', maxWidth: 520 }}>
-              No consulting experience required — we recruit for curiosity and work ethic, then
-              train the rest. Applications open each semester.
-            </div>
-          </div>
-          <a href="#contact" className="btn-white" style={{ flexShrink: 0 }}>
-            Apply now
-          </a>
-        </div>
       </div>
 
       <Footer />
