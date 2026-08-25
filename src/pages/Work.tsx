@@ -4,8 +4,8 @@ import Nav from '../components/Nav'
 import ImageSlot from '../components/ImageSlot'
 import { useReveal } from '../hooks/useReveal'
 import { withBase } from '../lib/withBase'
-
-const sora = "'Sora', sans-serif"
+import { poppins, playfair, playfairItalic } from '../lib/fonts'
+import { violetGrain } from '../lib/texture'
 
 const PROJECTS = [
   { id: 'work-team-1', name: 'Project name one', term: 'Fall 2025' },
@@ -85,7 +85,7 @@ function LogoCard({ slug, name }: { slug: string; name: string }) {
       }}
     >
       {failed ? (
-        <span style={{ fontFamily: sora, fontSize: 14, fontWeight: 600, color: '#5C5468' }}>{name}</span>
+        <span style={{ fontFamily: poppins, fontSize: 14, fontWeight: 600, color: '#5C5468' }}>{name}</span>
       ) : (
         <img
           src={withBase(`/assets/logos/${slug}.png`)}
@@ -123,7 +123,7 @@ export default function Work() {
       <Nav active="Work" />
 
       {/* Hero: campus photo backdrop + rotating project showcase */}
-      <div style={{ position: 'relative', background: '#2A1057', overflow: 'hidden' }}>
+      <div style={{ position: 'relative', background: violetGrain, overflow: 'hidden' }}>
         <img
           src={withBase('/assets/berkeley-campus.png')}
           alt=""
@@ -162,7 +162,7 @@ export default function Work() {
         >
           <div
             style={{
-              fontFamily: sora,
+              fontFamily: poppins,
               fontWeight: 600,
               fontSize: 13,
               letterSpacing: '0.18em',
@@ -175,10 +175,10 @@ export default function Work() {
           </div>
           <h1
             style={{
-              fontFamily: sora,
-              fontWeight: 800,
+              fontFamily: playfair,
+              fontWeight: 700,
               fontSize: 56,
-              letterSpacing: '-0.03em',
+              letterSpacing: '-0.01em',
               lineHeight: 1.05,
               color: '#FFFFFF',
               margin: 0,
@@ -216,10 +216,10 @@ export default function Work() {
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2 }}>
                   <span
                     style={{
-                      fontFamily: sora,
-                      fontWeight: 800,
+                      fontFamily: playfair,
+                      fontWeight: 700,
                       fontSize: 34,
-                      letterSpacing: '-0.02em',
+                      letterSpacing: '-0.01em',
                       color: '#F5F1FC',
                       textShadow: '0 0 24px rgba(201,180,242,0.55), 0 2px 18px rgba(25,19,34,0.6)',
                     }}
@@ -228,8 +228,7 @@ export default function Work() {
                   </span>
                   <span
                     style={{
-                      fontFamily: "'Instrument Serif', serif",
-                      fontStyle: 'italic',
+                      ...playfairItalic,
                       fontSize: 22,
                       color: '#C9B4F2',
                       textShadow: '0 0 18px rgba(201,180,242,0.6)',
@@ -299,7 +298,7 @@ export default function Work() {
         >
           <div
             style={{
-              fontFamily: sora,
+              fontFamily: poppins,
               fontWeight: 600,
               fontSize: 13,
               letterSpacing: '0.14em',
@@ -309,7 +308,7 @@ export default function Work() {
           >
             Our services
           </div>
-          <h2 style={{ fontFamily: sora, fontWeight: 800, fontSize: 44, letterSpacing: '-0.03em', margin: 0 }}>
+          <h2 style={{ fontFamily: playfair, fontWeight: 700, fontSize: 44, letterSpacing: '-0.01em', margin: 0 }}>
             Bring us <span style={{ color: '#3B1878' }}>any problem</span>
           </h2>
         </div>
@@ -319,10 +318,10 @@ export default function Work() {
             <div
               key="num"
               style={{
-                fontFamily: sora,
-                fontWeight: 800,
+                fontFamily: playfair,
+                fontWeight: 700,
                 fontSize: 64,
-                letterSpacing: '-0.03em',
+                letterSpacing: '-0.01em',
                 color: '#C9B4F2',
                 textAlign: i % 2 ? 'right' : 'left',
               }}
@@ -332,7 +331,7 @@ export default function Work() {
           )
           const text = (
             <div key="text" style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-              <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 26, letterSpacing: '-0.01em' }}>{s.title}</div>
+              <div style={{ fontFamily: poppins, fontWeight: 700, fontSize: 26, letterSpacing: '-0.01em' }}>{s.title}</div>
               <div style={{ fontSize: 16, lineHeight: 1.65, color: '#5C5468' }}>{s.desc}</div>
             </div>
           )
@@ -378,7 +377,7 @@ export default function Work() {
         >
           <div
             style={{
-              fontFamily: sora,
+              fontFamily: poppins,
               fontWeight: 600,
               fontSize: 13,
               letterSpacing: '0.14em',
@@ -388,7 +387,7 @@ export default function Work() {
           >
             How we work
           </div>
-          <h2 style={{ fontFamily: sora, fontWeight: 800, fontSize: 44, letterSpacing: '-0.03em', margin: 0 }}>
+          <h2 style={{ fontFamily: playfair, fontWeight: 700, fontSize: 44, letterSpacing: '-0.01em', margin: 0 }}>
             A 10-week <span style={{ color: '#3B1878' }}>engagement</span>
           </h2>
         </div>
@@ -409,7 +408,7 @@ export default function Work() {
             >
               <div
                 style={{
-                  fontFamily: sora,
+                  fontFamily: poppins,
                   fontWeight: 600,
                   fontSize: 13,
                   letterSpacing: '0.14em',
@@ -419,7 +418,7 @@ export default function Work() {
               >
                 {t.weeks}
               </div>
-              <div style={{ fontFamily: sora, fontWeight: 600, fontSize: 19 }}>{t.title}</div>
+              <div style={{ fontFamily: poppins, fontWeight: 600, fontSize: 19 }}>{t.title}</div>
               <div style={{ fontSize: 15, lineHeight: 1.6, color: '#5C5468' }}>{t.desc}</div>
             </div>
           ))}
@@ -427,7 +426,7 @@ export default function Work() {
       </div>
 
       {/* Animated CTA band */}
-      <div style={{ position: 'relative', background: '#2A1057', overflow: 'hidden' }}>
+      <div style={{ position: 'relative', background: violetGrain, overflow: 'hidden' }}>
         <div style={{ padding: '72px 0 0', display: 'flex', flexDirection: 'column', gap: 24 }}>
           <div
             style={{
@@ -441,7 +440,7 @@ export default function Work() {
           >
             <div
               style={{
-                fontFamily: sora,
+                fontFamily: poppins,
                 fontWeight: 600,
                 fontSize: 13,
                 letterSpacing: '0.18em',
@@ -484,10 +483,10 @@ export default function Work() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             <div
               style={{
-                fontFamily: sora,
-                fontWeight: 800,
+                fontFamily: playfair,
+                fontWeight: 700,
                 fontSize: 40,
-                letterSpacing: '-0.03em',
+                letterSpacing: '-0.01em',
                 color: '#FFFFFF',
                 lineHeight: 1.15,
               }}
@@ -519,7 +518,7 @@ export default function Work() {
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
             <img src={withBase('/assets/logo.png')} alt="" style={{ width: 32, height: 32 }} />
-            <span style={{ fontFamily: sora, fontWeight: 700, fontSize: 16, color: '#FFFFFF' }}>
+            <span style={{ fontFamily: poppins, fontWeight: 700, fontSize: 16, color: '#FFFFFF' }}>
               Core Consulting Group
             </span>
           </div>

@@ -6,11 +6,11 @@ import ImageSlot from '../components/ImageSlot'
 import { useReveal } from '../hooks/useReveal'
 import { useCountUp } from '../hooks/useCountUp'
 import { withBase } from '../lib/withBase'
-
-const sora = "'Sora', sans-serif"
+import { poppins, playfair } from '../lib/fonts'
+import { violetGrain, violetGrainLight } from '../lib/texture'
 
 const eyebrow: React.CSSProperties = {
-  fontFamily: sora,
+  fontFamily: poppins,
   fontWeight: 600,
   fontSize: 13,
   letterSpacing: '0.14em',
@@ -19,10 +19,10 @@ const eyebrow: React.CSSProperties = {
 }
 
 const h2: React.CSSProperties = {
-  fontFamily: sora,
-  fontWeight: 800,
+  fontFamily: playfair,
+  fontWeight: 700,
   fontSize: 48,
-  letterSpacing: '-0.03em',
+  letterSpacing: '-0.01em',
   lineHeight: 1.08,
   margin: 0,
 }
@@ -116,7 +116,7 @@ function LogoCard({ slug, name }: { slug: string; name: string }) {
     >
       {failed ? (
         // Client name stands in until the logo PNG is added
-        <span style={{ fontFamily: sora, fontSize: 14, fontWeight: 600, color: '#5C5468' }}>{name}</span>
+        <span style={{ fontFamily: poppins, fontSize: 14, fontWeight: 600, color: '#5C5468' }}>{name}</span>
       ) : (
         <img
           src={withBase(`/assets/logos/${slug}.png`)}
@@ -173,7 +173,7 @@ export default function Home() {
         >
           <div
             style={{
-              fontFamily: sora,
+              fontFamily: poppins,
               fontWeight: 600,
               fontSize: 14,
               letterSpacing: '0.18em',
@@ -186,7 +186,7 @@ export default function Home() {
           </div>
           <h1
             style={{
-              fontFamily: sora,
+              fontFamily: poppins,
               fontWeight: 800,
               fontSize: 76,
               letterSpacing: '-0.03em',
@@ -240,7 +240,7 @@ export default function Home() {
       </div>
 
       {/* Stats band */}
-      <div style={{ background: '#2A1057' }}>
+      <div style={{ background: violetGrain }}>
         <div
           ref={rowRef}
           style={{
@@ -256,10 +256,10 @@ export default function Home() {
             <div key={s.label} style={{ display: 'flex', flexDirection: 'column', gap: 6, textAlign: 'center' }}>
               <div
                 style={{
-                  fontFamily: sora,
-                  fontWeight: 800,
+                  fontFamily: playfair,
+                  fontWeight: 700,
                   fontSize: 54,
-                  letterSpacing: '-0.03em',
+                  letterSpacing: '-0.01em',
                   color: '#FFFFFF',
                 }}
               >
@@ -322,7 +322,7 @@ export default function Home() {
         <svg viewBox="0 0 1440 100" preserveAspectRatio="none" style={{ width: '100%', height: 90, display: 'block' }}>
           {wavePaths}
         </svg>
-        <div style={{ background: '#3B1878' }}>
+        <div style={{ background: violetGrainLight }}>
           <div id="services" style={{ maxWidth: 1180, margin: '0 auto', padding: '56px 40px 96px' }}>
             <div
               data-reveal
@@ -361,7 +361,7 @@ export default function Home() {
                   >
                     {s.icon}
                   </div>
-                  <div style={{ fontFamily: sora, fontWeight: 600, fontSize: 18, color: '#FFFFFF' }}>{s.title}</div>
+                  <div style={{ fontFamily: poppins, fontWeight: 600, fontSize: 18, color: '#FFFFFF' }}>{s.title}</div>
                   <div style={{ fontSize: 15, lineHeight: 1.6, color: 'rgba(255,255,255,0.75)', marginTop: -6 }}>
                     {s.desc}
                   </div>
@@ -421,7 +421,7 @@ export default function Home() {
         <div
           data-reveal
           style={{
-            background: '#2A1057',
+            background: violetGrain,
             borderRadius: 14,
             padding: '72px 64px',
             display: 'flex',
@@ -433,10 +433,10 @@ export default function Home() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             <div
               style={{
-                fontFamily: sora,
-                fontWeight: 800,
+                fontFamily: playfair,
+                fontWeight: 700,
                 fontSize: 40,
-                letterSpacing: '-0.03em',
+                letterSpacing: '-0.01em',
                 color: '#FFFFFF',
                 lineHeight: 1.12,
               }}

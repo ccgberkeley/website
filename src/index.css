@@ -87,7 +87,8 @@ a:hover {
 
 /* Hover states from the design's style-hover attributes */
 .nav-link {
-  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
   font-weight: 500;
   color: #191322;
 }
@@ -97,7 +98,8 @@ a:hover {
 
 /* Active nav link and the brand lockup keep their color on hover, per design */
 .nav-link-active {
-  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
   font-weight: 600;
   color: #3b1878;
 }
@@ -116,7 +118,7 @@ a:hover {
 }
 
 .btn-violet {
-  font-family: 'Sora', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 600;
   color: #ffffff;
   background: #3b1878;
@@ -129,7 +131,7 @@ a:hover {
 }
 
 .btn-white {
-  font-family: 'Sora', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: 15px;
   color: #191322;
@@ -144,7 +146,7 @@ a:hover {
 }
 
 .btn-outline-light {
-  font-family: 'Sora', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: 15px;
   color: #ffffff;
@@ -159,7 +161,7 @@ a:hover {
 }
 
 .btn-outline-dark {
-  font-family: 'Sora', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: 15px;
   color: #191322;
@@ -206,7 +208,7 @@ a:hover {
 }
 
 .link-underline {
-  font-family: 'Sora', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: 15px;
   color: #3b1878;
@@ -355,7 +357,7 @@ textarea::placeholder {
   justify-content: center;
   background: linear-gradient(135deg, #2a1057, #3b1878 55%, #191322);
   color: rgba(255, 255, 255, 0.55);
-  font-family: 'Sora', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.04em;

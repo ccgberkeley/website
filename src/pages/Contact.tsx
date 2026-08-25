@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom'
 import Nav from '../components/Nav'
 import CompactFooter from '../components/CompactFooter'
 import { useReveal } from '../hooks/useReveal'
+import { poppins, playfair } from '../lib/fonts'
+import { violetGrain } from '../lib/texture'
 
-const sora = "'Sora', sans-serif"
 const TOPICS = ['Joining CCG', 'A question', 'Club collaboration', 'Something else']
 
 function heroIn(delay: number): React.CSSProperties {
@@ -63,7 +64,7 @@ export default function Contact() {
       <Nav active="Contact" />
 
       {/* Hero */}
-      <div style={{ position: 'relative', background: '#2A1057' }}>
+      <div style={{ position: 'relative', background: violetGrain }}>
         <div
           style={{
             maxWidth: 1180,
@@ -78,7 +79,7 @@ export default function Contact() {
         >
           <div
             style={{
-              fontFamily: sora,
+              fontFamily: poppins,
               fontWeight: 600,
               fontSize: 13,
               letterSpacing: '0.18em',
@@ -91,10 +92,10 @@ export default function Contact() {
           </div>
           <h1
             style={{
-              fontFamily: sora,
-              fontWeight: 800,
+              fontFamily: playfair,
+              fontWeight: 700,
               fontSize: 60,
-              letterSpacing: '-0.03em',
+              letterSpacing: '-0.01em',
               lineHeight: 1.05,
               color: '#FFFFFF',
               margin: 0,
@@ -141,7 +142,7 @@ export default function Contact() {
         <div data-reveal style={{ display: 'flex', flexDirection: 'column', gap: 24, paddingTop: 16 }}>
           <div
             style={{
-              fontFamily: sora,
+              fontFamily: poppins,
               fontWeight: 600,
               fontSize: 13,
               letterSpacing: '0.14em',
@@ -153,10 +154,10 @@ export default function Contact() {
           </div>
           <h2
             style={{
-              fontFamily: sora,
-              fontWeight: 800,
+              fontFamily: playfair,
+              fontWeight: 700,
               fontSize: 40,
-              letterSpacing: '-0.03em',
+              letterSpacing: '-0.01em',
               lineHeight: 1.1,
               margin: 0,
             }}
@@ -197,7 +198,7 @@ export default function Contact() {
               marginTop: 8,
             }}
           >
-            <div style={{ fontFamily: sora, fontWeight: 600, fontSize: 15, color: '#3B1878' }}>
+            <div style={{ fontFamily: poppins, fontWeight: 600, fontSize: 15, color: '#3B1878' }}>
               Thinking of applying?
             </div>
             <div style={{ fontSize: 14.5, lineHeight: 1.6, color: '#5C5468' }}>

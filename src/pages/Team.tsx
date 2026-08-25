@@ -5,9 +5,8 @@ import ImageSlot from '../components/ImageSlot'
 import VideoSlot from '../components/VideoSlot'
 import { useReveal } from '../hooks/useReveal'
 import { withBase } from '../lib/withBase'
-
-const sora = "'Sora', sans-serif"
-const serifItalic: React.CSSProperties = { fontFamily: "'Instrument Serif', serif", fontStyle: 'italic' }
+import { poppins, playfair, playfairItalic as serifItalic } from '../lib/fonts'
+import { violetGrain, violetGrainLight } from '../lib/texture'
 
 const EXECS = [
   { slot: 'team-eric', name: 'Eric Xie', role: 'President', linkedin: 'https://www.linkedin.com/in/frankcowong/', email: 'z4@berkeley.edu' },
@@ -82,7 +81,7 @@ function LogoCard({ slug, name }: { slug: string; name: string }) {
       }}
     >
       {failed ? (
-        <span style={{ fontFamily: sora, fontSize: 14, fontWeight: 600, color: '#5C5468' }}>{name}</span>
+        <span style={{ fontFamily: poppins, fontSize: 14, fontWeight: 600, color: '#5C5468' }}>{name}</span>
       ) : (
         <img
           src={withBase(`/assets/logos/${slug}.png`)}
@@ -103,7 +102,7 @@ export default function Team() {
       <Nav active="Team" />
 
       {/* Hero with member video */}
-      <div style={{ position: 'relative', background: '#2A1057', overflow: 'hidden' }}>
+      <div style={{ position: 'relative', background: violetGrain, overflow: 'hidden' }}>
         <img
           src={withBase('/assets/berkeley-campus.png')}
           alt=""
@@ -149,7 +148,7 @@ export default function Team() {
         >
           <div
             style={{
-              fontFamily: sora,
+              fontFamily: poppins,
               fontWeight: 600,
               fontSize: 13,
               letterSpacing: '0.18em',
@@ -162,10 +161,10 @@ export default function Team() {
           </div>
           <h1
             style={{
-              fontFamily: sora,
-              fontWeight: 800,
+              fontFamily: playfair,
+              fontWeight: 700,
               fontSize: 60,
-              letterSpacing: '-0.03em',
+              letterSpacing: '-0.01em',
               lineHeight: 1.05,
               color: '#FFFFFF',
               margin: 0,
@@ -242,7 +241,7 @@ export default function Team() {
             />
             <div
               style={{
-                fontFamily: sora,
+                fontFamily: poppins,
                 fontWeight: 800,
                 fontSize: 60,
                 letterSpacing: '-0.02em',
@@ -270,15 +269,15 @@ export default function Team() {
           <path d="M0,80 C420,-20 1020,110 1440,30 L1440,100 L0,100 Z" fill="#C9B4F2" opacity="0.45" />
           <path d="M0,92 C440,4 1040,116 1440,44 L1440,100 L0,100 Z" fill="#3B1878" />
         </svg>
-        <div style={{ background: '#3B1878' }}>
+        <div style={{ background: violetGrainLight }}>
           <div style={{ maxWidth: 1180, margin: '0 auto', padding: '48px 40px 88px' }}>
             <div data-reveal style={{ textAlign: 'center', marginBottom: 56 }}>
               <h2
                 style={{
-                  fontFamily: sora,
+                  fontFamily: playfair,
                   fontWeight: 700,
                   fontSize: 56,
-                  letterSpacing: '-0.02em',
+                  letterSpacing: '-0.01em',
                   lineHeight: 1.05,
                   color: '#FFFFFF',
                   margin: 0,
@@ -313,11 +312,11 @@ export default function Team() {
                     <ImageSlot id={m.slot} placeholder="Headshot" style={{ width: '100%', height: '100%' }} />
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-                    <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 20, color: '#FFFFFF' }}>{m.name}</div>
+                    <div style={{ fontFamily: poppins, fontWeight: 700, fontSize: 20, color: '#FFFFFF' }}>{m.name}</div>
                     <div style={{ ...serifItalic, fontSize: 17, color: '#C9B4F2' }}>{m.role}</div>
                   </div>
                   <div style={{ display: 'flex', gap: 10 }}>
-                    <a href={m.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="social-exec" style={{ fontFamily: sora }}>
+                    <a href={m.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="social-exec" style={{ fontFamily: poppins }}>
                       in
                     </a>
                     <a href={`mailto:${m.email}`} aria-label="Email" className="social-exec">
@@ -344,10 +343,10 @@ export default function Team() {
         <div data-reveal style={{ textAlign: 'center', marginBottom: 56 }}>
           <h2
             style={{
-              fontFamily: sora,
+              fontFamily: playfair,
               fontWeight: 700,
               fontSize: 56,
-              letterSpacing: '-0.02em',
+              letterSpacing: '-0.01em',
               lineHeight: 1.05,
               margin: 0,
             }}
@@ -384,11 +383,11 @@ export default function Team() {
               </div>
               {/* flex: 1 keeps the social chips bottom-aligned across the row even when titles wrap */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: 4, flex: 1 }}>
-                <div style={{ fontFamily: sora, fontWeight: 700, fontSize: 18 }}>{m.name}</div>
+                <div style={{ fontFamily: poppins, fontWeight: 700, fontSize: 18 }}>{m.name}</div>
                 <div style={{ ...serifItalic, fontSize: 16, color: '#3B1878' }}>{m.role}</div>
               </div>
               <div style={{ display: 'flex', gap: 10 }}>
-                <a href={m.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="social-director" style={{ fontFamily: sora }}>
+                <a href={m.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="social-director" style={{ fontFamily: poppins }}>
                   in
                 </a>
                 <a href={`mailto:${m.email}`} aria-label="Email" className="social-director">
@@ -401,7 +400,7 @@ export default function Team() {
       </div>
 
       {/* Where we work */}
-      <div style={{ position: 'relative', background: '#2A1057', overflow: 'hidden' }}>
+      <div style={{ position: 'relative', background: violetGrain, overflow: 'hidden' }}>
         <div
           style={{
             maxWidth: 1180,
@@ -416,7 +415,7 @@ export default function Team() {
         >
           <div
             style={{
-              fontFamily: sora,
+              fontFamily: poppins,
               fontWeight: 600,
               fontSize: 13,
               letterSpacing: '0.18em',
@@ -428,10 +427,10 @@ export default function Team() {
           </div>
           <h2
             style={{
-              fontFamily: sora,
+              fontFamily: playfair,
               fontWeight: 700,
               fontSize: 44,
-              letterSpacing: '-0.02em',
+              letterSpacing: '-0.01em',
               margin: 0,
               color: '#FFFFFF',
             }}
@@ -490,7 +489,7 @@ export default function Team() {
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
             <img src={withBase('/assets/logo.png')} alt="" style={{ width: 32, height: 32 }} />
-            <span style={{ fontFamily: sora, fontWeight: 700, fontSize: 16, color: '#FFFFFF' }}>
+            <span style={{ fontFamily: poppins, fontWeight: 700, fontSize: 16, color: '#FFFFFF' }}>
               Core Consulting Group
             </span>
           </div>
