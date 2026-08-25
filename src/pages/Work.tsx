@@ -26,7 +26,7 @@ const SEMESTERS = [
 ]
 
 const svcIcon = (path: React.ReactNode) => (
-  <svg width={56} height={56} viewBox="0 0 24 24" fill="none" stroke="#3B1878" strokeWidth="1.4">
+  <svg width={72} height={72} viewBox="0 0 24 24" fill="none" stroke="#3B1878" strokeWidth="1.2">
     {path}
   </svg>
 )
@@ -131,70 +131,17 @@ function LogoCard({ slug, name }: { slug: string; name: string }) {
   )
 }
 
-// Hand-tuned scatter positions (center-anchored, % of the panel) so each
-// semester's logos read as a loose, layered collage instead of a straight
-// row. Keyed by logo count since slide sizes vary (3 vs 4 clients).
-const SCATTER: Record<number, { top: string; left: string; rotate: number; size: number; z: number }[]> = {
-  3: [
-    { top: '30%', left: '20%', rotate: -7, size: 1.08, z: 2 },
-    { top: '66%', left: '50%', rotate: 5, size: 0.96, z: 3 },
-    { top: '32%', left: '80%', rotate: -4, size: 1.0, z: 1 },
-  ],
-  4: [
-    { top: '28%', left: '15%', rotate: -8, size: 0.94, z: 2 },
-    { top: '62%', left: '38%', rotate: 6, size: 1.02, z: 4 },
-    { top: '26%', left: '62%', rotate: 5, size: 0.9, z: 1 },
-    { top: '64%', left: '85%', rotate: -6, size: 1.0, z: 3 },
-  ],
-}
-
-function ScatterLogo({
-  slug,
-  name,
-  pos,
-}: {
-  slug: string
-  name: string
-  pos: { top: string; left: string; rotate: number; size: number; z: number }
-}) {
+function ClientLogo({ slug, name }: { slug: string; name: string }) {
   const [failed, setFailed] = useState(false)
-  return (
-    <div
-      style={{
-        position: 'absolute',
-        top: pos.top,
-        left: pos.left,
-        transform: `translate(-50%, -50%) rotate(${pos.rotate}deg)`,
-        zIndex: pos.z,
-      }}
-    >
-      {failed ? (
-        <span
-          style={{
-            fontFamily: poppins,
-            fontWeight: 700,
-            fontSize: 16 * pos.size,
-            color: '#FFFFFF',
-            textShadow: '0 2px 14px rgba(10,4,24,0.6)',
-          }}
-        >
-          {name}
-        </span>
-      ) : (
-        <img
-          src={withBase(`/assets/logos/${slug}.png`)}
-          alt={name}
-          style={{
-            maxHeight: 60 * pos.size,
-            maxWidth: 170 * pos.size,
-            width: 'auto',
-            height: 'auto',
-            filter: 'drop-shadow(0 0 22px rgba(255,255,255,0.5)) drop-shadow(0 8px 18px rgba(10,4,24,0.4))',
-          }}
-          onError={() => setFailed(true)}
-        />
-      )}
-    </div>
+  return failed ? (
+    <span style={{ fontFamily: poppins, fontWeight: 700, fontSize: 18, color: '#3B1878' }}>{name}</span>
+  ) : (
+    <img
+      src={withBase(`/assets/logos/${slug}.png`)}
+      alt={name}
+      style={{ maxHeight: 76, maxWidth: 210, width: 'auto', height: 'auto' }}
+      onError={() => setFailed(true)}
+    />
   )
 }
 
@@ -299,39 +246,59 @@ export default function Work() {
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
-                  gap: 10,
+                  justifyContent: 'center',
+                  gap: 24,
                   opacity: slide === i ? 1 : 0,
                   zIndex: slide === i ? 2 : 1,
                   pointerEvents: slide === i ? 'auto' : 'none',
                   transition: 'opacity 0.9s ease',
                 }}
               >
-                <div
-                  style={{
-                    fontFamily: poppins,
-                    fontWeight: 600,
-                    fontSize: 13,
-                    letterSpacing: '0.14em',
-                    textTransform: 'uppercase',
-                    color: '#C9B4F2',
-                  }}
-                >
-                  Client engagements
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6 }}>
+                  <div
+                    style={{
+                      fontFamily: poppins,
+                      fontWeight: 600,
+                      fontSize: 13,
+                      letterSpacing: '0.14em',
+                      textTransform: 'uppercase',
+                      color: '#C9B4F2',
+                    }}
+                  >
+                    Client engagements
+                  </div>
+                  <div
+                    style={{
+                      fontFamily: playfair,
+                      fontWeight: 700,
+                      fontSize: 34,
+                      letterSpacing: '-0.01em',
+                      color: '#F5F1FC',
+                    }}
+                  >
+                    {s.term}
+                  </div>
                 </div>
                 <div
                   style={{
-                    fontFamily: playfair,
-                    fontWeight: 700,
-                    fontSize: 34,
-                    letterSpacing: '-0.01em',
-                    color: '#F5F1FC',
+                    width: '100%',
+                    maxWidth: 640,
+                    background: 'rgba(255,255,255,0.92)',
+                    backdropFilter: 'blur(10px)',
+                    WebkitBackdropFilter: 'blur(10px)',
+                    border: '1px solid rgba(255,255,255,0.6)',
+                    borderRadius: 20,
+                    boxShadow: '0 24px 56px rgba(10,4,24,0.35)',
+                    padding: '36px 44px',
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: 40,
                   }}
                 >
-                  {s.term}
-                </div>
-                <div style={{ position: 'relative', width: '100%', flex: 1, minHeight: 0 }}>
-                  {s.clients.map((slug, ci) => (
-                    <ScatterLogo key={slug} slug={slug} name={CLIENT_NAMES[slug]} pos={SCATTER[s.clients.length][ci]} />
+                  {s.clients.map((slug) => (
+                    <ClientLogo key={slug} slug={slug} name={CLIENT_NAMES[slug]} />
                   ))}
                 </div>
               </div>
@@ -438,8 +405,6 @@ export default function Work() {
               style={{
                 height: 180,
                 minWidth: 0,
-                borderRadius: 10,
-                background: '#F2EDFA',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
