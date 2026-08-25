@@ -86,7 +86,7 @@ function LogoCard({ slug, name }: { slug: string; name: string }) {
         <img
           src={withBase(`/assets/logos/${slug}.png`)}
           alt={name}
-          style={{ maxHeight: 44, maxWidth: 150, width: 'auto', height: 'auto' }}
+          style={{ maxHeight: 44, maxWidth: 210, width: 'auto', height: 'auto' }}
           onError={() => setFailed(true)}
         />
       )}
