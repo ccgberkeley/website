@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom'
 import Nav from '../components/Nav'
 import ImageSlot from '../components/ImageSlot'
+import RingMotif from '../components/RingMotif'
 import { useReveal } from '../hooks/useReveal'
 import { useCountUp } from '../hooks/useCountUp'
 import { withBase } from '../lib/withBase'
-
-const sora = "'Sora', sans-serif"
+import { poppins, playfair } from '../lib/fonts'
+import { violetGrain, violetGrainLight } from '../lib/texture'
 
 const STATS = [
   { value: 59, label: 'Transfer students' },
@@ -66,30 +67,11 @@ export default function About() {
       <Nav active="About" />
 
       {/* Immersive hero: deep purple, full-bleed */}
-      <div style={{ position: 'relative', background: '#2A1057', overflow: 'hidden' }}>
-        <div
-          style={{
-            position: 'absolute',
-            top: -140,
-            right: -160,
-            width: 520,
-            height: 520,
-            borderRadius: '50%',
-            background: 'rgba(59,24,120,0.65)',
-            animation: 'drift 9s ease-in-out infinite',
-          }}
-        />
-        <div
-          style={{
-            position: 'absolute',
-            bottom: -60,
-            left: -120,
-            width: 380,
-            height: 380,
-            borderRadius: '50%',
-            background: 'rgba(201,180,242,0.10)',
-            animation: 'drift 12s ease-in-out infinite reverse',
-          }}
+      <div style={{ position: 'relative', background: violetGrain, overflow: 'hidden' }}>
+        <RingMotif size={560} style={{ top: -160, right: -180, animation: 'drift 9s ease-in-out infinite' }} />
+        <RingMotif
+          size={420}
+          style={{ bottom: -80, left: -140, animation: 'drift 12s ease-in-out infinite reverse' }}
         />
         <div
           style={{
@@ -105,7 +87,7 @@ export default function About() {
         >
           <div
             style={{
-              fontFamily: sora,
+              fontFamily: poppins,
               fontWeight: 600,
               fontSize: 13,
               letterSpacing: '0.18em',
@@ -118,10 +100,10 @@ export default function About() {
           </div>
           <h1
             style={{
-              fontFamily: sora,
-              fontWeight: 800,
+              fontFamily: playfair,
+              fontWeight: 700,
               fontSize: 68,
-              letterSpacing: '-0.03em',
+              letterSpacing: '-0.01em',
               lineHeight: 1.04,
               color: '#FFFFFF',
               margin: 0,
@@ -165,10 +147,10 @@ export default function About() {
               <div key={s.label} style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
                 <div
                   style={{
-                    fontFamily: sora,
-                    fontWeight: 800,
+                    fontFamily: playfair,
+                    fontWeight: 700,
                     fontSize: 54,
-                    letterSpacing: '-0.03em',
+                    letterSpacing: '-0.01em',
                     color: '#FFFFFF',
                   }}
                 >
@@ -211,7 +193,7 @@ export default function About() {
         <div data-reveal style={{ display: 'flex', flexDirection: 'column', gap: 20, transitionDelay: '0.15s' }}>
           <div
             style={{
-              fontFamily: sora,
+              fontFamily: poppins,
               fontWeight: 600,
               fontSize: 13,
               letterSpacing: '0.14em',
@@ -223,10 +205,10 @@ export default function About() {
           </div>
           <h2
             style={{
-              fontFamily: sora,
-              fontWeight: 800,
+              fontFamily: playfair,
+              fontWeight: 700,
               fontSize: 44,
-              letterSpacing: '-0.03em',
+              letterSpacing: '-0.01em',
               lineHeight: 1.1,
               margin: 0,
             }}
@@ -254,7 +236,7 @@ export default function About() {
         <svg viewBox="0 0 1440 100" preserveAspectRatio="none" style={{ width: '100%', height: 90, display: 'block' }}>
           {wavePaths}
         </svg>
-        <div style={{ background: '#3B1878' }}>
+        <div style={{ background: violetGrainLight }}>
           <div style={{ maxWidth: 1180, margin: '0 auto', padding: '56px 40px 96px' }}>
             <div
               data-reveal
@@ -270,7 +252,7 @@ export default function About() {
             >
               <div
                 style={{
-                  fontFamily: sora,
+                  fontFamily: poppins,
                   fontWeight: 600,
                   fontSize: 13,
                   letterSpacing: '0.14em',
@@ -282,10 +264,10 @@ export default function About() {
               </div>
               <h2
                 style={{
-                  fontFamily: sora,
-                  fontWeight: 800,
+                  fontFamily: playfair,
+                  fontWeight: 700,
                   fontSize: 48,
-                  letterSpacing: '-0.03em',
+                  letterSpacing: '-0.01em',
                   lineHeight: 1.08,
                   margin: 0,
                   color: '#FFFFFF',
@@ -315,7 +297,7 @@ export default function About() {
                   >
                     {v.icon}
                   </div>
-                  <div style={{ fontFamily: sora, fontWeight: 600, fontSize: 19, color: '#FFFFFF' }}>{v.title}</div>
+                  <div style={{ fontFamily: poppins, fontWeight: 600, fontSize: 19, color: '#FFFFFF' }}>{v.title}</div>
                   <div style={{ fontSize: 15, lineHeight: 1.6, color: 'rgba(255,255,255,0.75)', marginTop: -6 }}>
                     {v.desc}
                   </div>
@@ -348,7 +330,7 @@ export default function About() {
         >
           <div
             style={{
-              fontFamily: sora,
+              fontFamily: poppins,
               fontWeight: 600,
               fontSize: 13,
               letterSpacing: '0.14em',
@@ -358,7 +340,7 @@ export default function About() {
           >
             Life at CCG
           </div>
-          <h2 style={{ fontFamily: sora, fontWeight: 800, fontSize: 44, letterSpacing: '-0.03em', margin: 0 }}>
+          <h2 style={{ fontFamily: poppins, fontWeight: 800, fontSize: 44, letterSpacing: '-0.03em', margin: 0 }}>
             More than a <span style={{ color: '#3B1878' }}>club</span>
           </h2>
         </div>
@@ -380,7 +362,7 @@ export default function About() {
         <div
           data-reveal
           style={{
-            background: '#2A1057',
+            background: violetGrain,
             borderRadius: 14,
             padding: '72px 64px',
             display: 'flex',
@@ -392,10 +374,10 @@ export default function About() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             <div
               style={{
-                fontFamily: sora,
-                fontWeight: 800,
+                fontFamily: playfair,
+                fontWeight: 700,
                 fontSize: 36,
-                letterSpacing: '-0.03em',
+                letterSpacing: '-0.01em',
                 color: '#FFFFFF',
                 lineHeight: 1.15,
               }}
@@ -427,7 +409,7 @@ export default function About() {
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
             <img src={withBase('/assets/logo.png')} alt="" style={{ width: 32, height: 32 }} />
-            <span style={{ fontFamily: sora, fontWeight: 700, fontSize: 16, color: '#FFFFFF' }}>
+            <span style={{ fontFamily: poppins, fontWeight: 700, fontSize: 16, color: '#FFFFFF' }}>
               Core Consulting Group
             </span>
           </div>

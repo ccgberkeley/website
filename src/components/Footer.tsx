@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { withBase } from '../lib/withBase'
+import { poppins } from '../lib/fonts'
 
 export default function Footer() {
   return (
@@ -19,7 +20,7 @@ export default function Footer() {
             <img src={withBase('/assets/logo.png')} alt="" style={{ width: 36, height: 36 }} />
             <span
               style={{
-                fontFamily: "'Sora', sans-serif",
+                fontFamily: poppins,
                 fontWeight: 700,
                 fontSize: 17,
                 color: '#FFFFFF',
@@ -37,7 +38,7 @@ export default function Footer() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
           <div
             style={{
-              fontFamily: "'Sora', sans-serif",
+              fontFamily: poppins,
               fontWeight: 600,
               fontSize: 13,
               letterSpacing: '0.14em',
@@ -60,7 +61,7 @@ export default function Footer() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
           <div
             style={{
-              fontFamily: "'Sora', sans-serif",
+              fontFamily: poppins,
               fontWeight: 600,
               fontSize: 13,
               letterSpacing: '0.14em',

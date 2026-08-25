@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import { withBase } from '../lib/withBase'
-
-const sora = "'Sora', sans-serif"
+import { poppins } from '../lib/fonts'
 
 // One-row footer used by the interior pages; `links` matches each design file.
 export default function CompactFooter({ links }: { links: { label: string; to: string }[] }) {
@@ -20,7 +19,7 @@ export default function CompactFooter({ links }: { links: { label: string; to: s
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
           <img src={withBase('/assets/logo.png')} alt="" style={{ width: 32, height: 32 }} />
-          <span style={{ fontFamily: sora, fontWeight: 700, fontSize: 16, color: '#FFFFFF' }}>
+          <span style={{ fontFamily: poppins, fontWeight: 700, fontSize: 16, color: '#FFFFFF' }}>
             Core Consulting Group
           </span>
         </div>

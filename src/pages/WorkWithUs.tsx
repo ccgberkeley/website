@@ -3,8 +3,8 @@ import Nav from '../components/Nav'
 import CompactFooter from '../components/CompactFooter'
 import { useReveal } from '../hooks/useReveal'
 import { mailSvg, instaSvg } from './Contact'
-
-const sora = "'Sora', sans-serif"
+import { poppins, playfair } from '../lib/fonts'
+import { violetGrain } from '../lib/texture'
 
 const FAQS = [
   {
@@ -73,7 +73,7 @@ export default function WorkWithUs() {
       <Nav />
 
       {/* Hero */}
-      <div style={{ position: 'relative', background: '#2A1057' }}>
+      <div style={{ position: 'relative', background: violetGrain }}>
         <div
           style={{
             maxWidth: 1180,
@@ -88,7 +88,7 @@ export default function WorkWithUs() {
         >
           <div
             style={{
-              fontFamily: sora,
+              fontFamily: poppins,
               fontWeight: 600,
               fontSize: 13,
               letterSpacing: '0.18em',
@@ -101,10 +101,10 @@ export default function WorkWithUs() {
           </div>
           <h1
             style={{
-              fontFamily: sora,
-              fontWeight: 800,
+              fontFamily: playfair,
+              fontWeight: 700,
               fontSize: 60,
-              letterSpacing: '-0.03em',
+              letterSpacing: '-0.01em',
               lineHeight: 1.05,
               color: '#FFFFFF',
               margin: 0,
@@ -147,7 +147,7 @@ export default function WorkWithUs() {
         <div data-reveal style={{ display: 'flex', flexDirection: 'column', gap: 24, paddingTop: 16 }}>
           <div
             style={{
-              fontFamily: sora,
+              fontFamily: poppins,
               fontWeight: 600,
               fontSize: 13,
               letterSpacing: '0.14em',
@@ -159,10 +159,10 @@ export default function WorkWithUs() {
           </div>
           <h2
             style={{
-              fontFamily: sora,
-              fontWeight: 800,
+              fontFamily: playfair,
+              fontWeight: 700,
               fontSize: 40,
-              letterSpacing: '-0.03em',
+              letterSpacing: '-0.01em',
               lineHeight: 1.1,
               margin: 0,
             }}
@@ -252,7 +252,7 @@ export default function WorkWithUs() {
           >
             <div
               style={{
-                fontFamily: sora,
+                fontFamily: poppins,
                 fontWeight: 600,
                 fontSize: 13,
                 letterSpacing: '0.14em',
@@ -262,7 +262,7 @@ export default function WorkWithUs() {
             >
               Before you ask
             </div>
-            <h2 style={{ fontFamily: sora, fontWeight: 800, fontSize: 44, letterSpacing: '-0.03em', margin: 0 }}>
+            <h2 style={{ fontFamily: playfair, fontWeight: 700, fontSize: 44, letterSpacing: '-0.01em', margin: 0 }}>
               Common <span style={{ color: '#3B1878' }}>questions</span>
             </h2>
           </div>
@@ -273,7 +273,7 @@ export default function WorkWithUs() {
                 data-reveal
                 style={{ display: 'flex', flexDirection: 'column', gap: 10, transitionDelay: `${i * 0.05}s` }}
               >
-                <div style={{ fontFamily: sora, fontWeight: 600, fontSize: 19, letterSpacing: '-0.01em' }}>{f.q}</div>
+                <div style={{ fontFamily: poppins, fontWeight: 600, fontSize: 19, letterSpacing: '-0.01em' }}>{f.q}</div>
                 <div style={{ fontSize: 15.5, lineHeight: 1.65, color: '#5C5468' }}>
                   {f.a ?? (
                     <>

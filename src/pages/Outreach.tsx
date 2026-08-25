@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom'
 import Nav from '../components/Nav'
 import ImageSlot from '../components/ImageSlot'
+import RingMotif from '../components/RingMotif'
 import { useReveal } from '../hooks/useReveal'
 import { withBase } from '../lib/withBase'
-
-const sora = "'Sora', sans-serif"
+import { poppins, playfair } from '../lib/fonts'
+import { violetGrain, violetGrainLight } from '../lib/texture'
 
 const BRANCHES = [
   { name: 'Pasadena City College', region: 'Pasadena' },
@@ -116,7 +117,7 @@ function heroIn(delay: number): React.CSSProperties {
 }
 
 const eyebrow: React.CSSProperties = {
-  fontFamily: sora,
+  fontFamily: poppins,
   fontWeight: 600,
   fontSize: 13,
   letterSpacing: '0.14em',
@@ -132,30 +133,11 @@ export default function Outreach() {
       <Nav active="Outreach" />
 
       {/* Hero */}
-      <div style={{ position: 'relative', background: '#2A1057', overflow: 'hidden' }}>
-        <div
-          style={{
-            position: 'absolute',
-            top: -140,
-            right: -160,
-            width: 520,
-            height: 520,
-            borderRadius: '50%',
-            background: 'rgba(59,24,120,0.65)',
-            animation: 'drift 9s ease-in-out infinite',
-          }}
-        />
-        <div
-          style={{
-            position: 'absolute',
-            bottom: -60,
-            left: -120,
-            width: 380,
-            height: 380,
-            borderRadius: '50%',
-            background: 'rgba(201,180,242,0.10)',
-            animation: 'drift 12s ease-in-out infinite reverse',
-          }}
+      <div style={{ position: 'relative', background: violetGrain, overflow: 'hidden' }}>
+        <RingMotif size={560} style={{ top: -160, right: -180, animation: 'drift 9s ease-in-out infinite' }} />
+        <RingMotif
+          size={420}
+          style={{ bottom: -80, left: -140, animation: 'drift 12s ease-in-out infinite reverse' }}
         />
         <div
           style={{
@@ -171,7 +153,7 @@ export default function Outreach() {
         >
           <div
             style={{
-              fontFamily: sora,
+              fontFamily: poppins,
               fontWeight: 600,
               fontSize: 13,
               letterSpacing: '0.18em',
@@ -184,10 +166,10 @@ export default function Outreach() {
           </div>
           <h1
             style={{
-              fontFamily: sora,
-              fontWeight: 800,
+              fontFamily: playfair,
+              fontWeight: 700,
               fontSize: 64,
-              letterSpacing: '-0.03em',
+              letterSpacing: '-0.01em',
               lineHeight: 1.05,
               color: '#FFFFFF',
               margin: 0,
@@ -238,10 +220,10 @@ export default function Outreach() {
           <div style={eyebrow}>Our story</div>
           <h2
             style={{
-              fontFamily: sora,
-              fontWeight: 800,
+              fontFamily: playfair,
+              fontWeight: 700,
               fontSize: 44,
-              letterSpacing: '-0.03em',
+              letterSpacing: '-0.01em',
               lineHeight: 1.1,
               margin: 0,
             }}
@@ -281,7 +263,7 @@ export default function Outreach() {
           <path d="M0,80 C420,-20 1020,110 1440,30 L1440,100 L0,100 Z" fill="#C9B4F2" opacity="0.45" />
           <path d="M0,92 C440,4 1040,116 1440,44 L1440,100 L0,100 Z" fill="#3B1878" />
         </svg>
-        <div style={{ background: '#3B1878' }}>
+        <div style={{ background: violetGrainLight }}>
           <div style={{ maxWidth: 1180, margin: '0 auto', padding: '48px 40px 88px' }}>
             <div
               data-reveal
@@ -297,10 +279,10 @@ export default function Outreach() {
               <div style={{ ...eyebrow, color: '#C9B4F2' }}>Our network</div>
               <h2
                 style={{
-                  fontFamily: sora,
+                  fontFamily: playfair,
                   fontWeight: 700,
                   fontSize: 48,
-                  letterSpacing: '-0.02em',
+                  letterSpacing: '-0.01em',
                   margin: 0,
                   color: '#FFFFFF',
                 }}
@@ -315,7 +297,7 @@ export default function Outreach() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 14 }}>
               {BRANCHES.map((b) => (
                 <div key={b.name} data-reveal className="branch-card">
-                  <div style={{ fontFamily: sora, fontWeight: 600, fontSize: 17, color: '#FFFFFF' }}>{b.name}</div>
+                  <div style={{ fontFamily: poppins, fontWeight: 600, fontSize: 17, color: '#FFFFFF' }}>{b.name}</div>
                   <div style={{ fontSize: 14, color: '#C9B4F2' }}>{b.region}</div>
                 </div>
               ))}
@@ -346,7 +328,7 @@ export default function Outreach() {
           }}
         >
           <div style={eyebrow}>The partnership</div>
-          <h2 style={{ fontFamily: sora, fontWeight: 700, fontSize: 44, letterSpacing: '-0.02em', margin: 0 }}>
+          <h2 style={{ fontFamily: playfair, fontWeight: 700, fontSize: 44, letterSpacing: '-0.01em', margin: 0 }}>
             What every branch <span style={{ color: '#3B1878' }}>gets</span>
           </h2>
         </div>
@@ -379,7 +361,7 @@ export default function Outreach() {
               >
                 {p.icon}
               </div>
-              <div style={{ fontFamily: sora, fontWeight: 600, fontSize: 19 }}>{p.title}</div>
+              <div style={{ fontFamily: poppins, fontWeight: 600, fontSize: 19 }}>{p.title}</div>
               <div style={{ fontSize: 15, lineHeight: 1.6, color: '#5C5468', marginTop: -5 }}>{p.desc}</div>
             </div>
           ))}
@@ -403,10 +385,10 @@ export default function Outreach() {
             <div style={eyebrow}>Start a branch</div>
             <h2
               style={{
-                fontFamily: sora,
-                fontWeight: 800,
+                fontFamily: playfair,
+                fontWeight: 700,
                 fontSize: 44,
-                letterSpacing: '-0.03em',
+                letterSpacing: '-0.01em',
                 lineHeight: 1.1,
                 margin: 0,
               }}
@@ -438,9 +420,9 @@ export default function Outreach() {
                   borderBottom: '1px solid #E6E1EE',
                 }}
               >
-                <div style={{ fontFamily: sora, fontWeight: 800, fontSize: 32, color: '#C9B4F2' }}>{s.num}</div>
+                <div style={{ fontFamily: playfair, fontWeight: 700, fontSize: 32, color: '#C9B4F2' }}>{s.num}</div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-                  <div style={{ fontFamily: sora, fontWeight: 600, fontSize: 20 }}>{s.title}</div>
+                  <div style={{ fontFamily: poppins, fontWeight: 600, fontSize: 20 }}>{s.title}</div>
                   <div style={{ fontSize: 15.5, lineHeight: 1.65, color: '#5C5468' }}>{s.body}</div>
                 </div>
               </div>
@@ -450,19 +432,8 @@ export default function Outreach() {
       </div>
 
       {/* CTA */}
-      <div style={{ position: 'relative', background: '#2A1057', overflow: 'hidden' }}>
-        <div
-          style={{
-            position: 'absolute',
-            top: -120,
-            left: -140,
-            width: 420,
-            height: 420,
-            borderRadius: '50%',
-            background: 'rgba(59,24,120,0.65)',
-            animation: 'drift 10s ease-in-out infinite',
-          }}
-        />
+      <div style={{ position: 'relative', background: violetGrain, overflow: 'hidden' }}>
+        <RingMotif size={460} style={{ top: -140, left: -160, animation: 'drift 10s ease-in-out infinite' }} />
         <div
           style={{
             position: 'relative',
@@ -478,10 +449,10 @@ export default function Outreach() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             <div
               style={{
-                fontFamily: sora,
-                fontWeight: 800,
+                fontFamily: playfair,
+                fontWeight: 700,
                 fontSize: 40,
-                letterSpacing: '-0.03em',
+                letterSpacing: '-0.01em',
                 color: '#FFFFFF',
                 lineHeight: 1.15,
               }}
@@ -513,7 +484,7 @@ export default function Outreach() {
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
             <img src={withBase('/assets/logo.png')} alt="" style={{ width: 32, height: 32 }} />
-            <span style={{ fontFamily: sora, fontWeight: 700, fontSize: 16, color: '#FFFFFF' }}>
+            <span style={{ fontFamily: poppins, fontWeight: 700, fontSize: 16, color: '#FFFFFF' }}>
               Core Consulting Group
             </span>
           </div>

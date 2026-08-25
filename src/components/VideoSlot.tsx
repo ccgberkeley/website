@@ -62,7 +62,7 @@ export default function VideoSlot({ src, placeholder, style }: VideoSlotProps) {
             border: `2px dashed ${dragOver ? '#FFFFFF' : 'rgba(255,255,255,0.35)'}`,
             borderRadius: 10,
             color: 'rgba(255,255,255,0.55)',
-            fontFamily: "'Sora', sans-serif",
+            fontFamily: "'Poppins', sans-serif",
             fontSize: 14,
             fontWeight: 500,
             transition: 'border-color 0.2s',
