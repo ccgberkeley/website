@@ -122,7 +122,12 @@ function LogoCard({ slug, name }: { slug: string; name: string }) {
         <img
           src={withBase(`/assets/logos/${slug}.png`)}
           alt={name}
-          style={{ maxHeight: 44, maxWidth: 140, width: 'auto', height: 'auto' }}
+          style={{
+            maxHeight: slug === 'intel' ? 34 : 44,
+            maxWidth: 140,
+            width: 'auto',
+            height: 'auto',
+          }}
           onError={() => setFailed(true)}
         />
       )}
@@ -183,7 +188,7 @@ export default function Home() {
               ...heroIn(0),
             }}
           >
-            UC Berkeley · Student-run consultancy
+            UC Berkeley · Haas School of Business
           </div>
           <h1
             style={{
