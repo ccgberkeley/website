@@ -247,6 +247,7 @@ export default function Outreach() {
         >
           <ImageSlot
             id="ccr-story-photo"
+            src={withBase('/assets/photos/outreach-story.jpg')}
             placeholder="Drop a photo — transfer members or an outreach event"
             style={{ width: '100%', height: 420 }}
           />

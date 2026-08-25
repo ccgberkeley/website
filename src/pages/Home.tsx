@@ -153,7 +153,12 @@ export default function Home() {
       {/* Hero */}
       <div id="top" style={{ position: 'relative', height: '84vh', minHeight: 580, overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, animation: 'slowZoom 18s ease-out both' }}>
-          <ImageSlot id="hero-photo" placeholder="Drop your club photo here" style={{ position: 'absolute', inset: 0 }} />
+          <ImageSlot
+            id="hero-photo"
+            src={withBase('/assets/photos/home-hero.jpg')}
+            placeholder="Drop your club photo here"
+            style={{ position: 'absolute', inset: 0 }}
+          />
         </div>
         <div
           style={{
@@ -319,7 +324,12 @@ export default function Home() {
             transitionDelay: '0.15s',
           }}
         >
-          <ImageSlot id="about-photo" placeholder="Team photo" style={{ width: '100%', height: 440 }} />
+          <ImageSlot
+            id="about-photo"
+            src={withBase('/assets/photos/home-about.jpg')}
+            placeholder="Team photo"
+            style={{ width: '100%', height: 440 }}
+          />
         </div>
       </div>
 
