@@ -1,42 +1,75 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Nav from '../components/Nav'
-import ImageSlot from '../components/ImageSlot'
 import { useReveal } from '../hooks/useReveal'
 import { withBase } from '../lib/withBase'
-import { poppins, playfair, playfairItalic } from '../lib/fonts'
+import { poppins, playfair } from '../lib/fonts'
 import { violetGrain } from '../lib/texture'
 
-const PROJECTS = [
-  { id: 'work-team-1', name: 'Project name one', term: 'Fall 2025' },
-  { id: 'work-team-2', name: 'Project name two', term: 'Spring 2026' },
-  { id: 'work-team-3', name: 'Intel', term: 'Fall 2026' },
+// Display names for the logo slugs used below (shared with the client marquee).
+const CLIENT_NAMES: Record<string, string> = {
+  intel: 'Intel',
+  raceforward: 'Race Forward',
+  autodesk: 'Autodesk',
+  qualcomm: 'Qualcomm',
+  jnj: 'Johnson & Johnson',
+  oracle: 'Oracle',
+  alaska: 'Alaska Airlines',
+  urban: 'Urban Outfitters',
+  tiktok: 'TikTok',
+}
+
+const SEMESTERS = [
+  { id: 'sem-sp26', term: 'Spring 2026', clients: ['intel', 'raceforward', 'autodesk'] },
+  { id: 'sem-fa25', term: 'Fall 2025', clients: ['qualcomm', 'jnj', 'autodesk'] },
+  { id: 'sem-sp25', term: 'Spring 2025', clients: ['oracle', 'alaska', 'urban', 'tiktok'] },
 ]
+
+const svcIcon = (path: React.ReactNode) => (
+  <svg width={56} height={56} viewBox="0 0 24 24" fill="none" stroke="#3B1878" strokeWidth="1.4">
+    {path}
+  </svg>
+)
 
 const SERVICES = [
   {
     num: '01',
-    slot: 'svc-1',
     title: 'Market expansion',
     desc: 'Market sizing, customer segmentation, competitive landscaping, and go-to-market strategy for teams launching new products or entering new regions. Past work includes international expansion guides and channel strategies.',
+    icon: svcIcon(
+      <>
+        <circle cx="12" cy="12" r="9" />
+        <path d="M12 3v18M3 12h18" />
+      </>,
+    ),
   },
   {
     num: '02',
-    slot: 'svc-2',
     title: 'Data & analytics',
     desc: "Statistical modeling, forecasting, survey design, and dashboards that turn raw data into clear decisions. We've tackled immense data-driven projects involving quantitative models and white papers.",
+    icon: svcIcon(<path d="M4 19h16M6 16v-5M11 16V8M16 16v-8" />),
   },
   {
     num: '03',
-    slot: 'svc-3',
     title: 'Growth strategy',
     desc: 'Pricing, positioning, brand audits, and product roadmaps for startups and established firms alike. Deliverables include slide decks, written reports, and midpoint plus final presentations.',
+    icon: svcIcon(
+      <>
+        <rect x="4" y="4" width="16" height="16" rx="2" />
+        <path d="M4 10h16M10 10v10" />
+      </>,
+    ),
   },
   {
     num: '04',
-    slot: 'svc-4',
     title: 'Operations',
     desc: 'Process audits, cost analysis, and organizational design that cut friction. Each recommendation comes with an implementation plan your team can act on the day we hand it off.',
+    icon: svcIcon(
+      <>
+        <circle cx="12" cy="12" r="3" />
+        <circle cx="12" cy="12" r="9" strokeDasharray="4 3" />
+      </>,
+    ),
   },
 ]
 
@@ -105,7 +138,7 @@ export default function Work() {
 
   const startRotation = () => {
     if (rotTimer.current) clearInterval(rotTimer.current)
-    rotTimer.current = setInterval(() => setSlide((s) => (s + 1) % 3), 5000)
+    rotTimer.current = setInterval(() => setSlide((s) => (s + 1) % SEMESTERS.length), 5000)
   }
 
   useEffect(() => {
@@ -188,54 +221,58 @@ export default function Work() {
             Partnering with <span style={{ color: '#C9B4F2' }}>purpose</span>
           </h1>
 
-          {/* Rotating project cutouts */}
-          <div style={{ position: 'relative', width: 'min(760px, 100%)', height: 440, marginTop: 16, ...heroIn(0.24) }}>
-            {PROJECTS.map((p, i) => (
+          {/* Rotating semester client showcase */}
+          <div style={{ position: 'relative', width: 'min(760px, 100%)', height: 400, marginTop: 16, ...heroIn(0.24) }}>
+            {SEMESTERS.map((s, i) => (
               <div
-                key={p.id}
+                key={s.id}
                 style={{
                   position: 'absolute',
                   inset: 0,
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
-                  gap: 16,
+                  justifyContent: 'center',
+                  gap: 28,
+                  background: 'rgba(255,255,255,0.06)',
+                  border: '1px solid rgba(255,255,255,0.14)',
+                  borderRadius: 20,
+                  padding: '44px 40px',
                   opacity: slide === i ? 1 : 0,
                   zIndex: slide === i ? 2 : 1,
                   pointerEvents: slide === i ? 'auto' : 'none',
                   transition: 'opacity 0.9s ease',
                 }}
               >
-                <div style={{ width: '100%', flex: 1, minHeight: 0 }}>
-                  <ImageSlot
-                    id={p.id}
-                    placeholder="Project team cutout photo (transparent PNG)"
-                    style={{ width: '100%', height: '100%' }}
-                  />
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2 }}>
-                  <span
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6 }}>
+                  <div
+                    style={{
+                      fontFamily: poppins,
+                      fontWeight: 600,
+                      fontSize: 13,
+                      letterSpacing: '0.14em',
+                      textTransform: 'uppercase',
+                      color: '#C9B4F2',
+                    }}
+                  >
+                    Client engagements
+                  </div>
+                  <div
                     style={{
                       fontFamily: playfair,
                       fontWeight: 700,
                       fontSize: 34,
                       letterSpacing: '-0.01em',
                       color: '#F5F1FC',
-                      textShadow: '0 0 24px rgba(201,180,242,0.55), 0 2px 18px rgba(25,19,34,0.6)',
                     }}
                   >
-                    {p.name}
-                  </span>
-                  <span
-                    style={{
-                      ...playfairItalic,
-                      fontSize: 22,
-                      color: '#C9B4F2',
-                      textShadow: '0 0 18px rgba(201,180,242,0.6)',
-                    }}
-                  >
-                    {p.term}
-                  </span>
+                    {s.term}
+                  </div>
+                </div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 16 }}>
+                  {s.clients.map((slug) => (
+                    <LogoCard key={slug} slug={slug} name={CLIENT_NAMES[slug]} />
+                  ))}
                 </div>
               </div>
             ))}
@@ -243,11 +280,11 @@ export default function Work() {
 
           {/* Dots */}
           <div style={{ display: 'flex', gap: 10, marginTop: 6 }}>
-            {PROJECTS.map((p, i) => (
+            {SEMESTERS.map((s, i) => (
               <button
-                key={p.id}
+                key={s.id}
                 onClick={() => goTo(i)}
-                aria-label={`Project ${i + 1}`}
+                aria-label={`Semester ${i + 1}`}
                 style={{
                   width: 10,
                   height: 10,
@@ -335,9 +372,20 @@ export default function Work() {
               <div style={{ fontSize: 16, lineHeight: 1.65, color: '#5C5468' }}>{s.desc}</div>
             </div>
           )
-          const photo = (
-            <div key="photo" style={{ height: 180, minWidth: 0, overflow: 'hidden', borderRadius: 10 }}>
-              <ImageSlot id={s.slot} placeholder="Project photo" style={{ width: '100%', height: 180 }} />
+          const graphic = (
+            <div
+              key="graphic"
+              style={{
+                height: 180,
+                minWidth: 0,
+                borderRadius: 10,
+                background: '#F2EDFA',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              {s.icon}
             </div>
           )
           return (
@@ -356,7 +404,7 @@ export default function Work() {
                 padding: 48,
               }}
             >
-              {i % 2 ? [photo, text, number] : [number, text, photo]}
+              {i % 2 ? [graphic, text, number] : [number, text, graphic]}
             </div>
           )
         })}
