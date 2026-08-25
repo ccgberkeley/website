@@ -209,6 +209,7 @@ export default function Team() {
           <div style={{ position: 'absolute', inset: 0 }}>
             <ImageSlot
               id="team-exec-banner"
+              src={withBase('/assets/photos/team-banner.jpg')}
               placeholder="Drop your full team banner photo here (PNG/JPG)"
               style={{ width: '100%', height: '100%' }}
             />

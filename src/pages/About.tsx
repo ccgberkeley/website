@@ -186,6 +186,7 @@ export default function About() {
         <div data-reveal style={{ height: 460, minWidth: 0, overflow: 'hidden', borderRadius: 14 }}>
           <ImageSlot
             id="about-page-photo"
+            src={withBase('/assets/photos/about-team.jpg')}
             placeholder="Drop a candid team photo here"
             style={{ width: '100%', height: 460 }}
           />
@@ -346,12 +347,17 @@ export default function About() {
         </div>
         <div data-reveal style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
           {[
-            { id: 'life-photo-1', placeholder: 'Retreat photo' },
-            { id: 'life-photo-2', placeholder: 'Client presentation photo' },
-            { id: 'life-photo-3', placeholder: 'Social event photo' },
+            { id: 'life-photo-1', placeholder: 'Retreat photo', src: 'about-retreat.jpg' },
+            { id: 'life-photo-2', placeholder: 'Client presentation photo', src: 'about-presentation.jpg' },
+            { id: 'life-photo-3', placeholder: 'Social event photo', src: 'about-social.jpg' },
           ].map((p) => (
             <div key={p.id} style={{ height: 280, overflow: 'hidden', borderRadius: 14 }}>
-              <ImageSlot id={p.id} placeholder={p.placeholder} style={{ width: '100%', height: 280 }} />
+              <ImageSlot
+                id={p.id}
+                src={withBase(`/assets/photos/${p.src}`)}
+                placeholder={p.placeholder}
+                style={{ width: '100%', height: 280 }}
+              />
             </div>
           ))}
         </div>

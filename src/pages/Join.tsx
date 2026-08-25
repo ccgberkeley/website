@@ -306,7 +306,12 @@ export default function Join() {
                 border: '6px solid #FFFFFF',
               }}
             >
-              <ImageSlot id="join-photo-1" placeholder="Recruitment event photo" style={{ width: '100%', height: '100%' }} />
+              <ImageSlot
+                id="join-photo-1"
+                src={withBase('/assets/photos/join-recruitment.jpg')}
+                placeholder="Recruitment event photo"
+                style={{ width: '100%', height: '100%' }}
+              />
             </div>
             <div
               style={{
@@ -319,7 +324,12 @@ export default function Join() {
                 border: '6px solid #FFFFFF',
               }}
             >
-              <ImageSlot id="join-photo-2" placeholder="Social night photo" style={{ width: '100%', height: '100%' }} />
+              <ImageSlot
+                id="join-photo-2"
+                src={withBase('/assets/photos/join-social-night.jpg')}
+                placeholder="Social night photo"
+                style={{ width: '100%', height: '100%' }}
+              />
             </div>
           </div>
         </div>
@@ -399,12 +409,27 @@ export default function Join() {
       <div style={{ maxWidth: 1180, margin: '0 auto', padding: '64px 40px 96px' }}>
         <div data-reveal style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
           {[
-            { id: 'join-strip-1', placeholder: 'Info session photo', transform: 'rotate(-1.5deg)' },
-            { id: 'join-strip-2', placeholder: 'New member class photo', transform: 'rotate(1deg) translateY(10px)' },
-            { id: 'join-strip-3', placeholder: 'Retreat photo', transform: 'rotate(-1deg)' },
+            {
+              id: 'join-strip-1',
+              placeholder: 'Info session photo',
+              transform: 'rotate(-1.5deg)',
+              src: 'join-info-session.jpg',
+            },
+            {
+              id: 'join-strip-2',
+              placeholder: 'New member class photo',
+              transform: 'rotate(1deg) translateY(10px)',
+              src: 'join-new-member-class.jpg',
+            },
+            { id: 'join-strip-3', placeholder: 'Retreat photo', transform: 'rotate(-1deg)', src: 'join-retreat.jpg' },
           ].map((p) => (
             <div key={p.id} style={{ height: 260, overflow: 'hidden', borderRadius: 14, transform: p.transform }}>
-              <ImageSlot id={p.id} placeholder={p.placeholder} style={{ width: '100%', height: 260 }} />
+              <ImageSlot
+                id={p.id}
+                src={withBase(`/assets/photos/${p.src}`)}
+                placeholder={p.placeholder}
+                style={{ width: '100%', height: 260 }}
+              />
             </div>
           ))}
         </div>
