@@ -593,7 +593,7 @@ export default function Work() {
               Become our next client
             </div>
             <div style={{ fontSize: 17, lineHeight: 1.6, color: '#C9B4F2' }}>
-              Applications for Fall 2026 are open. Reach out at berkeleyccg@gmail.com.
+              Have a project in mind? Reach out at berkeleyccg@gmail.com and let's talk.
             </div>
           </div>
           <Link to="/contact" className="btn-white" style={{ flexShrink: 0 }}>

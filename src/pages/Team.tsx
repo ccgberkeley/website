@@ -223,16 +223,6 @@ export default function Team() {
             >
               Core Consulting Group
             </div>
-            <div
-              style={{
-                ...serifItalic,
-                fontSize: 28,
-                color: '#C9B4F2',
-                textShadow: '0 0 18px rgba(201,180,242,0.5)',
-              }}
-            >
-              Leadership · 2026
-            </div>
           </div>
         </div>
         <svg viewBox="0 0 1440 100" preserveAspectRatio="none" style={{ width: '100%', height: 90, display: 'block' }}>
