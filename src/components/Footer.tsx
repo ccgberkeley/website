@@ -71,8 +71,8 @@ export default function Footer() {
           >
             Contact
           </div>
-          <a href="mailto:Berkeleyccg@gmail.com" className="footer-link">
-            Berkeleyccg@gmail.com
+          <a href="mailto:berkeleyccg@gmail.com" className="footer-link">
+            berkeleyccg@gmail.com
           </a>
           <a href="https://www.instagram.com/berkeleyccg/" className="footer-link">
             Instagram

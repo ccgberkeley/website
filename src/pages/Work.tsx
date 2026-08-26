@@ -567,7 +567,7 @@ export default function Work() {
               Become our next client
             </div>
             <div style={{ fontSize: 17, lineHeight: 1.6, color: '#C9B4F2' }}>
-              Applications for Fall 2026 are open — reach out at Berkeleyccg@gmail.com.
+              Applications for Fall 2026 are open — reach out at berkeleyccg@gmail.com.
             </div>
           </div>
           <Link to="/work-with-us" className="btn-white" style={{ flexShrink: 0 }}>
@@ -605,8 +605,8 @@ export default function Work() {
             <Link to="/work-with-us" className="footer-link-muted">
               Contact
             </Link>
-            <a href="mailto:Berkeleyccg@gmail.com" className="footer-link-muted">
-              Berkeleyccg@gmail.com
+            <a href="mailto:berkeleyccg@gmail.com" className="footer-link-muted">
+              berkeleyccg@gmail.com
             </a>
             <span style={{ fontSize: 13, color: '#5C5468' }}>© 2026 CCG</span>
           </div>

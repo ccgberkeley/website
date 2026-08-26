@@ -474,8 +474,8 @@ export default function Team() {
             <Link to="/join" className="footer-link-muted">
               Join
             </Link>
-            <a href="mailto:Berkeleyccg@gmail.com" className="footer-link-muted">
-              Berkeleyccg@gmail.com
+            <a href="mailto:berkeleyccg@gmail.com" className="footer-link-muted">
+              berkeleyccg@gmail.com
             </a>
             <span style={{ fontSize: 13, color: '#5C5468' }}>© 2026 CCG</span>
           </div>

@@ -66,7 +66,7 @@ export default function WorkWithUs() {
 
   const subject = encodeURIComponent(`Client inquiry — ${[firstName, lastName].filter(Boolean).join(' ')}`)
   const body = encodeURIComponent(`${message || ''}${email ? `\n\nReply to: ${email}` : ''}`)
-  const mailtoHref = `mailto:Berkeleyccg@gmail.com?subject=${subject}&body=${body}`
+  const mailtoHref = `mailto:berkeleyccg@gmail.com?subject=${subject}&body=${body}`
 
   return (
     <div style={{ overflowX: 'hidden' }}>
@@ -174,9 +174,9 @@ export default function WorkWithUs() {
             We'll follow up with next steps and a short intro call.
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginTop: 8 }}>
-            <a href="mailto:Berkeleyccg@gmail.com" className="contact-line">
+            <a href="mailto:berkeleyccg@gmail.com" className="contact-line">
               {iconChip(mailSvg)}
-              Berkeleyccg@gmail.com
+              berkeleyccg@gmail.com
             </a>
             <a href="https://www.instagram.com/berkeleyccg/" className="contact-line">
               {iconChip(instaSvg)}
@@ -278,8 +278,8 @@ export default function WorkWithUs() {
                   {f.a ?? (
                     <>
                       Send us a message above or email{' '}
-                      <a href="mailto:Berkeleyccg@gmail.com" style={{ fontWeight: 600 }}>
-                        Berkeleyccg@gmail.com
+                      <a href="mailto:berkeleyccg@gmail.com" style={{ fontWeight: 600 }}>
+                        berkeleyccg@gmail.com
                       </a>
                       . We'll set up a short intro call to scope the engagement together.
                     </>
