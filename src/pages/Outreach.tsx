@@ -4,7 +4,7 @@ import ImageSlot from '../components/ImageSlot'
 import RingMotif from '../components/RingMotif'
 import { useReveal } from '../hooks/useReveal'
 import { withBase } from '../lib/withBase'
-import { poppins, playfair } from '../lib/fonts'
+import { poppins, playfair, playfairItalic } from '../lib/fonts'
 import { violetGrain, violetGrainLight } from '../lib/texture'
 
 const BRANCHES = [
@@ -16,7 +16,7 @@ const BRANCHES = [
   { name: 'Sacramento City College', region: 'Sacramento' },
   { name: 'El Camino College', region: 'Torrance' },
   { name: 'Long Beach City College', region: 'Long Beach' },
-  { name: 'Solano Community College', region: 'Coming Soon' },
+  { name: 'Solano Community College', region: 'Solano' },
 ]
 
 const STEPS = [
@@ -300,6 +300,13 @@ export default function Outreach() {
                   <div style={{ fontSize: 14, color: '#C9B4F2' }}>{b.region}</div>
                 </div>
               ))}
+              <div
+                data-reveal
+                className="branch-card"
+                style={{ alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}
+              >
+                <div style={{ ...playfairItalic, fontSize: 18, color: '#C9B4F2' }}>More Coming...</div>
+              </div>
             </div>
           </div>
         </div>
