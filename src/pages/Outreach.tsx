@@ -177,9 +177,7 @@ export default function Outreach() {
               ...heroIn(0.12),
             }}
           >
-            We came from community college.
-            <br />
-            <span style={{ color: '#C9B4F2' }}>Now we're giving back.</span>
+            We came from <span style={{ color: '#C9B4F2' }}>community college.</span>
           </h1>
           <div
             style={{
