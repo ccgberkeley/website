@@ -354,13 +354,7 @@ export default function Contact() {
         </div>
       </div>
 
-      <CompactFooter
-        links={[
-          { label: 'Home', to: '/' },
-          { label: 'About', to: '/about' },
-          { label: 'Join', to: '/join' },
-        ]}
-      />
+      <CompactFooter links={[]} />
     </div>
   )
 }

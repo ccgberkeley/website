@@ -470,12 +470,6 @@ export default function Join() {
             </span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
-            <Link to="/" className="footer-link-muted">
-              Home
-            </Link>
-            <Link to="/about" className="footer-link-muted">
-              About
-            </Link>
             <Link to="/work" className="footer-link-muted">
               Our work
             </Link>

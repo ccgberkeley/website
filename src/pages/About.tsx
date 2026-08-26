@@ -420,9 +420,6 @@ export default function About() {
             </span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
-            <Link to="/" className="footer-link-muted">
-              Home
-            </Link>
             <Link to="/work" className="footer-link-muted">
               Our work
             </Link>

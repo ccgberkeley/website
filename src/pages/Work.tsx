@@ -596,12 +596,6 @@ export default function Work() {
             </span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
-            <Link to="/" className="footer-link-muted">
-              Home
-            </Link>
-            <Link to="/about" className="footer-link-muted">
-              About
-            </Link>
             <Link to="/contact" className="footer-link-muted">
               Contact
             </Link>
