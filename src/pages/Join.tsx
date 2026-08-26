@@ -166,7 +166,7 @@ export default function Join() {
             the rest. Scroll through the recruitment timeline below.
           </div>
           <div style={{ display: 'flex', gap: 16, marginTop: 6, ...heroIn(0.36) }}>
-            <a href="https://www.instagram.com/berkeleyccg/" className="btn-white">
+            <a href="https://forms.gle/ueVvtUbLAAmwhcUv5" target="_blank" rel="noopener noreferrer" className="btn-white">
               Apply now
             </a>
             <a href="#timeline" className="btn-outline-light">
@@ -444,7 +444,13 @@ export default function Join() {
               Applications for Spring 2026 close Jan 29 at 11 pm.
             </div>
           </div>
-          <a href="https://www.instagram.com/berkeleyccg/" className="btn-white" style={{ flexShrink: 0 }}>
+          <a
+            href="https://forms.gle/ueVvtUbLAAmwhcUv5"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-white"
+            style={{ flexShrink: 0 }}
+          >
             Apply now
           </a>
         </div>

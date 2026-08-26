@@ -7,18 +7,18 @@ import { poppins, playfair, playfairItalic as serifItalic } from '../lib/fonts'
 import { violetGrain, violetGrainLight } from '../lib/texture'
 
 const EXECS = [
-  { slot: 'team-eric', name: 'Eric Xie', role: 'President', linkedin: 'https://www.linkedin.com/in/frankcowong/', email: 'z4@berkeley.edu' },
-  { slot: 'team-gavin', name: 'Gavin Pon', role: 'Vice President of Consulting', linkedin: 'https://www.linkedin.com/in/frankcowong/', email: 'gavinpon13@berkeley.edu' },
-  { slot: 'team-sonny', name: 'Sonny Casteel', role: 'Internal Vice President', linkedin: 'https://www.linkedin.com/in/frankcowong/', email: 'sontron@berkeley.edu' },
-  { slot: 'team-frankco', name: 'Frankco Wong', role: 'External Vice President', linkedin: 'https://www.linkedin.com/in/frankcowong/', email: 'Frankcowong@berkeley.edu' },
+  { slot: 'team-eric', name: 'Eric Xie', role: 'President', photo: 'eric', linkedin: 'https://www.linkedin.com/in/zhilin-xie/', email: 'z4@berkeley.edu' },
+  { slot: 'team-gavin', name: 'Gavin Pon', role: 'Vice President of Consulting', photo: 'gavin', linkedin: 'https://www.linkedin.com/in/gavinpon/', email: 'gavinpon13@berkeley.edu' },
+  { slot: 'team-sonny', name: 'Sonny Casteel', role: 'Internal Vice President', photo: 'sonny', linkedin: 'https://www.linkedin.com/in/sonny-casteel-815661216/', email: 'sontron@berkeley.edu' },
+  { slot: 'team-frankco', name: 'Frankco Wong', role: 'External Vice President', photo: 'frankco', linkedin: 'https://www.linkedin.com/in/frankcowong/', email: 'Frankcowong@berkeley.edu' },
 ]
 
 const DIRECTORS = [
-  { slot: 'team-jasir', name: 'Jasir Baig', role: 'Director of Corporate Relations', linkedin: 'https://www.linkedin.com/in/frankcowong/', email: 'JasirBaig2@berkeley.edu' },
-  { slot: 'team-elaine', name: 'Elaine Owyoung', role: 'Director of Finance', linkedin: 'https://www.linkedin.com/in/frankcowong/', email: 'elaine.owyoung@berkeley.edu' },
-  { slot: 'team-vitalii', name: 'Vitalii Pavlenko', role: 'Director of Marketing', linkedin: 'https://www.linkedin.com/in/frankcowong/', email: 'vitalii-pavlenko@berkeley.edu' },
-  { slot: 'team-bonpatrick', name: 'Bonpatrick Estrella', role: 'Director of Professional Development', linkedin: 'https://www.linkedin.com/in/frankcowong/', email: 'bonpatricke@berkeley.edu' },
-  { slot: 'team-jeremiah', name: 'Jeremiah Simpson', role: 'Director of Community College Relations', linkedin: 'https://www.linkedin.com/in/frankcowong/', email: 'jeremiahsimpson@berkeley.edu' },
+  { slot: 'team-jasir', name: 'Jasir Baig', role: 'Director of Corporate Relations', photo: 'jasir', linkedin: 'https://www.linkedin.com/in/jasir-baig/', email: 'JasirBaig2@berkeley.edu' },
+  { slot: 'team-elaine', name: 'Elaine Owyoung', role: 'Director of Finance', photo: 'elaine', linkedin: 'https://www.linkedin.com/in/elaineowyoung/', email: 'elaine.owyoung@berkeley.edu' },
+  { slot: 'team-vitalii', name: 'Vitalii Pavlenko', role: 'Director of Marketing', photo: 'vitalii', linkedin: 'https://www.linkedin.com/in/vitalii-pavlenko-b83597291/', email: 'vitalii-pavlenko@berkeley.edu' },
+  { slot: 'team-bonpatrick', name: 'Bonpatrick Estrella', role: 'Director of Professional Development', photo: 'bonpatrick', linkedin: 'https://www.linkedin.com/in/bonpatrick-estrella-a635b3349/', email: 'bonpatricke@berkeley.edu' },
+  { slot: 'team-jeremiah', name: 'Jeremiah Simpson', role: 'Director of Community College Relations', photo: 'jeremiah', linkedin: 'https://www.linkedin.com/in/jeremiahsimpsonn/', email: 'jeremiahsimpson@berkeley.edu' },
 ]
 
 const FIRMS_ROW_1 = [
@@ -279,7 +279,12 @@ export default function Team() {
                       border: '4px solid rgba(201,180,242,0.5)',
                     }}
                   >
-                    <ImageSlot id={m.slot} placeholder="Headshot" style={{ width: '100%', height: '100%' }} />
+                    <ImageSlot
+                      id={m.slot}
+                      src={withBase(`/assets/team/${m.photo}.jpg`)}
+                      placeholder="Headshot"
+                      style={{ width: '100%', height: '100%' }}
+                    />
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
                     <div style={{ fontFamily: poppins, fontWeight: 700, fontSize: 20, color: '#FFFFFF' }}>{m.name}</div>
@@ -321,7 +326,7 @@ export default function Team() {
               margin: 0,
             }}
           >
-            The <span style={{ color: '#3B1878' }}>Directors</span>
+            Board of <span style={{ color: '#3B1878' }}>Directors</span>
           </h2>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 24 }}>
@@ -349,7 +354,12 @@ export default function Team() {
                   flexShrink: 0,
                 }}
               >
-                <ImageSlot id={m.slot} placeholder="Headshot" style={{ width: '100%', height: '100%' }} />
+                <ImageSlot
+                  id={m.slot}
+                  src={withBase(`/assets/team/${m.photo}.jpg`)}
+                  placeholder="Headshot"
+                  style={{ width: '100%', height: '100%' }}
+                />
               </div>
               {/* flex: 1 keeps the social chips bottom-aligned across the row even when titles wrap */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: 4, flex: 1 }}>
