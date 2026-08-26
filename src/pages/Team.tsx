@@ -326,7 +326,7 @@ export default function Team() {
               margin: 0,
             }}
           >
-            Board of <span style={{ color: '#3B1878' }}>Directors</span>
+            <span style={{ color: '#3B1878' }}>Board</span> of Directors
           </h2>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 24 }}>

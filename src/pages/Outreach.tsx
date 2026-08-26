@@ -16,7 +16,7 @@ const BRANCHES = [
   { name: 'Sacramento City College', region: 'Sacramento' },
   { name: 'El Camino College', region: 'Torrance' },
   { name: 'Long Beach City College', region: 'Long Beach' },
-  { name: 'Solano Community College', region: 'Fairfield — coming soon' },
+  { name: 'Solano Community College', region: 'Coming Soon' },
 ]
 
 const STEPS = [
