@@ -57,7 +57,7 @@ export default function Contact() {
 
   const subject = encodeURIComponent(`${topic} — ${[firstName, lastName].filter(Boolean).join(' ')}`)
   const body = encodeURIComponent(`${message || ''}${email ? `\n\nReply to: ${email}` : ''}`)
-  const mailtoHref = `mailto:Berkeleyccg@gmail.com?subject=${subject}&body=${body}`
+  const mailtoHref = `mailto:berkeleyccg@gmail.com?subject=${subject}&body=${body}`
 
   return (
     <div style={{ overflowX: 'clip' }}>
@@ -169,9 +169,9 @@ export default function Contact() {
             club wants to collaborate — send us a note. A real member reads every message.
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginTop: 8 }}>
-            <a href="mailto:Berkeleyccg@gmail.com" className="contact-line">
+            <a href="mailto:berkeleyccg@gmail.com" className="contact-line">
               {iconChip(mailSvg)}
-              Berkeleyccg@gmail.com
+              berkeleyccg@gmail.com
             </a>
             <a href="https://www.instagram.com/berkeleyccg/" className="contact-line">
               {iconChip(instaSvg)}
@@ -184,7 +184,7 @@ export default function Contact() {
                   <circle cx="12" cy="10" r="2.5" />
                 </svg>,
               )}
-              UC Berkeley, Berkeley CA
+              University of California, Berkeley
             </div>
           </div>
           <div
