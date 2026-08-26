@@ -6,7 +6,34 @@ import { useReveal } from '../hooks/useReveal'
 import { poppins, playfair } from '../lib/fonts'
 import { violetGrain } from '../lib/texture'
 
-const TOPICS = ['Joining CCG', 'A question', 'Club collaboration', 'Something else']
+const TOPICS = ['Joining CCG', 'Work with us', 'Club collaboration', 'A question', 'Something else']
+
+const FAQS = [
+  {
+    q: 'Is payment required?',
+    a: "We're a registered 501(c)(3) nonprofit. Reach out and we'll share more details with you directly.",
+  },
+  {
+    q: "What's the timeline?",
+    a: "We're flexible — we shape the engagement around whatever fits you and your company. A typical semester project runs about 10 weeks with regular check-ins, a midpoint presentation, and a final presentation.",
+  },
+  {
+    q: 'Who will be working on my project?',
+    a: 'A hand-picked team of a project leader, a senior consultant, and four consultants — backed by advisors in professional service industries. All are UC Berkeley students.',
+  },
+  {
+    q: 'What do we get at the end?',
+    a: 'Deliverables tailored to your problem — slide decks, written reports, quantitative models, or white papers — plus an implementation roadmap so you can move forward.',
+  },
+  {
+    q: 'What kinds of problems do you take on?',
+    a: "Market expansion, growth strategy, data & analytics, and operations — for startups, nonprofits, and established firms alike. If you're not sure your problem fits, ask.",
+  },
+  {
+    q: 'How do we get started?',
+    a: null, // rendered with an inline mailto link below
+  },
+]
 
 function heroIn(delay: number): React.CSSProperties {
   return { animation: `heroIn 0.9s cubic-bezier(0.2,0.6,0.2,1) ${delay}s both` }
@@ -113,8 +140,8 @@ export default function Contact() {
               ...heroIn(0.24),
             }}
           >
-            Curious about joining, want to grab a coffee chat, or just have a question? We'd love to
-            hear from you — no consulting experience required.
+            Curious about joining, have a project you'd like help with, or just have a question?
+            We'd love to hear from you.
           </div>
         </div>
         <svg
@@ -165,8 +192,8 @@ export default function Contact() {
             We're students <span style={{ color: '#3B1878' }}>too</span>
           </h2>
           <div style={{ fontSize: 17, lineHeight: 1.65, color: '#5C5468' }}>
-            Whether you're thinking about applying, want advice on breaking into consulting, or your
-            club wants to collaborate — send us a note. A real member reads every message.
+            Whether you're thinking about applying, have a project for us, or your club wants to
+            collaborate — send us a note. A real member reads every message.
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginTop: 8 }}>
             <a href="mailto:berkeleyccg@gmail.com" className="contact-line">
@@ -268,6 +295,61 @@ export default function Contact() {
           </a>
           <div style={{ fontSize: 13, color: '#9C93AC', textAlign: 'center' }}>
             Opens your email client — or DM us on Instagram, we're fast there.
+          </div>
+        </div>
+      </div>
+
+      {/* FAQs */}
+      <div style={{ background: '#FFFFFF', borderTop: '1px solid #E6E1EE' }}>
+        <div style={{ maxWidth: 1180, margin: '0 auto', padding: '96px 40px 112px' }}>
+          <div
+            data-reveal
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 14,
+              textAlign: 'center',
+              alignItems: 'center',
+              marginBottom: 56,
+            }}
+          >
+            <div
+              style={{
+                fontFamily: poppins,
+                fontWeight: 600,
+                fontSize: 13,
+                letterSpacing: '0.14em',
+                textTransform: 'uppercase',
+                color: '#3B1878',
+              }}
+            >
+              Before you reach out
+            </div>
+            <h2 style={{ fontFamily: playfair, fontWeight: 700, fontSize: 44, letterSpacing: '-0.01em', margin: 0 }}>
+              Common project <span style={{ color: '#3B1878' }}>questions</span>
+            </h2>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px 64px' }}>
+            {FAQS.map((f, i) => (
+              <div
+                key={f.q}
+                data-reveal
+                style={{ display: 'flex', flexDirection: 'column', gap: 10, transitionDelay: `${i * 0.05}s` }}
+              >
+                <div style={{ fontFamily: poppins, fontWeight: 600, fontSize: 19, letterSpacing: '-0.01em' }}>{f.q}</div>
+                <div style={{ fontSize: 15.5, lineHeight: 1.65, color: '#5C5468' }}>
+                  {f.a ?? (
+                    <>
+                      Send us a message above or email{' '}
+                      <a href="mailto:berkeleyccg@gmail.com" style={{ fontWeight: 600 }}>
+                        berkeleyccg@gmail.com
+                      </a>
+                      . We'll set up a short intro call to scope the engagement together.
+                    </>
+                  )}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

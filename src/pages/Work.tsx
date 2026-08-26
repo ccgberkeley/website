@@ -570,7 +570,7 @@ export default function Work() {
               Applications for Fall 2026 are open — reach out at berkeleyccg@gmail.com.
             </div>
           </div>
-          <Link to="/work-with-us" className="btn-white" style={{ flexShrink: 0 }}>
+          <Link to="/contact" className="btn-white" style={{ flexShrink: 0 }}>
             Get in touch
           </Link>
         </div>
@@ -602,7 +602,7 @@ export default function Work() {
             <Link to="/about" className="footer-link-muted">
               About
             </Link>
-            <Link to="/work-with-us" className="footer-link-muted">
+            <Link to="/contact" className="footer-link-muted">
               Contact
             </Link>
             <a href="mailto:berkeleyccg@gmail.com" className="footer-link-muted">

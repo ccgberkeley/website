@@ -60,7 +60,7 @@ export default function Nav({ active }: { active?: string }) {
             ),
           )}
           <Link
-            to="/work-with-us"
+            to="/contact"
             className="btn-violet"
             style={{ fontSize: 14, padding: '10px 20px' }}
           >
