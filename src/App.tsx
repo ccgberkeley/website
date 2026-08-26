@@ -6,7 +6,6 @@ import Team from './pages/Team'
 import Outreach from './pages/Outreach'
 import Join from './pages/Join'
 import Contact from './pages/Contact'
-import WorkWithUs from './pages/WorkWithUs'
 
 export default function App() {
   return (
@@ -18,7 +17,8 @@ export default function App() {
       <Route path="/community-college" element={<Outreach />} />
       <Route path="/join" element={<Join />} />
       <Route path="/contact" element={<Contact />} />
-      <Route path="/work-with-us" element={<WorkWithUs />} />
+      {/* Work-with-us was folded into the contact page; keep old links working */}
+      <Route path="/work-with-us" element={<Navigate to="/contact" replace />} />
       {/* Remaining pages are built next; until then send unknown paths home */}
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>

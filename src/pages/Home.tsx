@@ -223,7 +223,7 @@ export default function Home() {
             delivering real results for our clients.
           </div>
           <div style={{ display: 'flex', gap: 16, marginTop: 8, pointerEvents: 'auto', ...heroIn(0.45) }}>
-            <Link to="/work-with-us" className="btn-white">
+            <Link to="/contact" className="btn-white">
               Work with us
             </Link>
             <Link to="/join" className="btn-outline-light">
