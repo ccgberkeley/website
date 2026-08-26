@@ -168,7 +168,7 @@ export default function Outreach() {
             style={{
               fontFamily: playfair,
               fontWeight: 700,
-              fontSize: 64,
+              fontSize: 'clamp(34px, 6.5vw, 64px)',
               letterSpacing: '-0.01em',
               lineHeight: 1.05,
               color: '#FFFFFF',
@@ -209,7 +209,7 @@ export default function Outreach() {
           margin: '0 auto',
           padding: '96px 40px 104px',
           display: 'grid',
-          gridTemplateColumns: 'minmax(0,1fr) minmax(0,1fr)',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
           gap: 72,
           alignItems: 'center',
         }}
@@ -220,7 +220,7 @@ export default function Outreach() {
             style={{
               fontFamily: playfair,
               fontWeight: 700,
-              fontSize: 44,
+              fontSize: 'clamp(28px, 4.4vw, 44px)',
               letterSpacing: '-0.01em',
               lineHeight: 1.1,
               margin: 0,
@@ -280,7 +280,7 @@ export default function Outreach() {
                 style={{
                   fontFamily: playfair,
                   fontWeight: 700,
-                  fontSize: 48,
+                  fontSize: 'clamp(30px, 4.6vw, 48px)',
                   letterSpacing: '-0.01em',
                   margin: 0,
                   color: '#FFFFFF',
@@ -293,7 +293,7 @@ export default function Outreach() {
                 own club, its own board, its own projects.
               </div>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 14 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 14 }}>
               {BRANCHES.map((b) => (
                 <div key={b.name} data-reveal className="branch-card">
                   <div style={{ fontFamily: poppins, fontWeight: 600, fontSize: 17, color: '#FFFFFF' }}>{b.name}</div>
@@ -327,11 +327,19 @@ export default function Outreach() {
           }}
         >
           <div style={eyebrow}>The partnership</div>
-          <h2 style={{ fontFamily: playfair, fontWeight: 700, fontSize: 44, letterSpacing: '-0.01em', margin: 0 }}>
+          <h2
+            style={{
+              fontFamily: playfair,
+              fontWeight: 700,
+              fontSize: 'clamp(28px, 4.4vw, 44px)',
+              letterSpacing: '-0.01em',
+              margin: 0,
+            }}
+          >
             What every branch <span style={{ color: '#3B1878' }}>gets</span>
           </h2>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16 }}>
           {PERKS.map((p, i) => (
             <div
               key={p.title}
@@ -375,18 +383,18 @@ export default function Outreach() {
             margin: '0 auto',
             padding: '96px 40px 112px',
             display: 'grid',
-            gridTemplateColumns: 'minmax(0,0.9fr) minmax(0,1.1fr)',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
             gap: 72,
             alignItems: 'start',
           }}
         >
-          <div data-reveal style={{ position: 'sticky', top: 110, display: 'flex', flexDirection: 'column', gap: 18 }}>
+          <div data-reveal className="sticky-col" style={{ top: 110, display: 'flex', flexDirection: 'column', gap: 18 }}>
             <div style={eyebrow}>Start a branch</div>
             <h2
               style={{
                 fontFamily: playfair,
                 fontWeight: 700,
-                fontSize: 44,
+                fontSize: 'clamp(28px, 4.4vw, 44px)',
                 letterSpacing: '-0.01em',
                 lineHeight: 1.1,
                 margin: 0,
@@ -450,7 +458,7 @@ export default function Outreach() {
               style={{
                 fontFamily: playfair,
                 fontWeight: 700,
-                fontSize: 40,
+                fontSize: 'clamp(28px, 4.2vw, 40px)',
                 letterSpacing: '-0.01em',
                 color: '#FFFFFF',
                 lineHeight: 1.15,

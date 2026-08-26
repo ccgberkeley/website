@@ -102,7 +102,7 @@ export default function About() {
             style={{
               fontFamily: playfair,
               fontWeight: 700,
-              fontSize: 68,
+              fontSize: 'clamp(34px, 6.5vw, 68px)',
               letterSpacing: '-0.01em',
               lineHeight: 1.04,
               color: '#FFFFFF',
@@ -139,7 +139,7 @@ export default function About() {
               margin: '0 auto',
               padding: '56px 40px 72px',
               display: 'grid',
-              gridTemplateColumns: 'repeat(4, 1fr)',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))',
               gap: 32,
             }}
           >
@@ -149,7 +149,7 @@ export default function About() {
                   style={{
                     fontFamily: playfair,
                     fontWeight: 700,
-                    fontSize: 54,
+                    fontSize: 'clamp(34px, 5.5vw, 54px)',
                     letterSpacing: '-0.01em',
                     color: '#FFFFFF',
                   }}
@@ -178,7 +178,7 @@ export default function About() {
           margin: '0 auto',
           padding: '104px 40px 120px',
           display: 'grid',
-          gridTemplateColumns: 'minmax(0,1fr) minmax(0,1fr)',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
           gap: 72,
           alignItems: 'center',
         }}
@@ -208,7 +208,7 @@ export default function About() {
             style={{
               fontFamily: playfair,
               fontWeight: 700,
-              fontSize: 44,
+              fontSize: 'clamp(28px, 4.4vw, 44px)',
               letterSpacing: '-0.01em',
               lineHeight: 1.1,
               margin: 0,
@@ -267,7 +267,7 @@ export default function About() {
                 style={{
                   fontFamily: playfair,
                   fontWeight: 700,
-                  fontSize: 48,
+                  fontSize: 'clamp(30px, 4.6vw, 48px)',
                   letterSpacing: '-0.01em',
                   lineHeight: 1.08,
                   margin: 0,
@@ -277,7 +277,7 @@ export default function About() {
                 Our <span style={{ color: '#C9B4F2' }}>values</span>
               </h2>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16 }}>
               {VALUES.map((v, i) => (
                 <div
                   key={v.title}
@@ -341,11 +341,19 @@ export default function About() {
           >
             Life at CCG
           </div>
-          <h2 style={{ fontFamily: poppins, fontWeight: 800, fontSize: 44, letterSpacing: '-0.03em', margin: 0 }}>
+          <h2
+            style={{
+              fontFamily: poppins,
+              fontWeight: 800,
+              fontSize: 'clamp(28px, 4.4vw, 44px)',
+              letterSpacing: '-0.03em',
+              margin: 0,
+            }}
+          >
             More than a <span style={{ color: '#3B1878' }}>club</span>
           </h2>
         </div>
-        <div data-reveal style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
+        <div data-reveal style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16 }}>
           {[
             { id: 'life-photo-1', placeholder: 'Retreat photo', src: 'about-retreat.jpg' },
             { id: 'life-photo-2', placeholder: 'Client presentation photo', src: 'about-presentation.jpg' },

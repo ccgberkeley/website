@@ -21,7 +21,7 @@ const eyebrow: React.CSSProperties = {
 const h2: React.CSSProperties = {
   fontFamily: playfair,
   fontWeight: 700,
-  fontSize: 48,
+  fontSize: 'clamp(30px, 4.6vw, 48px)',
   letterSpacing: '-0.01em',
   lineHeight: 1.08,
   margin: 0,
@@ -192,7 +192,7 @@ export default function Home() {
             style={{
               fontFamily: poppins,
               fontWeight: 800,
-              fontSize: 76,
+              fontSize: 'clamp(38px, 8vw, 76px)',
               letterSpacing: '-0.03em',
               lineHeight: 1.02,
               color: '#FFFFFF',
@@ -252,7 +252,7 @@ export default function Home() {
             margin: '0 auto',
             padding: '48px 40px 64px',
             display: 'grid',
-            gridTemplateColumns: 'repeat(4, 1fr)',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))',
             gap: 32,
           }}
         >
@@ -262,7 +262,7 @@ export default function Home() {
                 style={{
                   fontFamily: playfair,
                   fontWeight: 700,
-                  fontSize: 54,
+                  fontSize: 'clamp(34px, 5.5vw, 54px)',
                   letterSpacing: '-0.01em',
                   color: '#FFFFFF',
                 }}
@@ -283,7 +283,7 @@ export default function Home() {
           margin: '0 auto',
           padding: '120px 40px',
           display: 'grid',
-          gridTemplateColumns: 'minmax(0,1fr) minmax(0,1fr)',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
           gap: 72,
           alignItems: 'center',
         }}
@@ -354,7 +354,7 @@ export default function Home() {
                 our full attention for 10–12 weeks.
               </div>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16 }}>
               {SERVICES.map((s, i) => (
                 <div key={s.title} data-reveal className="service-card" style={{ transitionDelay: `${i * 0.1}s` }}>
                   <div

@@ -121,7 +121,7 @@ export default function Contact() {
             style={{
               fontFamily: playfair,
               fontWeight: 700,
-              fontSize: 60,
+              fontSize: 'clamp(34px, 6vw, 60px)',
               letterSpacing: '-0.01em',
               lineHeight: 1.05,
               color: '#FFFFFF',
@@ -161,7 +161,7 @@ export default function Contact() {
           margin: '0 auto',
           padding: '64px 40px 120px',
           display: 'grid',
-          gridTemplateColumns: 'minmax(0,1fr) minmax(0,1.2fr)',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
           gap: 72,
           alignItems: 'start',
         }}
@@ -183,7 +183,7 @@ export default function Contact() {
             style={{
               fontFamily: playfair,
               fontWeight: 700,
-              fontSize: 40,
+              fontSize: 'clamp(28px, 4.2vw, 40px)',
               letterSpacing: '-0.01em',
               lineHeight: 1.1,
               margin: 0,
@@ -251,7 +251,7 @@ export default function Contact() {
             transitionDelay: '0.15s',
           }}
         >
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: 16 }}>
             <div style={fieldCol}>
               <label style={label}>First name</label>
               <input className="form-field" value={firstName} onChange={(e) => setFirstName(e.target.value)} placeholder="Oski" />
@@ -325,11 +325,19 @@ export default function Contact() {
             >
               Before you reach out
             </div>
-            <h2 style={{ fontFamily: playfair, fontWeight: 700, fontSize: 44, letterSpacing: '-0.01em', margin: 0 }}>
+            <h2
+              style={{
+                fontFamily: playfair,
+                fontWeight: 700,
+                fontSize: 'clamp(28px, 4.4vw, 44px)',
+                letterSpacing: '-0.01em',
+                margin: 0,
+              }}
+            >
               Common project <span style={{ color: '#3B1878' }}>questions</span>
             </h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px 64px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '48px 64px' }}>
             {FAQS.map((f, i) => (
               <div
                 key={f.q}

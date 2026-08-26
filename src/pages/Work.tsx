@@ -139,7 +139,7 @@ function ClientLogo({ slug, name }: { slug: string; name: string }) {
     <img
       src={withBase(`/assets/logos/${slug}.png`)}
       alt={name}
-      style={{ maxHeight: 76, maxWidth: 210, width: 'auto', height: 'auto' }}
+      style={{ maxHeight: 'clamp(44px, 9vw, 76px)', maxWidth: 'clamp(120px, 26vw, 210px)', width: 'auto', height: 'auto' }}
       onError={() => setFailed(true)}
     />
   )
@@ -224,7 +224,7 @@ export default function Work() {
             style={{
               fontFamily: playfair,
               fontWeight: 700,
-              fontSize: 56,
+              fontSize: 'clamp(32px, 5.6vw, 56px)',
               letterSpacing: '-0.01em',
               lineHeight: 1.05,
               color: '#FFFFFF',
@@ -236,7 +236,15 @@ export default function Work() {
           </h1>
 
           {/* Rotating semester client showcase */}
-          <div style={{ position: 'relative', width: 'min(760px, 100%)', height: 420, marginTop: 16, ...heroIn(0.24) }}>
+          <div
+            style={{
+              position: 'relative',
+              width: 'min(760px, 100%)',
+              height: 'clamp(420px, 900px - 60vw, 620px)',
+              marginTop: 16,
+              ...heroIn(0.24),
+            }}
+          >
             {SEMESTERS.map((s, i) => (
               <div
                 key={s.id}
@@ -289,12 +297,12 @@ export default function Work() {
                     border: '1px solid rgba(255,255,255,0.45)',
                     borderRadius: 20,
                     boxShadow: '0 24px 56px rgba(10,4,24,0.3)',
-                    padding: '36px 44px',
+                    padding: 'clamp(20px, 5vw, 36px) clamp(20px, 6vw, 44px)',
                     display: 'flex',
                     flexWrap: 'wrap',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    gap: 40,
+                    gap: 'clamp(20px, 4vw, 40px)',
                   }}
                 >
                   {s.clients.map((slug) => (
@@ -372,7 +380,15 @@ export default function Work() {
           >
             Our services
           </div>
-          <h2 style={{ fontFamily: playfair, fontWeight: 700, fontSize: 44, letterSpacing: '-0.01em', margin: 0 }}>
+          <h2
+            style={{
+              fontFamily: playfair,
+              fontWeight: 700,
+              fontSize: 'clamp(28px, 4.4vw, 44px)',
+              letterSpacing: '-0.01em',
+              margin: 0,
+            }}
+          >
             Bring us <span style={{ color: '#3B1878' }}>any problem</span>
           </h2>
         </div>
@@ -381,10 +397,11 @@ export default function Work() {
           const number = (
             <div
               key="num"
+              className="work-row-num"
               style={{
                 fontFamily: playfair,
                 fontWeight: 700,
-                fontSize: 64,
+                fontSize: 'clamp(40px, 6vw, 64px)',
                 letterSpacing: '-0.01em',
                 color: '#C9B4F2',
                 textAlign: i % 2 ? 'right' : 'left',
@@ -402,6 +419,7 @@ export default function Work() {
           const graphic = (
             <div
               key="graphic"
+              className="work-row-graphic"
               style={{
                 height: 180,
                 minWidth: 0,
@@ -460,11 +478,19 @@ export default function Work() {
           >
             How we work
           </div>
-          <h2 style={{ fontFamily: playfair, fontWeight: 700, fontSize: 44, letterSpacing: '-0.01em', margin: 0 }}>
+          <h2
+            style={{
+              fontFamily: playfair,
+              fontWeight: 700,
+              fontSize: 'clamp(28px, 4.4vw, 44px)',
+              letterSpacing: '-0.01em',
+              margin: 0,
+            }}
+          >
             A 10-week <span style={{ color: '#3B1878' }}>engagement</span>
           </h2>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 16 }}>
           {TIMELINE.map((t, i) => (
             <div
               key={t.title}
