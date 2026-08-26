@@ -125,7 +125,7 @@ export default function About() {
             }}
           >
             CCG democratizes business careers for students of diverse and non-traditional
-            backgrounds — a team of passionate, hardworking professionals bringing fresh
+            backgrounds, a team of passionate, hardworking professionals bringing fresh
             perspectives to leadership teams.
           </div>
         </div>
@@ -217,7 +217,7 @@ export default function About() {
             A student-run consultancy at <span style={{ color: '#3B1878' }}>UC Berkeley</span>
           </h2>
           <div style={{ fontSize: 17, lineHeight: 1.65, color: '#5C5468' }}>
-            We recruit for curiosity and work ethic — no consulting experience required — then
+            We recruit for curiosity and work ethic, no consulting experience required, then
             train every member through real client engagements. Each semester, hand-picked teams
             of six take on projects for startups, nonprofits, and established firms.
           </div>
@@ -399,7 +399,7 @@ export default function About() {
               Join our <span style={{ color: '#C9B4F2' }}>family</span>
             </div>
             <div style={{ fontSize: 17, lineHeight: 1.6, color: '#C9B4F2' }}>
-              Applications open each semester — no experience required.
+              Applications open each semester, no experience required.
             </div>
           </div>
           <Link to="/#contact" className="btn-white" style={{ flexShrink: 0 }}>

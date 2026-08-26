@@ -23,7 +23,7 @@ const STEPS = [
   {
     num: '01',
     title: 'Reach out',
-    body: 'Message us — or we may find you. We look for motivated students at community colleges with strong transfer communities who want to bring consulting to their campus.',
+    body: 'Message us, or we may find you. We look for motivated students at community colleges with strong transfer communities who want to bring consulting to their campus.',
   },
   {
     num: '02',
@@ -33,7 +33,7 @@ const STEPS = [
   {
     num: '03',
     title: 'Found your club',
-    body: 'Build an executive board, find a faculty advisor, and register on your campus. We support you through all of it — and our name helps you recruit your first members.',
+    body: 'Build an executive board, find a faculty advisor, and register on your campus. We support you through all of it, and our name helps you recruit your first members.',
   },
   {
     num: '04',
@@ -43,14 +43,14 @@ const STEPS = [
   {
     num: '05',
     title: 'Land your first project',
-    body: 'We help you source a first engagement from local businesses and personal connections — small in scale, real in impact, perfect for learning.',
+    body: 'We help you source a first engagement from local businesses and personal connections: small in scale, real in impact, perfect for learning.',
   },
 ]
 
 const PERKS = [
   {
     title: 'Full training curriculum',
-    desc: '75+ slides of new-member training — consulting foundations, MECE, storytelling, decking, and mock cases — so new branches can teach consulting from day one.',
+    desc: '75+ slides of new-member training: consulting foundations, MECE, storytelling, decking, and mock cases, so new branches can teach consulting from day one.',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B1878" strokeWidth="1.5">
         <path d="M4 19V6a2 2 0 0 1 2-2h13v13H6a2 2 0 0 0-2 2zm0 0a2 2 0 0 0 2 2h13" />
@@ -60,7 +60,7 @@ const PERKS = [
   },
   {
     title: 'A dedicated mentor',
-    desc: 'Every branch is paired with a member of our Community College Relations committee — regular check-ins, answers to any question, and support from founding through their first project.',
+    desc: 'Every branch is paired with a member of our Community College Relations committee: regular check-ins, answers to any question, and support from founding through their first project.',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B1878" strokeWidth="1.5">
         <circle cx="9" cy="8" r="3.5" />
@@ -71,7 +71,7 @@ const PERKS = [
   },
   {
     title: 'Real first projects',
-    desc: 'We help branches land their first engagements with local businesses — small-scale, low-stakes projects built for learning, not pressure.',
+    desc: 'We help branches land their first engagements with local businesses: small-scale, low-stakes projects built for learning, not pressure.',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B1878" strokeWidth="1.5">
         <path d="M12 3v4M12 3l3 3M12 3L9 6" />
@@ -82,7 +82,7 @@ const PERKS = [
   },
   {
     title: 'Panels & workshops',
-    desc: 'Intro-to-consulting panels, transfer panels with recent transfers, resume workshops, and case competitions — hosted virtually so every branch can join.',
+    desc: 'Intro-to-consulting panels, transfer panels with recent transfers, resume workshops, and case competitions, hosted virtually so every branch can join.',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B1878" strokeWidth="1.5">
         <rect x="3" y="5" width="18" height="12" rx="2" />
@@ -92,7 +92,7 @@ const PERKS = [
   },
   {
     title: 'Transfer guidance',
-    desc: 'Honest advice from people who made the jump — application strategy, GPA planning, and what actually helped us land at Berkeley.',
+    desc: 'Honest advice from people who made the jump: application strategy, GPA planning, and what actually helped us land at Berkeley.',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B1878" strokeWidth="1.5">
         <path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z" />
@@ -102,7 +102,7 @@ const PERKS = [
   },
   {
     title: 'A statewide network',
-    desc: 'Joint socials, branch mixers, and a growing community of consultants across California — plus the weight of an established name behind your club.',
+    desc: 'Joint socials, branch mixers, and a growing community of consultants across California, plus the weight of an established name behind your club.',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B1878" strokeWidth="1.5">
         <circle cx="12" cy="12" r="9" />
@@ -189,7 +189,7 @@ export default function Outreach() {
             }}
           >
             Many of us are transfers ourselves. We know how few doors are open to community college
-            students who want a business career — so we're building them, one CCG branch at a time.
+            students who want a business career, so we're building them, one CCG branch at a time.
           </div>
         </div>
         <svg
@@ -230,7 +230,7 @@ export default function Outreach() {
           </h2>
           <div style={{ fontSize: 17, lineHeight: 1.65, color: '#5C5468' }}>
             Over half of CCG is transfer students. Before Berkeley, we were at community colleges
-            wondering how anyone breaks into consulting — no clubs, no case prep, no network. That
+            wondering how anyone breaks into consulting: no clubs, no case prep, no network. That
             gap is exactly why this program exists.
           </div>
           <div style={{ fontSize: 17, lineHeight: 1.65, color: '#5C5468' }}>
@@ -246,7 +246,7 @@ export default function Outreach() {
           <ImageSlot
             id="ccr-story-photo"
             src={withBase('/assets/photos/outreach-story.jpg')}
-            placeholder="Drop a photo — transfer members or an outreach event"
+            placeholder="Drop a photo: transfer members or an outreach event"
             style={{ width: '100%', height: 420 }}
           />
         </div>
@@ -289,7 +289,7 @@ export default function Outreach() {
                 Partner <span style={{ color: '#C9B4F2' }}>branches</span>
               </h2>
               <div style={{ fontSize: 17, lineHeight: 1.6, color: 'rgba(255,255,255,0.78)', maxWidth: 560 }}>
-                Student-founded CCG branches at community colleges across California — each one its
+                Student-founded CCG branches at community colleges across California: each one its
                 own club, its own board, its own projects.
               </div>
             </div>
@@ -403,7 +403,7 @@ export default function Outreach() {
               From first email to first <span style={{ color: '#3B1878' }}>client</span>
             </h2>
             <div style={{ fontSize: 17, lineHeight: 1.65, color: '#5C5468' }}>
-              No consulting experience needed — most branch founders have never touched a case
+              No consulting experience needed. Most branch founders have never touched a case
               before. We walk you through every step.
             </div>
             <Link

@@ -374,14 +374,18 @@ textarea::placeholder {
 /* Join page scroll timeline */
 [data-tl-event] {
   opacity: 0.4;
+  transition: opacity 0.5s ease;
+}
+[data-tl-event] .tl-card {
   transform: scale(0.98);
   transition:
-    opacity 0.5s ease,
     transform 0.5s ease,
     border-color 0.5s ease;
 }
 [data-tl-event].tl-active {
   opacity: 1;
+}
+[data-tl-event].tl-active .tl-card {
   transform: scale(1);
 }
 [data-tl-event].tl-active .tl-dot {

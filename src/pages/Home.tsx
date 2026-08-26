@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import ImageSlot from '../components/ImageSlot'
+import RingMotif from '../components/RingMotif'
 import { useReveal } from '../hooks/useReveal'
 import { useCountUp } from '../hooks/useCountUp'
 import { withBase } from '../lib/withBase'
@@ -161,6 +162,11 @@ export default function Home() {
           background: violetGrain,
         }}
       >
+        <RingMotif size={560} style={{ top: -160, right: -180, animation: 'drift 9s ease-in-out infinite' }} />
+        <RingMotif
+          size={420}
+          style={{ bottom: -100, left: -140, animation: 'drift 12s ease-in-out infinite reverse' }}
+        />
         <div
           style={{
             position: 'absolute',
@@ -212,16 +218,8 @@ export default function Home() {
               ...heroIn(0.3),
             }}
           >
-            Empowering students from every background with the tools to succeed in consulting — and
+            Empowering students from every background with the tools to succeed in consulting and
             delivering real results for our clients.
-          </div>
-          <div style={{ display: 'flex', gap: 16, marginTop: 8, pointerEvents: 'auto', ...heroIn(0.45) }}>
-            <Link to="/contact" className="btn-white">
-              Work with us
-            </Link>
-            <Link to="/join" className="btn-outline-light">
-              Join our team
-            </Link>
           </div>
         </div>
         <svg
@@ -331,8 +329,12 @@ export default function Home() {
         <svg viewBox="0 0 1440 100" preserveAspectRatio="none" style={{ width: '100%', height: 90, display: 'block' }}>
           {wavePaths}
         </svg>
-        <div style={{ background: violetGrainLight }}>
-          <div id="services" style={{ maxWidth: 1180, margin: '0 auto', padding: '56px 40px 96px' }}>
+        <div style={{ position: 'relative', overflow: 'hidden', background: violetGrainLight }}>
+          <RingMotif size={480} style={{ top: -140, left: -160, animation: 'drift 11s ease-in-out infinite' }} />
+          <div
+            id="services"
+            style={{ position: 'relative', maxWidth: 1180, margin: '0 auto', padding: '56px 40px 96px' }}
+          >
             <div
               data-reveal
               style={{
