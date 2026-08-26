@@ -346,12 +346,14 @@ export default function Outreach() {
             What every branch <span style={{ color: '#3B1878' }}>gets</span>
           </h2>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16 }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 16 }}>
           {PERKS.map((p, i) => (
             <div
               key={p.title}
               data-reveal
               style={{
+                flex: '1 1 220px',
+                maxWidth: 280,
                 background: '#FFFFFF',
                 border: '1px solid #E6E1EE',
                 borderRadius: 14,
