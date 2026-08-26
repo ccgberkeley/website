@@ -131,7 +131,7 @@ export default function About() {
         </div>
 
         {/* Diversity stats live inside the color */}
-        <div style={{ position: 'relative', borderTop: '1px solid rgba(255,255,255,0.14)' }}>
+        <div style={{ position: 'relative' }}>
           <div
             ref={rowRef}
             style={{

@@ -222,23 +222,6 @@ export default function Home() {
             delivering real results for our clients.
           </div>
         </div>
-        <svg
-          viewBox="0 0 1440 100"
-          preserveAspectRatio="none"
-          style={{
-            position: 'absolute',
-            left: 0,
-            right: 0,
-            bottom: -1,
-            width: '100%',
-            height: 90,
-            display: 'block',
-            pointerEvents: 'none',
-          }}
-        >
-          <path d="M0,60 C360,110 1080,-10 1440,50 L1440,100 L0,100 Z" fill="#C9B4F2" opacity="0.45" />
-          <path d="M0,72 C400,116 1060,8 1440,64 L1440,100 L0,100 Z" fill="#2A1057" />
-        </svg>
       </div>
 
       {/* Stats band */}
