@@ -53,6 +53,9 @@ export default function Footer() {
           <a href="https://www.instagram.com/berkeleyccg/" className="footer-link">
             Instagram
           </a>
+          <a href="https://www.linkedin.com/company/berkeleyccg/" className="footer-link">
+            LinkedIn
+          </a>
         </div>
       </div>
       <div style={{ maxWidth: 1180, margin: '0 auto', padding: '0 40px 40px' }}>
