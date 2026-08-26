@@ -490,15 +490,6 @@ export default function Outreach() {
             </span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
-            <Link to="/" className="footer-link-muted">
-              Home
-            </Link>
-            <Link to="/about" className="footer-link-muted">
-              About
-            </Link>
-            <Link to="/join" className="footer-link-muted">
-              Join
-            </Link>
             <a href="mailto:berkeleyccg@gmail.com" className="footer-link-muted">
               berkeleyccg@gmail.com
             </a>

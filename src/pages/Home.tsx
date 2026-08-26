@@ -151,23 +151,16 @@ export default function Home() {
       <Nav />
 
       {/* Hero */}
-      <div id="top" style={{ position: 'relative', height: '84vh', minHeight: 580, overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', inset: 0, animation: 'slowZoom 18s ease-out both' }}>
-          <ImageSlot
-            id="hero-photo"
-            src={withBase('/assets/photos/home-hero.jpg')}
-            placeholder="Drop your club photo here"
-            style={{ position: 'absolute', inset: 0 }}
-          />
-        </div>
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            background: 'linear-gradient(180deg, rgba(25,19,34,0.42), rgba(25,19,34,0.68))',
-            pointerEvents: 'none',
-          }}
-        />
+      <div
+        id="top"
+        style={{
+          position: 'relative',
+          height: '84vh',
+          minHeight: 580,
+          overflow: 'hidden',
+          background: violetGrain,
+        }}
+      >
         <div
           style={{
             position: 'absolute',

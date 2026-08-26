@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
 import Nav from '../components/Nav'
 import ImageSlot from '../components/ImageSlot'
 import { useReveal } from '../hooks/useReveal'
@@ -465,15 +464,6 @@ export default function Team() {
             </span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
-            <Link to="/" className="footer-link-muted">
-              Home
-            </Link>
-            <Link to="/about" className="footer-link-muted">
-              About
-            </Link>
-            <Link to="/join" className="footer-link-muted">
-              Join
-            </Link>
             <a href="mailto:berkeleyccg@gmail.com" className="footer-link-muted">
               berkeleyccg@gmail.com
             </a>
