@@ -113,28 +113,6 @@ export default function Join() {
 
       {/* Hero */}
       <div style={{ position: 'relative', background: violetGrain, overflow: 'hidden' }}>
-        <img
-          src={withBase('/assets/berkeley-campus.png')}
-          alt=""
-          style={{
-            position: 'absolute',
-            inset: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            objectPosition: 'center 30%',
-            opacity: 0.3,
-            pointerEvents: 'none',
-          }}
-        />
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            background: 'linear-gradient(180deg, rgba(42,16,87,0.6) 0%, rgba(42,16,87,0.8) 55%, #2A1057 100%)',
-            pointerEvents: 'none',
-          }}
-        />
         <div
           style={{
             position: 'relative',

@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Nav from '../components/Nav'
 import ImageSlot from '../components/ImageSlot'
-import VideoSlot from '../components/VideoSlot'
 import { useReveal } from '../hooks/useReveal'
 import { withBase } from '../lib/withBase'
 import { poppins, playfair, playfairItalic as serifItalic } from '../lib/fonts'
@@ -101,37 +100,8 @@ export default function Team() {
     <div style={{ overflowX: 'clip' }}>
       <Nav active="Team" />
 
-      {/* Hero with member video */}
+      {/* Hero */}
       <div style={{ position: 'relative', background: violetGrain, overflow: 'hidden' }}>
-        <img
-          src={withBase('/assets/berkeley-campus.png')}
-          alt=""
-          style={{
-            position: 'absolute',
-            inset: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            objectPosition: 'center 30%',
-            opacity: 0.3,
-            pointerEvents: 'none',
-          }}
-        />
-        <div style={{ position: 'absolute', inset: 0 }}>
-          <VideoSlot
-            id="team-hero-video"
-            placeholder="Drop a recruitment video here (mp4) — plays behind the heading"
-            style={{ width: '100%', height: '100%' }}
-          />
-        </div>
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            background: 'linear-gradient(180deg, rgba(42,16,87,0.6) 0%, rgba(42,16,87,0.8) 55%, #2A1057 100%)',
-            pointerEvents: 'none',
-          }}
-        />
         <div
           style={{
             position: 'relative',
