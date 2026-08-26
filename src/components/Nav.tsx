@@ -48,23 +48,21 @@ export default function Nav({ active }: { active?: string }) {
           </span>
         </Link>
         <div style={{ display: 'flex', alignItems: 'center', gap: 32 }}>
-          {links.map((l) =>
-            l.label === active ? (
-              <Link key={l.to} to={l.to} className="nav-link-active">
-                {l.label}
-              </Link>
-            ) : (
-              <Link key={l.to} to={l.to} className="nav-link">
-                {l.label}
-              </Link>
-            ),
-          )}
-          <Link
-            to="/contact"
-            className="btn-violet"
-            style={{ fontSize: 14, padding: '10px 20px' }}
-          >
-            Work with us
+          {links
+            .filter((l) => l.label !== 'Contact')
+            .map((l) =>
+              l.label === active ? (
+                <Link key={l.to} to={l.to} className="nav-link-active">
+                  {l.label}
+                </Link>
+              ) : (
+                <Link key={l.to} to={l.to} className="nav-link">
+                  {l.label}
+                </Link>
+              ),
+            )}
+          <Link to="/contact" className="btn-violet" style={{ fontSize: 14, padding: '10px 20px' }}>
+            Contact
           </Link>
         </div>
       </div>
