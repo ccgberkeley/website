@@ -151,7 +151,7 @@ export default function Team() {
               ...heroIn(0.24),
             }}
           >
-            The leadership behind every engagement — and the family behind the leadership.
+            The leadership behind every engagement, and the family behind the leadership.
           </div>
         </div>
         <svg

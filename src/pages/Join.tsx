@@ -11,7 +11,7 @@ const EVENTS = [
   {
     date: '8/26–9/3',
     name: 'Coffee Chats',
-    detail: 'Meet current members one-on-one — sign up via our Instagram bio!',
+    detail: 'Meet current members one-on-one. Sign up via our Instagram bio!',
     label: 'Aug 26 – Sep 3',
     body: 'Meet current members one-on-one. Sign up via our Instagram bio!',
   },
@@ -53,9 +53,9 @@ const EVENTS = [
   {
     date: '9/3',
     name: 'Application Due',
-    detail: "Applications close at 10 pm sharp — apply via the link in our Instagram bio.",
+    detail: 'Applications close at 10 pm sharp. Apply via the link below.',
     label: 'Sep 3 · 10 pm',
-    body: "Apply via the link in our Instagram bio — don't wait until the last minute.",
+    body: "Apply via the link below — don't wait until the last minute!",
     highlight: true,
   },
   {
@@ -169,7 +169,7 @@ export default function Join() {
               ...heroIn(0.24),
             }}
           >
-            No consulting experience required — we recruit for curiosity and work ethic, then train
+            No consulting experience required. We recruit for curiosity and work ethic, then train
             the rest. Scroll through the recruitment timeline below.
           </div>
           <div style={{ display: 'flex', gap: 16, marginTop: 6, ...heroIn(0.36) }}>
@@ -342,6 +342,7 @@ export default function Join() {
                 }}
               />
               <div
+                className="tl-card"
                 style={{
                   background: e.highlight ? '#2A1057' : '#FFFFFF',
                   border: `1px solid ${e.highlight ? '#2A1057' : '#E6E1EE'}`,

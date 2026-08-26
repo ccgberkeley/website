@@ -5,8 +5,8 @@ import { poppins } from '../lib/fonts'
 
 const links = [
   { label: 'About', to: '/about' },
-  { label: 'Work', to: '/work' },
   { label: 'Team', to: '/team' },
+  { label: 'Work', to: '/work' },
   { label: 'Outreach', to: '/community-college' },
   { label: 'Join', to: '/join' },
   { label: 'Contact', to: '/contact' },

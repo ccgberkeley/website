@@ -15,19 +15,19 @@ const FAQS = [
   },
   {
     q: "What's the timeline?",
-    a: "We're flexible — we shape the engagement around whatever fits you and your company. A typical semester project runs about 10 weeks with regular check-ins, a midpoint presentation, and a final presentation.",
+    a: "We're flexible. We shape the engagement around whatever fits you and your company. A typical semester project runs about 10 weeks with regular check-ins, a midpoint presentation, and a final presentation.",
   },
   {
     q: 'Who will be working on my project?',
-    a: 'A hand-picked team of a project leader, a senior consultant, and four consultants — backed by advisors in professional service industries. All are UC Berkeley students.',
+    a: 'A hand-picked team of a project leader, a senior consultant, and four consultants, backed by advisors in professional service industries. All are UC Berkeley students.',
   },
   {
     q: 'What do we get at the end?',
-    a: 'Deliverables tailored to your problem — slide decks, written reports, quantitative models, or white papers — plus an implementation roadmap so you can move forward.',
+    a: 'Deliverables tailored to your problem: slide decks, written reports, quantitative models, or white papers, plus an implementation roadmap so you can move forward.',
   },
   {
     q: 'What kinds of problems do you take on?',
-    a: "Market expansion, growth strategy, data & analytics, and operations — for startups, nonprofits, and established firms alike. If you're not sure your problem fits, ask.",
+    a: "Market expansion, growth strategy, data & analytics, and operations, for startups, nonprofits, and established firms alike. If you're not sure your problem fits, ask.",
   },
   {
     q: 'How do we get started?',
@@ -193,7 +193,7 @@ export default function Contact() {
           </h2>
           <div style={{ fontSize: 17, lineHeight: 1.65, color: '#5C5468' }}>
             Whether you're thinking about applying, have a project for us, or your club wants to
-            collaborate — send us a note. A real member reads every message.
+            collaborate, send us a note. A real member reads every message.
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginTop: 8 }}>
             <a href="mailto:berkeleyccg@gmail.com" className="contact-line">
@@ -233,7 +233,7 @@ export default function Contact() {
               <Link to="/join" style={{ fontWeight: 600 }}>
                 recruitment timeline
               </Link>{' '}
-              for this semester's dates — info sessions are the best place to meet us in person.
+              for this semester's dates. Info sessions are the best place to meet us in person.
             </div>
           </div>
         </div>
@@ -293,9 +293,6 @@ export default function Contact() {
           >
             Send message
           </a>
-          <div style={{ fontSize: 13, color: '#9C93AC', textAlign: 'center' }}>
-            Opens your email client — or DM us on Instagram, we're fast there.
-          </div>
         </div>
       </div>
 
