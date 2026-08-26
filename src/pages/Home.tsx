@@ -8,7 +8,7 @@ import { useReveal } from '../hooks/useReveal'
 import { useCountUp } from '../hooks/useCountUp'
 import { withBase } from '../lib/withBase'
 import { poppins, playfair } from '../lib/fonts'
-import { violetGrain, violetGrainLight } from '../lib/texture'
+import { violetGrain, violetGrainLight, noise } from '../lib/texture'
 
 const eyebrow: React.CSSProperties = {
   fontFamily: poppins,
@@ -163,10 +163,7 @@ export default function Home() {
         }}
       >
         <RingMotif size={560} style={{ top: -160, right: -180, animation: 'drift 9s ease-in-out infinite' }} />
-        <RingMotif
-          size={420}
-          style={{ bottom: -100, left: -140, animation: 'drift 12s ease-in-out infinite reverse' }}
-        />
+        <RingMotif size={380} style={{ bottom: 40, left: -160, animation: 'drift 12s ease-in-out infinite reverse' }} />
         <div
           style={{
             position: 'absolute',
@@ -224,8 +221,9 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Stats band */}
-      <div style={{ background: violetGrain }}>
+      {/* Stats band: gradient bridges the hero's tone into a slightly lighter
+          shade so the two blocks read as distinct without a hard seam. */}
+      <div style={{ background: `${noise}, linear-gradient(180deg, #2A1057, #3B1878)` }}>
         <div
           ref={rowRef}
           style={{
