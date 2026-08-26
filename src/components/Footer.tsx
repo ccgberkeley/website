@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { withBase } from '../lib/withBase'
 import { poppins } from '../lib/fonts'
 
@@ -11,7 +10,7 @@ export default function Footer() {
           margin: '0 auto',
           padding: '80px 40px 48px',
           display: 'grid',
-          gridTemplateColumns: '2fr 1fr 1fr',
+          gridTemplateColumns: '2fr 1fr',
           gap: 64,
         }}
       >
@@ -34,29 +33,6 @@ export default function Footer() {
             independently of the University of California. We take full responsibility for our
             organization and this web site.
           </div>
-        </div>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-          <div
-            style={{
-              fontFamily: poppins,
-              fontWeight: 600,
-              fontSize: 13,
-              letterSpacing: '0.14em',
-              textTransform: 'uppercase',
-              color: '#C9B4F2',
-            }}
-          >
-            Explore
-          </div>
-          <Link to="/about" className="footer-link">
-            About us
-          </Link>
-          <Link to="/work" className="footer-link">
-            Our work
-          </Link>
-          <Link to="/join" className="footer-link">
-            Join us
-          </Link>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
           <div
