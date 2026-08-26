@@ -117,6 +117,60 @@ a:hover {
   color: #191322;
 }
 
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.nav-toggle-bar {
+  width: 22px;
+  height: 2px;
+  background: #191322;
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.nav-toggle-bar.open:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle-bar.open:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle-bar.open:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+.nav-mobile-panel {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .nav-links-desktop {
+    display: none !important;
+  }
+  .nav-toggle {
+    display: flex;
+  }
+  .nav-mobile-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px 24px 20px;
+    border-top: 1px solid #e6e1ee;
+  }
+  .nav-mobile-panel .nav-link,
+  .nav-mobile-panel .nav-link-active {
+    padding: 12px 0;
+    font-size: 15px;
+  }
+}
+
 .btn-violet {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
@@ -191,6 +245,42 @@ a:hover {
 }
 .work-row:hover {
   border-color: #c9b4f2 !important;
+}
+
+@media (max-width: 720px) {
+  .work-row {
+    grid-template-columns: 1fr !important;
+    padding: 28px !important;
+    gap: 20px !important;
+  }
+  .work-row > div {
+    text-align: left !important;
+  }
+  .work-row-num {
+    order: -1;
+  }
+  .work-row-graphic {
+    order: 1;
+    height: 100px !important;
+  }
+}
+
+.sticky-col {
+  position: sticky;
+}
+@media (max-width: 860px) {
+  .sticky-col {
+    position: static;
+  }
+}
+
+/* Safety net: CTA rows built with justify-content:space-between (headline +
+   button) wrap instead of squeezing once the viewport can't fit both. */
+@media (max-width: 700px) {
+  [style*='justify-content: space-between'] {
+    flex-wrap: wrap !important;
+    row-gap: 20px !important;
+  }
 }
 
 .service-card {

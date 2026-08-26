@@ -150,7 +150,7 @@ export default function Join() {
             style={{
               fontFamily: playfair,
               fontWeight: 700,
-              fontSize: 64,
+              fontSize: 'clamp(34px, 6.5vw, 64px)',
               letterSpacing: '-0.01em',
               lineHeight: 1.05,
               color: '#FFFFFF',
@@ -199,15 +199,15 @@ export default function Join() {
           margin: '0 auto',
           padding: '88px 40px 40px',
           display: 'grid',
-          gridTemplateColumns: 'minmax(0,1fr) minmax(0,1.15fr)',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
           gap: 72,
           alignItems: 'start',
         }}
       >
         {/* Sticky date panel */}
         <div
+          className="sticky-col"
           style={{
-            position: 'sticky',
             top: 96,
             display: 'flex',
             flexDirection: 'column',
@@ -233,7 +233,7 @@ export default function Join() {
             style={{
               fontFamily: playfair,
               fontWeight: 700,
-              fontSize: 112,
+              fontSize: 'clamp(52px, 11vw, 112px)',
               letterSpacing: '-0.02em',
               lineHeight: 1,
               color: '#3B1878',
@@ -245,7 +245,7 @@ export default function Join() {
           <div
             style={{
               ...playfairItalic,
-              fontSize: 32,
+              fontSize: 'clamp(24px, 3.4vw, 32px)',
               color: '#191322',
               marginTop: -6,
             }}
@@ -392,7 +392,7 @@ export default function Join() {
 
       {/* Photo strip */}
       <div style={{ maxWidth: 1180, margin: '0 auto', padding: '64px 40px 96px' }}>
-        <div data-reveal style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
+        <div data-reveal style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16 }}>
           {[
             {
               id: 'join-strip-1',

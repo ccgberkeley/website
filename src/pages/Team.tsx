@@ -132,7 +132,7 @@ export default function Team() {
             style={{
               fontFamily: playfair,
               fontWeight: 700,
-              fontSize: 60,
+              fontSize: 'clamp(34px, 6vw, 60px)',
               letterSpacing: '-0.01em',
               lineHeight: 1.05,
               color: '#FFFFFF',
@@ -213,7 +213,7 @@ export default function Team() {
               style={{
                 fontFamily: poppins,
                 fontWeight: 800,
-                fontSize: 60,
+                fontSize: 'clamp(30px, 6vw, 60px)',
                 letterSpacing: '-0.02em',
                 color: '#FFFFFF',
                 textShadow: '0 2px 20px rgba(25,19,34,0.7)',
@@ -246,7 +246,7 @@ export default function Team() {
                 style={{
                   fontFamily: playfair,
                   fontWeight: 700,
-                  fontSize: 56,
+                  fontSize: 'clamp(34px, 5.5vw, 56px)',
                   letterSpacing: '-0.01em',
                   lineHeight: 1.05,
                   color: '#FFFFFF',
@@ -256,7 +256,7 @@ export default function Team() {
                 Executive <span style={{ color: '#C9B4F2' }}>Board</span>
               </h2>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: 24 }}>
               {EXECS.map((m, i) => (
                 <div
                   key={m.slot}
@@ -272,8 +272,8 @@ export default function Team() {
                 >
                   <div
                     style={{
-                      width: 170,
-                      height: 170,
+                      width: 'clamp(120px, 30vw, 170px)',
+                      height: 'clamp(120px, 30vw, 170px)',
                       borderRadius: '50%',
                       overflow: 'hidden',
                       border: '4px solid rgba(201,180,242,0.5)',
@@ -320,7 +320,7 @@ export default function Team() {
             style={{
               fontFamily: playfair,
               fontWeight: 700,
-              fontSize: 56,
+              fontSize: 'clamp(34px, 5.5vw, 56px)',
               letterSpacing: '-0.01em',
               lineHeight: 1.05,
               margin: 0,
@@ -329,7 +329,7 @@ export default function Team() {
             <span style={{ color: '#3B1878' }}>Board</span> of Directors
           </h2>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 24 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: 24 }}>
           {DIRECTORS.map((m, i) => (
             <div
               key={m.slot}
@@ -346,8 +346,8 @@ export default function Team() {
             >
               <div
                 style={{
-                  width: 140,
-                  height: 140,
+                  width: 'clamp(100px, 24vw, 140px)',
+                  height: 'clamp(100px, 24vw, 140px)',
                   borderRadius: '50%',
                   overflow: 'hidden',
                   border: '4px solid #F2EDFA',
@@ -409,7 +409,7 @@ export default function Team() {
             style={{
               fontFamily: playfair,
               fontWeight: 700,
-              fontSize: 44,
+              fontSize: 'clamp(28px, 4.4vw, 44px)',
               letterSpacing: '-0.01em',
               margin: 0,
               color: '#FFFFFF',

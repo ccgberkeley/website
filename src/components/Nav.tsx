@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { withBase } from '../lib/withBase'
 import { poppins } from '../lib/fonts'
@@ -12,6 +13,8 @@ const links = [
 ]
 
 export default function Nav({ active }: { active?: string }) {
+  const [open, setOpen] = useState(false)
+
   return (
     <div
       style={{
@@ -34,8 +37,8 @@ export default function Nav({ active }: { active?: string }) {
           justifyContent: 'space-between',
         }}
       >
-        <Link to="/" className="nav-brand">
-          <img src={withBase('/assets/logo.png')} alt="Core Consulting Group" style={{ width: 36, height: 36 }} />
+        <Link to="/" className="nav-brand" onClick={() => setOpen(false)}>
+          <img src={withBase('/assets/logo.png')} alt="Core Consulting Group" style={{ width: 36, height: 36, flexShrink: 0 }} />
           <span
             style={{
               fontFamily: poppins,
@@ -47,7 +50,7 @@ export default function Nav({ active }: { active?: string }) {
             Core Consulting Group
           </span>
         </Link>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 32 }}>
+        <div className="nav-links-desktop" style={{ display: 'flex', alignItems: 'center', gap: 32 }}>
           {links
             .filter((l) => l.label !== 'Contact')
             .map((l) =>
@@ -65,7 +68,33 @@ export default function Nav({ active }: { active?: string }) {
             Contact
           </Link>
         </div>
+        <button
+          type="button"
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-expanded={open}
+          className="nav-toggle"
+          onClick={() => setOpen((v) => !v)}
+        >
+          <span className={open ? 'nav-toggle-bar open' : 'nav-toggle-bar'} />
+          <span className={open ? 'nav-toggle-bar open' : 'nav-toggle-bar'} />
+          <span className={open ? 'nav-toggle-bar open' : 'nav-toggle-bar'} />
+        </button>
       </div>
+      {open && (
+        <div className="nav-mobile-panel">
+          {links.map((l) =>
+            l.label === active ? (
+              <Link key={l.to} to={l.to} className="nav-link-active" onClick={() => setOpen(false)}>
+                {l.label}
+              </Link>
+            ) : (
+              <Link key={l.to} to={l.to} className="nav-link" onClick={() => setOpen(false)}>
+                {l.label}
+              </Link>
+            ),
+          )}
+        </div>
+      )}
     </div>
   )
 }

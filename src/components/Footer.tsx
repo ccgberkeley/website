@@ -10,7 +10,7 @@ export default function Footer() {
           margin: '0 auto',
           padding: '80px 40px 48px',
           display: 'grid',
-          gridTemplateColumns: '2fr 1fr',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
           gap: 64,
         }}
       >
