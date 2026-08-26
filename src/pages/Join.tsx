@@ -9,53 +9,60 @@ import { violetGrain } from '../lib/texture'
 
 const EVENTS = [
   {
-    date: '1/20–1/29',
+    date: '8/26–9/3',
     name: 'Coffee Chats',
     detail: 'Meet current members one-on-one — sign up via our Instagram bio!',
-    label: 'Jan 20 – 29',
+    label: 'Aug 26 – Sep 3',
     body: 'Meet current members one-on-one. Sign up via our Instagram bio!',
   },
   {
-    date: '1/22',
+    date: '8/27',
     name: 'Calapalooza',
-    detail: 'Come find our table at Upper Sproul Plaza, 10 am – 4 pm.',
-    label: 'Jan 22 · 10 am – 4 pm',
+    detail: 'Come find our table at Upper Sproul Plaza, 11:30 am – 6:30 pm.',
+    label: 'Aug 27 · 11:30 am – 6:30 pm',
     body: '@ Upper Sproul Plaza',
   },
   {
-    date: '1/27',
+    date: '8/31',
     name: 'Info Session 1',
-    detail: 'Learn what CCG is all about, 8 – 9 pm in Anthropology & Art Practice 155.',
-    label: 'Jan 27 · 8 – 9 pm',
-    body: '@ Anthropology & Art Practice 155',
+    detail: 'Learn what CCG is all about, 8 – 9 pm in Wheeler Hall 108.',
+    label: 'Aug 31 · 8 – 9 pm',
+    body: '@ Wheeler Hall 108',
   },
   {
-    date: '1/28',
+    date: '9/1',
     name: 'Info Session 2',
-    detail: 'A second chance to meet us, 8 – 9 pm in Social Sciences 60.',
-    label: 'Jan 28 · 8 – 9 pm',
-    body: '@ Social Sciences 60',
+    detail: 'A second chance to meet us, 8 – 9 pm in Social Science 56.',
+    label: 'Sep 1 · 8 – 9 pm',
+    body: '@ Social Science 56',
   },
   {
-    date: '1/29',
+    date: '9/2',
+    name: 'Women in Business Night',
+    detail: 'A night for women interested in business and consulting, 8 – 9 pm in Social Science 56.',
+    label: 'Sep 2 · 8 – 9 pm',
+    body: '@ Social Science 56',
+  },
+  {
+    date: '9/3',
     name: 'Social Night',
-    detail: 'Hang out with the whole club, 7 – 9 pm at Haas Courtyard.',
-    label: 'Jan 29 · 7 – 9 pm',
-    body: '@ Haas Courtyard',
+    detail: 'Hang out with the whole club, 8 – 9:30 pm at Hearst Field Annex.',
+    label: 'Sep 3 · 8 – 9:30 pm',
+    body: '@ Hearst Field Annex',
   },
   {
-    date: '1/29',
+    date: '9/3',
     name: 'Application Due',
-    detail: "Applications close at 11 pm sharp — apply via the link in our Instagram bio.",
-    label: 'Jan 29 · 11 pm',
+    detail: "Applications close at 10 pm sharp — apply via the link in our Instagram bio.",
+    label: 'Sep 3 · 10 pm',
     body: "Apply via the link in our Instagram bio — don't wait until the last minute.",
     highlight: true,
   },
   {
-    date: '1/31–2/1',
+    date: '9/5–9/6',
     name: 'Interviews',
     detail: 'Selected applicants interview over the weekend. Offers go out shortly after.',
-    label: 'Jan 31 – Feb 1',
+    label: 'Sep 5 – 6',
     body: 'Selected applicants interview over the weekend. Offers go out shortly after.',
   },
 ]
@@ -137,7 +144,7 @@ export default function Join() {
               ...heroIn(0),
             }}
           >
-            Spring 2026 recruitment
+            Fall 2026 recruitment
           </div>
           <h1
             style={{
@@ -441,7 +448,7 @@ export default function Join() {
               Ready to apply?
             </div>
             <div style={{ fontSize: 17, lineHeight: 1.6, color: '#C9B4F2' }}>
-              Applications for Spring 2026 close Jan 29 at 11 pm.
+              Applications for Fall 2026 close Sep 3 at 10 pm.
             </div>
           </div>
           <a
