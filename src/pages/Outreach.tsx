@@ -71,7 +71,7 @@ const PERKS = [
   },
   {
     title: 'Real first projects',
-    desc: 'We help branches land their first engagements with local businesses: small-scale, low-stakes projects built for learning, not pressure.',
+    desc: 'We equip branches with guidance and example decks to source small-scale, low-stakes first engagements with local businesses, built for learning, not pressure.',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B1878" strokeWidth="1.5">
         <path d="M12 3v4M12 3l3 3M12 3L9 6" />
