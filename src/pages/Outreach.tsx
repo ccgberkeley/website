@@ -352,8 +352,8 @@ export default function Outreach() {
               key={p.title}
               data-reveal
               style={{
-                flex: '1 1 220px',
-                maxWidth: 280,
+                flex: '0 1 calc(25% - 12px)',
+                minWidth: 220,
                 background: '#FFFFFF',
                 border: '1px solid #E6E1EE',
                 borderRadius: 14,
