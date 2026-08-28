@@ -354,6 +354,7 @@ export default function Outreach() {
               style={{
                 flex: '0 1 calc(25% - 12px)',
                 minWidth: 220,
+                minHeight: 351,
                 background: '#FFFFFF',
                 border: '1px solid #E6E1EE',
                 borderRadius: 14,
