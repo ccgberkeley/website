@@ -163,7 +163,7 @@ export default function Home() {
         }}
       >
         <RingMotif size={560} style={{ top: -160, right: -180, animation: 'drift 9s ease-in-out infinite' }} />
-        <RingMotif size={380} style={{ bottom: 40, left: -160, animation: 'drift 12s ease-in-out infinite reverse' }} />
+        <RingMotif size={320} style={{ bottom: 90, left: -160, animation: 'drift 12s ease-in-out infinite reverse' }} />
         <div
           style={{
             position: 'absolute',
