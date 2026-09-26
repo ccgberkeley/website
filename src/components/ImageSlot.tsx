@@ -6,12 +6,13 @@ interface ImageSlotProps {
   alt?: string
   placeholder: string
   style?: React.CSSProperties
+  objectPosition?: string
 }
 
 // Drop-zone image slot: drag a photo in or click to pick one. The chosen
 // image is stored in localStorage (keyed by slot id) so it survives reloads.
 // A `src` prop (a real shipped asset) takes precedence over the stored image.
-export default function ImageSlot({ id, src, alt = '', placeholder, style }: ImageSlotProps) {
+export default function ImageSlot({ id, src, alt = '', placeholder, style, objectPosition }: ImageSlotProps) {
   const [stored, setStored] = useState<string | null>(null)
   const [dragOver, setDragOver] = useState(false)
   const inputRef = useRef<HTMLInputElement>(null)
@@ -55,7 +56,7 @@ export default function ImageSlot({ id, src, alt = '', placeholder, style }: Ima
     >
       {image ? (
         <>
-          <img src={image} alt={alt} />
+          <img src={image} alt={alt} style={objectPosition ? { objectPosition } : undefined} />
           {!src && (
             <button
               aria-label="Remove photo"

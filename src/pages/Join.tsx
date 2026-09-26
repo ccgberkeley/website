@@ -128,18 +128,21 @@ export default function Join() {
               placeholder: 'Recruitment event photo',
               transform: 'rotate(-1.5deg)',
               src: 'join-recruitment.jpg',
+              objectPosition: '38% 40%',
             },
             {
               id: 'join-graduation',
               placeholder: 'Graduation photo',
               transform: 'rotate(1deg) translateY(10px)',
               src: 'join-graduation.jpg',
+              objectPosition: '72% 30%',
             },
             {
               id: 'join-photo-2',
               placeholder: 'Social night photo',
               transform: 'rotate(-1deg)',
               src: 'join-social-night.jpg',
+              objectPosition: '54% 35%',
             },
             {
               id: 'join-strip-2',
@@ -160,6 +163,7 @@ export default function Join() {
                 src={withBase(`/assets/photos/${p.src}`)}
                 placeholder={p.placeholder}
                 style={{ width: '100%', height: 260 }}
+                objectPosition={p.objectPosition}
               />
             </div>
           ))}
