@@ -106,7 +106,7 @@ export default function Join() {
               color: '#8A6BC1',
             }}
           >
-            Recruitment moments
+            Life at CCG
           </div>
           <div
             style={{
@@ -118,7 +118,7 @@ export default function Join() {
               marginTop: 8,
             }}
           >
-            A look back at <span style={{ color: '#8A6BC1' }}>Fall 2026</span>
+            Moments from the <span style={{ color: '#8A6BC1' }}>club</span>
           </div>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16 }}>
