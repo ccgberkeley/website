@@ -130,10 +130,10 @@ export default function Join() {
               src: 'join-recruitment.jpg',
             },
             {
-              id: 'join-strip-1',
-              placeholder: 'Info session photo',
+              id: 'join-graduation',
+              placeholder: 'Graduation photo',
               transform: 'rotate(1deg) translateY(10px)',
-              src: 'join-info-session.jpg',
+              src: 'join-graduation.jpg',
             },
             {
               id: 'join-photo-2',
