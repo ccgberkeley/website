@@ -229,11 +229,11 @@ export default function Contact() {
               Thinking of applying?
             </div>
             <div style={{ fontSize: 14.5, lineHeight: 1.6, color: '#5C5468' }}>
-              Check the{' '}
+              Fall 2026 applications are closed. Visit the{' '}
               <Link to="/join" style={{ fontWeight: 600 }}>
-                recruitment timeline
+                Join page
               </Link>{' '}
-              for this semester's dates. Info sessions are the best place to meet us in person.
+              or follow us on Instagram for Spring 2027 recruitment details.
             </div>
           </div>
         </div>
