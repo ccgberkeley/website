@@ -371,28 +371,6 @@ textarea::placeholder {
   color: #3b1878;
 }
 
-/* Join page scroll timeline */
-[data-tl-event] {
-  opacity: 0.4;
-  transition: opacity 0.5s ease;
-}
-[data-tl-event] .tl-card {
-  transform: scale(0.98);
-  transition:
-    transform 0.5s ease,
-    border-color 0.5s ease;
-}
-[data-tl-event].tl-active {
-  opacity: 1;
-}
-[data-tl-event].tl-active .tl-card {
-  transform: scale(1);
-}
-[data-tl-event].tl-active .tl-dot {
-  background: #3b1878 !important;
-  box-shadow: 0 0 0 6px #f2edfa;
-}
-
 /* Outreach partner-branch cards */
 .branch-card {
   background: rgba(255, 255, 255, 0.06);
